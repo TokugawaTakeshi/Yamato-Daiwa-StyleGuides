@@ -1,3 +1,11 @@
+const foo = 1;
+const bar = 2;
+const baz = 3;
 
-var a = 1;
-debugger;
+
+if (foo) {
+  bar();
+}
+else {
+  baz();
+}

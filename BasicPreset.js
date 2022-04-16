@@ -1,4 +1,5 @@
 const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules.js")
+const TypeScriptOverridings = require("./Partials/Overridings/TypeScriptOverridings");
 
 
 module.exports = {
@@ -27,8 +28,7 @@ module.exports = {
   },
 
   overrides: [
-
-
+    TypeScriptOverridings
   ],
 
   globals: {
