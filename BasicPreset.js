@@ -1,5 +1,9 @@
-const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules.js")
+const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules")
+const NodeJS_BasicRules  = require("./Partials/NodeJS_Rules")
 const TypeScriptOverridings = require("./Partials/Overridings/TypeScriptOverridings");
+const TestFilesOverridings = require("./Partials/Overridings/TestFilesOverridings")
+const VueComponentsFilesOverrides = require("./Partials/Overridings/Vue/VueComponentsFilesOverrides")
+const VuexModuleComponentsOverrides = require("./Partials/Overridings/Vue/VuexModuleComponentsOverrides")
 
 
 module.exports = {
@@ -9,26 +13,36 @@ module.exports = {
   parserOptions: {
     sourceType: "module",
     project: "tsconfig.json",
-    tsconfigRootDir: "./"
+    tsconfigRootDir: "./",
+    templateTokenizer: {
+      pug: "vue-eslint-parser-template-tokenizer-pug"
+    }
   },
 
   env: {
     "es6": true,
     "browser": true,
-    "node": true
+    "node": true,
+    "mocha": true
   },
 
   plugins: [
     "@typescript-eslint",
-    "node"
+    "import",
+    "node",
+    "vue"
   ],
 
   rules: {
-    ...ECMA_ScriptBasicRules
+    ...ECMA_ScriptBasicRules,
+    ...NodeJS_BasicRules
   },
 
   overrides: [
-    TypeScriptOverridings
+    TypeScriptOverridings,
+    TestFilesOverridings,
+    VueComponentsFilesOverrides,
+    VuexModuleComponentsOverrides
   ],
 
   globals: {

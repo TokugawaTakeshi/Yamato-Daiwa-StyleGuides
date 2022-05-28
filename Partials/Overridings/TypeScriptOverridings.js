@@ -97,12 +97,11 @@ module.exports = {
     "default-param-last": "off",
     "@typescript-eslint/default-param-last": "error",
 
-    "init-declarations": "off",
-    "@typescript-eslint/init-declarations": "error",
-
     "@typescript-eslint/no-array-constructor": "error",
 
     "@typescript-eslint/no-confusing-void-expression": "error",
+
+    "@typescript-eslint/no-duplicate-enum-values": "error",
 
     "no-invalid-this": "off",
     "@typescript-eslint/no-invalid-this": "error",
@@ -219,7 +218,7 @@ module.exports = {
     ],
 
     "no-duplicate-imports": "off",
-    "@typescript-eslint/no-duplicate-imports": "error",
+    "import/no-duplicates": "error",
 
     "no-empty-function": "off",
     "@typescript-eslint/no-empty-function": "error",
@@ -368,10 +367,10 @@ module.exports = {
 
     "@typescript-eslint/no-require-imports": "error",
 
-    "@typescript-eslint/prefer-for-of": "error",
+    "@typescript-eslint/prefer-for-of": "error"
 
 
     /* --- Experimental --------------------------------------------------------------------------------------------- */
-    "@typescript-eslint/prefer-readonly-parameter-types": "warn"
+    // "@typescript-eslint/prefer-readonly-parameter-types": "warn"
   }
 };

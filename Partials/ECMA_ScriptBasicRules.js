@@ -77,6 +77,7 @@ module.exports = {
 
 
   /* --- Prevention of the confusing / Stupid errors ---------------------------------------------------------------- */
+  "no-constant-binary-expression": "error",
   "no-self-assign": "error",
   "no-self-compare": "error",
   "no-sparse-arrays": "error",
@@ -88,8 +89,7 @@ module.exports = {
   "default-param-last": "error",
   "func-names": [ "error", "always" ],
   "func-style": [ "error", "declaration" ],
-  "init-declarations": [ "warn", "always" ],
-  "new-cap": [ "error" ],
+  "new-cap": [ "error", { capIsNew: false } ],
   "no-array-constructor": "error",
   "no-bitwise": "error",
   "no-confusing-arrow": [ "error", { allowParens: true } ],
@@ -247,12 +247,12 @@ module.exports = {
       properties: "never",
       exceptions: [
         "add",
-        "ID",
+        "id",
         "key",
-        "pug",
         "Pug",
-        "vue",
-        "Vue"
+        "pug",
+        "Vue",
+        "vue"
       ]
     }
   ],
