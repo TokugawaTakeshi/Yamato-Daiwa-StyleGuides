@@ -332,7 +332,7 @@ module.exports = {
 
 
     /* --- Fast-and-dirty code prevention --------------------------------------------------------------------------- */
-    "@typescript-eslint/ban-ts-comment": "error",
+    "@typescript-eslint/ban-ts-comment": [ "error", { minimumDescriptionLength: 20 } ],
 
     "@typescript-eslint/ban-types": "error",
 

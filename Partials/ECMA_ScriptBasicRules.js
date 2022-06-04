@@ -88,7 +88,7 @@ module.exports = {
   "default-case-last": "error",
   "default-param-last": "error",
   "func-names": [ "error", "always" ],
-  "func-style": [ "error", "declaration" ],
+  "func-style": [ "error", "declaration", { allowArrowFunctions: true } ],
   "new-cap": [ "error", { capIsNew: false } ],
   "no-array-constructor": "error",
   "no-bitwise": "error",
