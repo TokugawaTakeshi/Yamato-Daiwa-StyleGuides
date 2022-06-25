@@ -5,7 +5,7 @@ module.exports = {
   "node/no-exports-assign": "error",
   "node/no-extraneous-import": "error",
   // "node/no-extraneous-require": "error",
-  "node/no-missing-import": "error",
+  // "node/no-missing-import": [ "error", { tryExtensions: [ ".ts", ".js", ".mjs", ".json", ".node" ] } ],
   // "node/no-missing-require": "error",
   // "node/no-new-require": "error",
   "node/no-path-concat": "error",
@@ -15,7 +15,7 @@ module.exports = {
 
   "node/no-unpublished-require": "error",
   "node/no-unsupported-features/es-builtins": "error",
-  "node/no-unsupported-features/es-syntax": "error",
+  // "node/no-unsupported-features/es-syntax": "error",
   "node/no-unsupported-features/node-builtins": "error",
   "node/process-exit-as-throw": "error",
   "node/shebang": "error",

@@ -247,6 +247,8 @@ module.exports = {
 
     "@typescript-eslint/class-literal-property-style": "warn",
 
+    "@typescript-eslint/consistent-generic-constructors": [ "error", "constructor" ],
+
     "@typescript-eslint/consistent-indexed-object-style": [ "warn", "index-signature" ],
 
     "dot-notation": "off",
