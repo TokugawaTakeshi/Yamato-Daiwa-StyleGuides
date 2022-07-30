@@ -12,8 +12,9 @@ module.exports = {
 
   parserOptions: {
     sourceType: "module",
-    project: "tsconfig.json",
     tsconfigRootDir: "./",
+    project: "tsconfig.json",
+    extraFileExtensions: [ ".vue" ],
     templateTokenizer: {
       pug: "vue-eslint-parser-template-tokenizer-pug"
     }

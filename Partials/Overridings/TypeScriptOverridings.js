@@ -171,6 +171,7 @@ module.exports = {
 
     "@typescript-eslint/no-unnecessary-type-assertion": "error",
 
+    "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
 
     "@typescript-eslint/return-await": "error",
@@ -247,7 +248,7 @@ module.exports = {
 
     "@typescript-eslint/class-literal-property-style": "warn",
 
-    "@typescript-eslint/consistent-generic-constructors": [ "error", "constructor" ],
+    "@typescript-eslint/consistent-generic-constructors": [ "error", "type-annotation" ],
 
     "@typescript-eslint/consistent-indexed-object-style": [ "warn", "index-signature" ],
 
@@ -369,10 +370,14 @@ module.exports = {
 
     "@typescript-eslint/no-require-imports": "error",
 
-    "@typescript-eslint/prefer-for-of": "error"
+    "@typescript-eslint/prefer-for-of": "error",
 
 
     /* --- Experimental --------------------------------------------------------------------------------------------- */
     // "@typescript-eslint/prefer-readonly-parameter-types": "warn"
+
+
+    /* --- Disabling of basic rules --------------------------------------------------------------------------------- */
+    "consistent-return": "off"
   }
 };

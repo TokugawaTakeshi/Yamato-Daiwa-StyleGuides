@@ -189,7 +189,7 @@ module.exports = {
   "jsx-quotes": "warn",
   "key-spacing": "warn",
   "keyword-spacing": "warn",
-  "lines-around-comment": [ "error", { "beforeBlockComment": true } ],
+  "lines-around-comment": [ "warn", { "beforeBlockComment": true } ],
   "max-len": [
     "warn",
     {
