@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.0.18",
+  "version": "0.0.19",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "repository": {
     "type": "git",
@@ -19,9 +19,9 @@
     "typescript": "4.7.4"
   },
   "dependencies": {
-    "@typescript-eslint/eslint-plugin": "5.31.0",
-    "@typescript-eslint/parser": "5.31.0",
-    "eslint": "8.20.0",
+    "@typescript-eslint/eslint-plugin": "5.33.0",
+    "@typescript-eslint/parser": "5.33.0",
+    "eslint": "8.21.0",
     "eslint-plugin-import": "2.26.0",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-vue": "9.3.0",

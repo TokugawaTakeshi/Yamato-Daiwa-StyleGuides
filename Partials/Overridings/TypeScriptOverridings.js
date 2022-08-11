@@ -193,6 +193,7 @@ module.exports = {
           "public-static-field",
           "protected-static-field",
           "private-static-field",
+          "static-initialization",
 
           "public-abstract-field",
           "protected-abstract-field",
