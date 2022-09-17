@@ -245,9 +245,11 @@ module.exports = {
     {
       min: 4,
       properties: "never",
+      /* Case is matters */
       exceptions: [
         "add",
         "id",
+        "ID",
         "key",
         "Pug",
         "pug",
