@@ -190,6 +190,7 @@ module.exports = {
   "key-spacing": "warn",
   "keyword-spacing": "warn",
   "lines-around-comment": [ "warn", { "beforeBlockComment": true } ],
+  "logical-assignment-operators": [ "warn", "never" ],
   "max-len": [
     "warn",
     {

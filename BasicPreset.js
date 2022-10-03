@@ -2,8 +2,9 @@ const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules")
 const NodeJS_BasicRules  = require("./Partials/NodeJS_Rules")
 const TypeScriptOverridings = require("./Partials/Overridings/TypeScriptOverridings");
 const TestFilesOverridings = require("./Partials/Overridings/TestFilesOverridings")
-const VueComponentsFilesOverrides = require("./Partials/Overridings/Vue/VueComponentsFilesOverrides")
-const VuexModuleComponentsOverrides = require("./Partials/Overridings/Vue/VuexModuleComponentsOverrides")
+const VueComponentsFilesOverridings = require("./Partials/Overridings/Vue/VueComponentsFilesOverridings")
+const VuexModuleComponentsOverridings = require("./Partials/Overridings/Vue/VuexModuleComponentsOverridings")
+const JSX_FilesOverridings = require("./Partials/Overridings/React/JSX_FilesOverridings")
 
 
 module.exports = {
@@ -31,7 +32,8 @@ module.exports = {
     "@typescript-eslint",
     "import",
     "node",
-    "vue"
+    "vue",
+    "react"
   ],
 
   rules: {
@@ -42,8 +44,9 @@ module.exports = {
   overrides: [
     TypeScriptOverridings,
     TestFilesOverridings,
-    VueComponentsFilesOverrides,
-    VuexModuleComponentsOverrides
+    VueComponentsFilesOverridings,
+    VuexModuleComponentsOverridings,
+    JSX_FilesOverridings
   ],
 
   globals: {
