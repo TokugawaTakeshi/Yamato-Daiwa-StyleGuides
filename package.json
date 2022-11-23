@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.0.28",
+  "version": "0.0.29",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "repository": {
     "type": "git",
@@ -29,8 +29,8 @@
     "eslint-plugin-vue-pug": "0.5.4"
   },
   "files": [
-    "BasicPreset.js",
-    "Markup-BasicPreset.js",
+    "ECMAScript.js",
+    "Markup.js",
     "Partials"
   ],
   "scripts": {
