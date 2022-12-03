@@ -262,8 +262,7 @@ module.exports = {
     "@typescript-eslint/func-call-spacing": "warn",
 
     "keyword-spacing": "off",
-    // Not available because of bugs
-    // "@typescript-eslint/keyword-spacing": "warn",
+    "@typescript-eslint/keyword-spacing": "warn",
 
     "@typescript-eslint/member-delimiter-style": [
       "warn",
@@ -339,7 +338,15 @@ module.exports = {
 
 
     /* --- Fast-and-dirty code prevention --------------------------------------------------------------------------- */
-    "@typescript-eslint/ban-ts-comment": [ "error", { minimumDescriptionLength: 20 } ],
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": { descriptionFormat: "^: TS\\d+\\s" },
+        "ts-ignore": { descriptionFormat: "^: TS\\d+\\s" },
+        "ts-nocheck": { descriptionFormat: "^: TS\\d+\\s" },
+        minimumDescriptionLength: 20
+      }
+    ],
 
     "@typescript-eslint/ban-types": "error",
 
