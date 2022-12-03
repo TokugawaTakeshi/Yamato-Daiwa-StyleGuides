@@ -262,7 +262,8 @@ module.exports = {
     "@typescript-eslint/func-call-spacing": "warn",
 
     "keyword-spacing": "off",
-    "@typescript-eslint/keyword-spacing": "warn",
+    // Not available because of bugs
+    // "@typescript-eslint/keyword-spacing": "warn",
 
     "@typescript-eslint/member-delimiter-style": [
       "warn",
