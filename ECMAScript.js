@@ -50,6 +50,7 @@ module.exports = {
   ],
 
   globals: {
+    ReadonlyMap: "readonly",
     BigInt: "readonly",
     NodeJS: "readonly",
     BufferEncoding: "readonly"
