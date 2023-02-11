@@ -73,6 +73,8 @@ module.exports = {
 
   requireLineFeedAtFileEnd: true,
 
+  requireSpaceAfterCodeOperator: true,
+
   requireSpecificAttributes: [
     { input: [ "type" ] },
     { img: [ "alt" ] }
