@@ -104,12 +104,7 @@ module.exports = {
     "class-methods-use-this": "off",
     "@typescript-eslint/indent": "off",
     "@typescript-eslint/member-ordering": "off",
-    "vue/script-indent": [
-      "warn",
-      2,
-      {
-        baseIndent: 1
-      }
-    ]
+    "vue/script-indent": "off"
+
   }
 };
