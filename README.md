@@ -21,7 +21,7 @@ npm i @yamato-daiwa/style_guides -D -E
 For the **.eslintrc.yaml** case, it will be:
 
 ```yaml
-extends: ./node_modules/@yamato-daiwa/style_guides/BasicPreset.js
+extends: ./node_modules/@yamato-daiwa/style_guides/ECMAScript.js
 ```
 
 
@@ -31,6 +31,6 @@ For the **.pug-lintrc** case, it will be:
 
 ```
 {
-  "extends": "./node_modules/@yamato-daiwa/style_guides/Markup-BasicPreset.js",
+  "extends": "./node_modules/@yamato-daiwa/style_guides/Markup.js",
 }
 ```
