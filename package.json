@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.0.45",
+  "version": "0.0.46",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "repository": {
     "type": "git",
@@ -31,7 +31,7 @@
   },
   "files": [
     "Partials",
-    ".prettierrc.yaml",
+    "ECMAScript.pretteir.js",
     "ECMAScript.js",
     "Markup.js"
   ],
