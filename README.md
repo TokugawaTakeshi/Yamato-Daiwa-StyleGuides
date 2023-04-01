@@ -29,8 +29,17 @@ extends: ./node_modules/@yamato-daiwa/style_guides/ECMAScript.js
 
 For the **.pug-lintrc** case, it will be:
 
+```json
+{
+  "extends": "./node_modules/@yamato-daiwa/style_guides/Markup.js"
+}
 ```
+
+Depending on the project building mode, the excluding of **node_modules** could require.
+
+```json
 {
   "extends": "./node_modules/@yamato-daiwa/style_guides/Markup.js",
+  "excludeFiles": [ "node_modules/**" ]
 }
 ```

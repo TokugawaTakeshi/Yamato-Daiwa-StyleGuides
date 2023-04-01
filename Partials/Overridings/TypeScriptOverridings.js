@@ -105,6 +105,8 @@ module.exports = {
 
     "@typescript-eslint/no-duplicate-enum-values": "error",
 
+    "@typescript-eslint/no-duplicate-type-constituents": "error",
+
     "no-invalid-this": "off",
     "@typescript-eslint/no-invalid-this": "error",
 
@@ -130,6 +132,8 @@ module.exports = {
     "@typescript-eslint/no-unnecessary-type-arguments": "error",
 
     "@typescript-eslint/no-unnecessary-type-constraint": "error",
+
+    "@typescript-eslint/no-unsafe-enum-comparison": "error",
 
     "no-unused-expressions": "off",
     "@typescript-eslint/no-unused-expressions": "error",
