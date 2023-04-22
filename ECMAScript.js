@@ -51,6 +51,7 @@ module.exports = {
 
   globals: {
     ReadonlyMap: "readonly",
+    ReadonlySet: "readonly",
     MapConstructor: "readonly",
     BigInt: "readonly",
     NodeJS: "readonly",
