@@ -25,8 +25,6 @@ module.exports = {
       }
     ],
 
-    "@typescript-eslint/no-implicit-any-catch": "error",
-
     "@typescript-eslint/no-non-null-asserted-optional-chain": "error",
 
     "@typescript-eslint/no-non-null-assertion": "error",
@@ -291,8 +289,6 @@ module.exports = {
     ],
 
     "@typescript-eslint/no-var-requires": "error",
-
-    "@typescript-eslint/no-parameter-properties": "error",
 
     "object-curly-spacing": "off",
     "@typescript-eslint/object-curly-spacing": ECMA_ScriptBasicRules["object-curly-spacing"],
