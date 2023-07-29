@@ -90,6 +90,15 @@ module.exports = {
     /* --- Prevention of the confusing / Stupid errors -------------------------------------------------------------- */
     "@typescript-eslint/await-thenable": "error",
 
+    "class-methods-use-this": "off",
+    "@typescript-eslint/class-methods-use-this": [
+      "error",
+      {
+        ignoreOverrideMethods: true,
+        ignoreClassesThatImplementAnInterface: true
+      }
+    ],
+
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
 
     "@typescript-eslint/no-for-in-array": "error",

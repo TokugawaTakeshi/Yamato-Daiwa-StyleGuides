@@ -135,7 +135,6 @@ module.exports = {
   "no-extra-semi": "error",
   "no-new-object": "error",
   "no-new-wrappers": "error",
-  "no-return-await": "error",
   "no-undef-init": "error",
   "no-unneeded-ternary": "error",
   "no-useless-call": "error",
