@@ -251,7 +251,7 @@ module.exports = {
     ],
 
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-unused-vars": ECMA_ScriptBasicRules["no-unused-vars"],
 
 
     /* --- Unification of equivalent writings ----------------------------------------------------------------------- */
