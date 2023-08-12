@@ -228,7 +228,7 @@ module.exports = {
   "no-unused-private-class-members": "error",
   "no-unused-vars": [
     "error",
-    { argsIgnorePattern: "^_" }
+    { destructuredArrayIgnorePattern: "^_" }
   ],
   "capitalized-comments": "warn",
   "grouped-accessor-pairs": [ "warn", "getBeforeSet" ],
