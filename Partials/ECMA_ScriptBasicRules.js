@@ -226,7 +226,10 @@ module.exports = {
   /* --- Neatness --------------------------------------------------------------------------------------------------- */
   "no-duplicate-imports": "error",
   "no-unused-private-class-members": "error",
-  "no-unused-vars": "error",
+  "no-unused-vars": [
+    "error",
+    { argsIgnorePattern: "^_" }
+  ],
   "capitalized-comments": "warn",
   "grouped-accessor-pairs": [ "warn", "getBeforeSet" ],
   "id-denylist": [
