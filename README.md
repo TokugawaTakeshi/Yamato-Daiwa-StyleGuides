@@ -35,7 +35,7 @@ For the **.pug-lintrc** case, it will be:
 }
 ```
 
-Depending on the project building mode, the excluding of **node_modules** could require.
+Depending on the project building tool, the excluding of **node_modules** could require.
 
 ```json
 {
