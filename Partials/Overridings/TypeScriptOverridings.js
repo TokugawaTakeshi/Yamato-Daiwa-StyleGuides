@@ -39,6 +39,8 @@ module.exports = {
 
     "@typescript-eslint/no-unsafe-member-access": "error",
 
+    "@typescript-eslint/no-unsafe-unary-minus": "error",
+
     "@typescript-eslint/prefer-return-this-type": "warn",
 
     "@typescript-eslint/strict-boolean-expressions": "error",
