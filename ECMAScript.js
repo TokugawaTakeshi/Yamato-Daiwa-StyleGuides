@@ -29,6 +29,7 @@ module.exports = {
   },
 
   plugins: [
+    "@stylistic",
     "@typescript-eslint",
     "import",
     "node",

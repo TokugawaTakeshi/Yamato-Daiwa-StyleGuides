@@ -189,6 +189,8 @@ module.exports = {
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
 
+    "@typescript-eslint/no-useless-template-literals": "warn",
+
     "@typescript-eslint/return-await": "error",
 
 
@@ -258,9 +260,6 @@ module.exports = {
 
     /* --- Unification of equivalent writings ----------------------------------------------------------------------- */
     "@typescript-eslint/array-type": [ "warn", { default: "generic" } ],
-
-    "brace-style": "off",
-    "@typescript-eslint/brace-style": ECMA_ScriptBasicRules["brace-style"],
 
     "@typescript-eslint/class-literal-property-style": "warn",
 
