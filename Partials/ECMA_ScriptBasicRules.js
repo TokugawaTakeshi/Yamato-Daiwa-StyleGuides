@@ -180,29 +180,33 @@ module.exports = {
   "@stylistic/comma-dangle": [ "warn", "never" ],
   "@stylistic/comma-spacing": [ "warn", { "before": false, "after": true } ],
   "@stylistic/comma-style": [　"error",　"last"　],
-
-  "computed-property-spacing": [　"warn",　"never"　],
-  "dot-location": [ "warn", "object" ],
-  "func-call-spacing": "warn",
-  "function-call-argument-newline": [ "error", "consistent" ],
-  "function-paren-newline": [ "error", "consistent" ],
-  "generator-star-spacing": "warn",
-  "jsx-quotes": "warn",
-  "key-spacing": "warn",
-  "keyword-spacing": "warn",
-  "lines-around-comment": [ "warn", { "beforeBlockComment": true } ],
-  "logical-assignment-operators": [ "warn", "never" ],
-  "max-len": [
+  "@stylistic/computed-property-spacing": [　"warn",　"never"　],
+  "@stylistic/dot-location": [ "warn", "object" ],
+  "@stylistic/function-call-argument-newline": [ "warn", "consistent" ],
+  "@stylistic/function-call-spacing": "warn",
+  "@stylistic/function-paren-newline": [ "warn", "consistent" ],
+  "@stylistic/generator-star-spacing": [ "warn", { "before": true, "after": false } ],
+  "@stylistic/jsx-quotes": [ "error", "prefer-double" ],
+  "@stylistic/key-spacing": [
     "warn",
     {
-      code: 130,
-      ignoreUrls: true,
-      ignorePattern: "^\\s{4}\"[@~]?[\\w/:.-]+\";\\s*$"
+      "beforeColon": false,
+      "afterColon": true,
+      "mode": "strict"
     }
   ],
-  "max-statements-per-line": [ "warn", { max: 2 } ],
-  "new-parens": "error",
-  "newline-per-chained-call": [ "warn", { ignoreChainWithDepth: 2 } ],
+  "@stylistic/keyword-spacing": [
+    "warn",
+    {
+      "before": true,
+      "after": true
+    }
+  ],
+
+  "logical-assignment-operators": [ "warn", "never" ],
+  "@stylistic/max-statements-per-line": [ "warn", { max: 2 } ],
+  "@stylistic/new-parens": "error",
+  "@stylistic/newline-per-chained-call": [ "warn", { ignoreChainWithDepth: 2 } ],
   "no-whitespace-before-property": "warn",
   "object-curly-newline": [ "warn", { consistent: true } ],
   "object-curly-spacing": [ "warn", "always" ],
@@ -225,6 +229,31 @@ module.exports = {
 
 
   /* --- Neatness --------------------------------------------------------------------------------------------------- */
+  "@stylistic/lines-around-comment": [
+    "warn",
+    { "beforeBlockComment": true }
+  ],
+
+  "@stylistic/lines-between-class-members": [
+    "warn",
+    {
+      enforce: [
+        { blankLine: "always", prev: "field", next: "method" },
+        { blankLine: "always", prev: "method", next: "method" },
+        { blankLine: "always", prev: "method", next: "field" }
+      ]
+    }
+  ],
+
+  "@stylistic/max-len": [
+    "warn",
+    {
+      code: 130,
+      ignoreUrls: true,
+      ignorePattern: "^\\s{4}\"[@~]?[\\w/:.-]+\";\\s*$"
+    }
+  ],
+
   "no-duplicate-imports": "error",
   "no-unused-private-class-members": "error",
   "no-unused-vars": [
@@ -325,11 +354,11 @@ module.exports = {
   "strict": "error",
 
 
-  /* --- Not sorted yet --------------------------------------------------------------------------------------------- */
+  /* --- Other ------------------------------------------------------------------------------------------------------ */
   "no-await-in-loop": "error",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "eol-last": [　"error",　"always"　],
+  "@stylistic/eol-last": [　"warn"　],
   "unicode-bom": "error"
 
 

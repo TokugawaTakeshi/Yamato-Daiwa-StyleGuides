@@ -270,12 +270,6 @@ module.exports = {
     "dot-notation": "off",
     "@typescript-eslint/dot-notation": "warn",
 
-    "func-call-spacing": "off",
-    "@typescript-eslint/func-call-spacing": "warn",
-
-    "keyword-spacing": "off",
-    "@typescript-eslint/keyword-spacing": "warn",
-
     "@typescript-eslint/member-delimiter-style": [
       "warn",
       {
