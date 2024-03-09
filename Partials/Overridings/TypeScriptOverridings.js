@@ -60,6 +60,8 @@ module.exports = {
 
 
     /* --- Algorithmic errors preventing ---------------------------------------------------------------------------- */
+    "@typescript-eslint/no-array-delete": "error",
+
     "no-dupe-class-members": "off",
     "@typescript-eslint/no-dupe-class-members": "error",
 
@@ -175,12 +177,6 @@ module.exports = {
     "@typescript-eslint/comma-dangle": "error",
 
     "@typescript-eslint/no-extra-non-null-assertion": "error",
-
-    "no-extra-parens": "off",
-    "@typescript-eslint/no-extra-parens": ECMA_ScriptBasicRules["no-extra-parens"],
-
-    "no-extra-semi": "off",
-    "@typescript-eslint/no-extra-semi": "error",
 
     "@typescript-eslint/no-unnecessary-qualifier": "error",
 
@@ -393,6 +389,7 @@ module.exports = {
 
 
     /* --- Disabling of basic rules --------------------------------------------------------------------------------- */
-    "consistent-return": "off"
+    "consistent-return": "off",
+    "@typescript-eslint/consistent-return": "error"
   }
 };

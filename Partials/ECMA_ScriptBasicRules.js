@@ -93,7 +93,7 @@ module.exports = {
   "new-cap": [ "error", { capIsNew: false } ],
   "no-array-constructor": "error",
   "no-bitwise": "error",
-  "no-confusing-arrow": [ "error", { allowParens: true } ],
+  "@stylistic/no-confusing-arrow": [ "error", { allowParens: true } ],
   "no-div-regex": "error",
   "no-extend-native": "error",
   "no-extra-boolean-cast": "error",
@@ -132,7 +132,7 @@ module.exports = {
   "no-else-return": "error",
   "no-extra-bind": "error",
   "no-extra-label": "error",
-  "no-extra-semi": "error",
+  "@stylistic/no-extra-semi": "error",
   "no-new-wrappers": "error",
   "no-object-constructor": "error",
   "no-undef-init": "error",
@@ -150,7 +150,7 @@ module.exports = {
       avoidExplicitReturnArrows: true
     }
   ],
-  "no-extra-parens": [
+  "@stylistic/no-extra-parens": [
     "warn",
     "all",
     {
