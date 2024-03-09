@@ -103,6 +103,9 @@ module.exports = {
       }
     ],
 
+    "consistent-return": "off",
+    "@typescript-eslint/consistent-return": ECMA_ScriptBasicRules["consistent-return"],
+
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
 
     "@typescript-eslint/no-for-in-array": "error",
@@ -387,9 +390,5 @@ module.exports = {
     /* --- Experimental --------------------------------------------------------------------------------------------- */
     // "@typescript-eslint/prefer-readonly-parameter-types": "warn"
 
-
-    /* --- Disabling of basic rules --------------------------------------------------------------------------------- */
-    "consistent-return": "off",
-    "@typescript-eslint/consistent-return": "error"
   }
 };
