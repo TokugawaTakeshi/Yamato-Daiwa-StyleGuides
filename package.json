@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.1.8",
+  "version": "0.1.9",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "repository": {
     "type": "git",
