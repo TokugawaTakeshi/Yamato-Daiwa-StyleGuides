@@ -1,10 +1,13 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.1.10",
+  "version": "0.2.1",
   "description": "The guidelines for ESLint, Pug and Stylus.",
+  "engines": {
+    "node": ">=18.18.0"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/TokugawaTakeshi/Yamato-Daiwa-StyleGuides.git"
+    "url": "git+https://github.com/TokugawaTakeshi/Yamato-Daiwa-StyleGuides.git"
   },
   "keywords": [
     "eslint",
@@ -17,27 +20,27 @@
   "license": "MIT",
   "peerDependencies": {
     "@stylistic/eslint-plugin": "~1.7.0",
-    "@typescript-eslint/eslint-plugin": "~7.2.0",
-    "@typescript-eslint/parser": "~7.2.0",
+    "@typescript-eslint/eslint-plugin": "~7.5.0",
+    "@typescript-eslint/parser": "~7.5.0",
     "eslint": "~8.57.0",
     "eslint-plugin-import": "~2.29.1",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-react": "~7.34.1",
-    "eslint-plugin-vue": "~9.23.0",
+    "eslint-plugin-vue": "~9.24.0",
     "eslint-plugin-vue-pug": "~0.6.1",
-    "typescript": "~5.4.2"
+    "typescript": "~5.4.0"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "1.7.0",
-    "@typescript-eslint/eslint-plugin": "7.2.0",
-    "@typescript-eslint/parser": "7.2.0",
+    "@typescript-eslint/eslint-plugin": "7.5.0",
+    "@typescript-eslint/parser": "7.5.0",
     "eslint": "8.57.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
     "eslint-plugin-react": "7.34.1",
-    "eslint-plugin-vue": "9.23.0",
+    "eslint-plugin-vue": "9.24.0",
     "eslint-plugin-vue-pug": "0.6.2",
-    "typescript": "5.4.2"
+    "typescript": "5.4.4"
   },
   "files": [
     "Partials",
@@ -45,7 +48,7 @@
     "Markup.js"
   ],
   "scripts": {
-    "JavaScript test": "eslint Tests/JavaScriptTest.js --config ECMAScript.js",
-    "TypeScript test": "eslint Tests/TypeScriptTest.ts --config ECMAScript.js"
+    "JavaScript Test": "eslint Tests/JavaScriptTest.js --config ECMAScript.js",
+    "TypeScript Test": "eslint Tests/TypeScriptTest.ts --config ECMAScript.js"
   }
 }

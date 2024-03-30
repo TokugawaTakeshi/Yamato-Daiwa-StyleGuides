@@ -58,6 +58,7 @@ module.exports = {
       }
     ],
 
+    "@typescript-eslint/use-unknown-in-catch-callback-variable": "error",
 
     /* --- Algorithmic errors preventing ---------------------------------------------------------------------------- */
     "@typescript-eslint/no-array-delete": "error",
@@ -102,9 +103,6 @@ module.exports = {
         ignoreClassesThatImplementAnInterface: true
       }
     ],
-
-    "consistent-return": "off",
-    "@typescript-eslint/consistent-return": ECMA_ScriptBasicRules["consistent-return"],
 
     "@typescript-eslint/no-confusing-non-null-assertion": "error",
 
@@ -292,9 +290,6 @@ module.exports = {
     ],
 
     "@typescript-eslint/no-var-requires": "error",
-
-    "object-curly-spacing": "off",
-    "@typescript-eslint/object-curly-spacing": ECMA_ScriptBasicRules["object-curly-spacing"],
 
     "@typescript-eslint/prefer-function-type": "warn",
 

@@ -85,7 +85,6 @@ module.exports = {
   "no-template-curly-in-string": "error",
   "no-unexpected-multiline": "error",
   "class-methods-use-this": "warn",
-  "consistent-return": [ "warn", { "treatUndefinedAsUnspecified": true } ],
   "default-case-last": "error",
   "default-param-last": "error",
   "func-names": [ "error", "always" ],
@@ -100,7 +99,7 @@ module.exports = {
   "no-implicit-coercion": "error",
   "no-implicit-globals": "error",
   "no-invalid-this": "error",
-  "no-mixed-operators": "error",
+  "@stylistic/no-mixed-operators": "error",
   "no-multi-assign": "error",
   "no-negated-condition": "error",
   "no-new": "error",
@@ -163,12 +162,10 @@ module.exports = {
   /* --- Unification of equivalent writings ------------------------------------------------------------------------- */
   "curly": "error",
   "dot-notation": "warn",
-  "no-floating-decimal": "error",
   "one-var": [ "error", "never" ],
-  "one-var-declaration-per-line": [ "error", "initializations" ],
+  "@stylistic/one-var-declaration-per-line": [ "error", "initializations" ],
   "prefer-object-spread": "error",
   "prefer-regex-literals": [ "error", { disallowRedundantWrapping: true } ],
-  "quote-props": [ "error", "as-needed" ],
   "@stylistic/array-bracket-newline": [ "warn", "consistent" ],
   "@stylistic/array-bracket-spacing": [ "warn", "always" ],
   "@stylistic/array-element-newline": [ "warn", "consistent" ],
@@ -206,12 +203,14 @@ module.exports = {
   "@stylistic/max-statements-per-line": [ "warn", { max: 2 } ],
   "@stylistic/new-parens": "error",
   "@stylistic/newline-per-chained-call": [ "warn", { ignoreChainWithDepth: 2 } ],
-  "no-whitespace-before-property": "warn",
-  "object-curly-newline": [ "warn", { consistent: true } ],
-  "object-curly-spacing": [ "warn", "always" ],
-  "object-property-newline": [ "warn", { allowAllPropertiesOnSameLine: true } ],
-  "quotes": [ "error", "double", { avoidEscape: true } ],
-  "rest-spread-spacing": [ "warn", "never" ],
+  "@stylistic/no-floating-decimal": "error",
+  "@stylistic/no-whitespace-before-property": "warn",
+  "@stylistic/object-curly-spacing": [ "warn", "always" ],
+  "@stylistic/object-property-newline": [ "warn", { allowAllPropertiesOnSameLine: true } ],
+  "@stylistic/operator-linebreak": [ "warn", "after" ],
+  "@stylistic/quote-props": [ "warn", "as-needed" ],
+  "@stylistic/quotes": [ "error", "double", { avoidEscape: true } ],
+  "@stylistic/rest-spread-spacing": [ "warn", "never" ],
   "semi": "error",
   "semi-spacing": "warn",
   "semi-style": "warn",
@@ -321,9 +320,9 @@ module.exports = {
   "no-warning-comments": "warn",
   "prefer-named-capture-group": "error",
   "spaced-comment": [ "warn", "always", { "block": { "markers": [ "!" ], "balanced": true } } ],
-  "no-mixed-spaces-and-tabs": "warn",
-  "no-multi-spaces": "warn",
-  "no-multiple-empty-lines": [
+  "@stylistic/no-mixed-spaces-and-tabs": "warn",
+  "@stylistic/no-multi-spaces": "warn",
+  "@stylistic/no-multiple-empty-lines": [
     "warn",
     {
       max: 2,
@@ -331,6 +330,7 @@ module.exports = {
       maxEOF: 1
     }
   ],
+  "@stylistic/object-curly-newline": [ "warn", { consistent: true } ],
 
 
   /* --- Preventing of deprecated or not recommended functionality -------------------------------------------------- */
