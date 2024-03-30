@@ -1,9 +1,9 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="JavaScript test" type="js.build_tools.npm" nameIsGenerated="true">
+  <configuration default="false" name="TypeScript Test" type="js.build_tools.npm" nameIsGenerated="true">
     <package-json value="$PROJECT_DIR$/package.json" />
     <command value="run" />
     <scripts>
-      <script value="JavaScript test" />
+      <script value="TypeScript Test" />
     </scripts>
     <node-interpreter value="project" />
     <envs />
