@@ -324,15 +324,12 @@ module.exports = {
     "space-before-blocks": "off",
     "@typescript-eslint/space-before-blocks": [ "error" ],
 
-    "space-before-function-paren": "off",
-    "@typescript-eslint/space-before-function-paren": ECMA_ScriptBasicRules["space-before-function-paren"],
-
-    "space-infix-ops": "off",
-    "@typescript-eslint/space-infix-ops": "warn",
-
-    "@typescript-eslint/type-annotation-spacing": "warn",
+    "@stylistic/type-annotation-spacing": "warn",
+    "@stylistic/type-generic-spacing": "warn",
+    "@stylistic/type-named-tuple-spacing": "warn",
 
     "@typescript-eslint/unified-signatures": "warn",
+
 
 
     /* --- Fast-and-dirty code prevention --------------------------------------------------------------------------- */
