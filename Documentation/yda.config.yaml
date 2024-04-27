@@ -98,7 +98,7 @@ projectBuilding:
             outputTopDirectoryRelativePath: 03-ProductionBuild
 
 
-  # ━━━ Plain copying ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # ━━━ Plain Copying ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   plainCopying:
 
     filesGroups:
@@ -138,7 +138,7 @@ projectBuilding:
             revisioning: { enable: true }
 
 
-  # ━━━ Development server ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  # ━━━ Development Server ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   browserLiveReloading:
 
     setups:
@@ -150,3 +150,14 @@ projectBuilding:
           rootDirectoryRelativePath: 02-LocalDevelopmentBuild
 
         openInBrowsers: chrome
+
+
+  # ━━━ Files Watching ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+  filesWatching:
+
+    relativePathsOfExcludeDirectories:
+      - 02-StaticPreviewBuild
+      - 03-LocalDevelopmentBuild
+      - 04-StagingBuild
+      - 05-ProductionBuild
+      - Documentation

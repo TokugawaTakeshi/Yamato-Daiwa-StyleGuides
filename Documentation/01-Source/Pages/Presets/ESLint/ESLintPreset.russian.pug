@@ -1,0 +1,238 @@
+extends ../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
+
+
+block append Requirements
+
+  include ../../../SharedAssets/Markup/SharedAssets.russian.pug
+  include ../../../SharedComponents/SharedComponents.russian.pug
+
+
+block append Metadata
+
+  -
+
+    HTML_PAGE_LANGUAGE = "ru";
+    HTML_PAGE_TITLE = buildHTML_PageTitle("ESLint");
+    HTML_PageMetaData = {
+      description: "",
+      author: HTML_PAGE_AUTHOR
+    };
+
+    FAVICON_URI = "@MustBeInPublicRoot/favicon";
+
+    styleSheetsURIs = [
+      "$CommonStyles",
+      "$LayoutsStyles/TwoColumns/TwoColumnsLayout.css",
+      "$PreMadesStyles",
+      "@CustomizedExternalComponents"
+    ];
+
+    scriptsURIs.endOfBody = [ "$CommonLogic" ];
+
+    RoutingEmulator.setCurrentRoute("presets.ESLint");
+
+    LanguageDropDownList__YDF_DK.setLinks({
+      english: "./ESLintPreset.english.html",
+      japanese: "./ESLintPreset.japanese.html",
+    });
+
+    const pageTableOfContents = localizedRouting.presets.$children.ESLint.$sectioning;
+
+
+block append HeadScriptsLinks
+
+  if __IS_PRODUCTION_BUILDING_MODE__
+
+    +GoogleAnalyticsScript
+
+
+block append SpecificContent
+
+  article
+
+    //- ━━━ ESLint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$tableOfContentsTitle }).Article-Heading1
+
+    //- ━━━ Общие правила для TypeScript и JavaScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    +Heading--YDF({
+      level: 2,
+      text: pageTableOfContents.ECMAScriptCommonRules.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$anchor
+    }).Article-Heading2
+
+    //- ─── Валидность ECMAScript-кода ─────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$anchor
+    }).Article-Heading3
+
+    p.Article-Paragraph.
+      Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, позволяя писать бессмысленный код
+        (например, можно в #[+Term--YDID классе] объявить #[+Term--YDID геттер], который ничего не возвращает) без
+        ошибок при его выполнении.
+
+
+    //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+ImportantEntity__Code--YDID Array] имеет несколько #[+Term--YDID методов] для фильтрации, маппинга и
+          сворачивания.
+        Если мы забудем указать инструкцию возврата значения в #[+Term--YDID функциях обратного вызова], которые
+          передаются через #[+Term--YDID параметры] этих #[+Term__Contrast--YDID методов], то, возможно, это ошибка.
+        Если вы не&nbsp;хотите возвращать значение или не&nbsp;нуждаетесь в возвращённом значение, то тогда лучше
+          использовать метод #[+ImportantEntity__Code--YDID .forEach].
+
+      p.Article-Paragraph.
+        #[+ImportantEntity__Code--YDID Array] has several #[+Term--YDID methods] for filtering, mapping, and folding.
+        If we forget to write return statement in a #[+Term--YDID callback] of those, it’s probably a mistake.
+        If you don’t want to use a return or don’t need the returned results, consider using
+          #[+ImportantEntity__Code--YDID .forEach] instead.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/array-callback-return"
+        }).Article-Link Официальная документация ESLint
+
+    p.Article-Paragraph.
+      При использовании языка #[+ImportantEntity--YDID TypeScript] с качественным оповещением об ошибках подобного рода
+        странности будут сразу же обнаружены, поскольку все стандартные #[+Term--YDID методы] (в том числе и
+        #[+Term--YDID массивов]) имеют качественные определения #[+Term--YDID TypeScript-типов].
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "array-callback-return": "error" }
+
+
+    //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+Term--YDID Конструкторы] #[+Keyword--YDID унаследованных] #[+Term--YDID классов] #[+Keyword--YDID должны] вызывать
+          #[+ImportantEntity__Code--YDID super()].
+        #[+Term--YDID Конструкторы] #[+Term__Contrast--YDID классов], которые #[+Keyword--YDID не]&nbsp;унаследованы,
+          #[+ImportantEntity__Code--YDID super()] вызывать #[+Keyword--YDID не]&nbsp;должны.
+        Если это не замечено (программистом), то среда выполнения #[+ImportantEntity--YDID JavaScript] выбросит
+          ошибку выполнения кода.
+
+      p.Article-Paragraph.
+        #[+Term--YDID Constructors] of #[+Keyword--YDID derived] #[+Term--YDID classes] #[+Keyword--YDID must] call
+          #[+ImportantEntity__Code--YDID super()].
+        Constructors of #[+Keyword--YDID non] derived #[+Term--YDID classes] must&nbsp;#[+Keyword--YDID not]&nbsp;call
+          #[+ImportantEntity__Code--YDID super()].
+        If this is not observed, the #[+ImportantEntity--YDID JavaScript] engine will raise a runtime error.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/constructor-super"
+        }).Article-Link Официальная документация ESLint
+
+    p.Article-Paragraph.
+      Если в #[+Term--YDID конструкторе] #[+Keyword--YDID унаследованного] #[+Term--YDID класса] обратиться к
+        #[+Term--YDID контекстной переменной] #[+ImportantEntity__Code--YDID this], то язык
+        #[+ImportantEntity__Code--YDID TypeScript] оповестит об ошибке #[+ImportantEntity__Code--YDID TS2377].
+      Что касается #[+ImportantEntity--YDID JavaScript], то без данного #[+ImportantEntity--YDID ESLint]-правила
+        это ошибку способны заметить лишь лучшие #[+Term--YDID интегрированные среды разработки], такие как
+        #[+ImportantEntity--YDID IntelliJ IDEA].
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "constructor-super": "error" }
+
+
+    //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        The get syntax binds an object property to a function that will be called when that property is looked up.
+        It was first introduced in ECMAScript 5.
+        Note that every #[+Term--YDID getter] is expected to return a value.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/getter-return"
+        }).Article-Link Официальная документация ESLint
+
+    p.Article-Paragraph.
+      Если код написан на #[+ImportantEntity--YDID TypeScript], то компилятор (вернее сказать, транспайлер) сразу же
+        заметит это в виде ошибки #[+ImportantEntity--YDID TS2378].
+      Если же код написан на #[+ImportantEntity--YDID JavaScript], то даже такие передовые интегрированные среды
+        разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] не поднимут тревоги (проверено на версии
+        #[+ImportantEntity--YDID 2024.1.1]).
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "getter-return": "error" }
+
+
+    //- ─── Предотвращение алгоритмических ошибок ──────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+    }).Article-Heading3
+
+    p.Article-Paragraph.
+      В отличие от предыдущей группы правил, нарушения данной могут быть представлены валидным кодом, однако с высокой
+        вероятностью являются алгоритмической ошибкой.
+      Данные правила также достаточно хорошо прокомментированы официальной документацией, для многих из них мы
+        ограничимся ещё переводом с улучшением стилистики.
+
+    //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        A #[+ImportantEntity--YDID for] loop with a stop condition that can never be reached, such as one with a
+          counter that moves in the wrong direction, will run infinitely.
+        While there are occasions when an infinite loop is intended, the convention is to construct such loops as
+          #[+ImportantEntity__Code--YDID while] loops.
+        More typically, an infinite for loop is a bug.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/for-direction"
+        }).Article-Link Официальная документация ESLint
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "for-direction": "error" }
+
+
+    //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    +Heading--YDF({
+      level: 2,
+      text: pageTableOfContents.typeScriptRules.$heading,
+      HTML_ID: pageTableOfContents.typeScriptRules.$anchor
+    }).Article-Heading2
+
+    //- ─── Безопасность типизации ─────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.typeScriptRules.$children.typeSafety.$heading,
+      HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$anchor
+    }).Article-Heading3

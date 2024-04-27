@@ -5,9 +5,25 @@
     const localizedRouting = {
 
       top: {
-        $tableOfContentsTitle: localization.top.$tableOfContentsTitle,
+        $heading: localization.top.$heading,
         $URI: localization.top.$URI
+      },
+
+      presets: {
+
+        $heading: localization.presets.$heading,
+
+        $children: {
+
+          ESLint: {
+            $heading: "ESLint",
+            $URI: `@All/Presets/ESLint/ESLintPreset.${ localization.fileNameLocalizationExtension }`
+          }
+
+        }
+
       }
+
     };
 
     return localizedRouting;

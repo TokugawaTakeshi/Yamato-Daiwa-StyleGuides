@@ -1,0 +1,73 @@
+-
+
+  generatePageTableOfContents = localizedStrings => {
+
+    const PAGE_URI = localizedRouting.presets.$children.ESLint.$URI;
+
+    const tableOfContents = {
+
+      ECMAScriptCommonRules: {
+
+        $heading: localizedStrings.ECMAScriptCommonRules.$heading,
+        $anchor: "ECMA_SCRIPT_COMMON_RULES--SECTION",
+        get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
+
+        $children: {
+
+          codeValidity: {
+
+            $heading: localizedStrings.ECMAScriptCommonRules.codeValidity.$heading,
+            $anchor: "CODE_VALIDITY--SECTION",
+            get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
+
+            $children: {
+
+              "array-callback-return": {
+                $heading: "array-callback-return",
+                $anchor: "array-callback-return",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              },
+
+              "constructor-super": {
+                $heading: "constructor-super",
+                $anchor: "constructor-super",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              },
+
+              "getter-return": {
+                $heading: "getter-return",
+                $anchor: "getter-return",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              }
+
+            }
+
+          },
+
+          algorithmicErrorsPreventing: {
+
+            $heading: localizedStrings.ECMAScriptCommonRules.algorithmicErrorsPreventing.$heading,
+            $anchor: "ALGORITHMIC_ERRORS_PREVENTING--SECTION",
+            get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
+
+            $children: {
+
+              "for-direction": {
+                $heading: "for-direction",
+                $anchor: "for-direction",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              }
+
+            }
+
+          }
+
+        }
+
+      }
+
+    };
+
+    return tableOfContents;
+
+  };

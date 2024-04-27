@@ -1,0 +1,11 @@
+include ESLintPreset.toc.pug
+
+
+-
+
+  localizedRouting.presets.$children.ESLint.$sectioning = generatePageTableOfContents({
+    ECMAScriptCommonRules: {
+      $heading: "Общие правила для TypeScript и JavaScript",
+      codeValidity: { $heading: "Валидность ECMAScript-кода" }
+    }
+  });
