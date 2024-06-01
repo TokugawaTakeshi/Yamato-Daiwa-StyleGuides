@@ -309,21 +309,6 @@ module.exports = {
 
     "@typescript-eslint/promise-function-async": "error",
 
-    "quotes": "off",
-    "@typescript-eslint/quotes": [
-      "error",
-      "double",
-      {
-        "avoidEscape": true
-      }
-    ],
-
-    "semi": "off",
-    "@typescript-eslint/semi": "error",
-
-    "space-before-blocks": "off",
-    "@typescript-eslint/space-before-blocks": [ "error" ],
-
     "@stylistic/type-annotation-spacing": "warn",
     "@stylistic/type-generic-spacing": "warn",
     "@stylistic/type-named-tuple-spacing": "warn",

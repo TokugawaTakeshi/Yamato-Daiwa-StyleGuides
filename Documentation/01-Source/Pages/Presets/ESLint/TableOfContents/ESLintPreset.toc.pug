@@ -38,6 +38,12 @@
                 $heading: "getter-return",
                 $anchor: "getter-return",
                 get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              },
+
+              "no-async-promise-executor": {
+                $heading: "no-async-promise-executor",
+                $anchor: "no-async-promise-executor",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
               }
 
             }
@@ -59,6 +65,44 @@
               }
 
             }
+
+          },
+
+          other: {
+
+            $heading: localizedStrings.ECMAScriptCommonRules.other.$heading,
+            $anchor: "ECMA_SCRIPT_COMMON_RULES-OTHER--SECTION",
+            get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
+
+            $children: {
+
+              "no-await-in-loop": {
+                $heading: "no-await-in-loop",
+                $anchor: "no-await-in-loop",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              }
+
+            }
+
+          }
+
+        }
+
+      },
+
+      typeScriptRules: {
+
+        $heading: localizedStrings.typeScriptRules.$heading,
+        $anchor: "TYPE_SCRIPT_RULES--SECTION",
+        get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
+
+        $children: {
+
+          typeSafety: {
+
+            $heading: localizedStrings.typeScriptRules.typeSafety.$heading,
+            $anchor: "TYPE_SAFETY--SECTION",
+            get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
 
           }
 

@@ -152,12 +152,8 @@ projectBuilding:
         openInBrowsers: chrome
 
 
-  # ━━━ Files Watching ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    # ━━━ Files Watching ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
   filesWatching:
 
     relativePathsOfExcludeDirectories:
-      - 02-StaticPreviewBuild
-      - 03-LocalDevelopmentBuild
-      - 04-StagingBuild
-      - 05-ProductionBuild
-      - Documentation
+      - 03-ProductionBuild
