@@ -7,7 +7,7 @@ module.exports = {
 
   "rules": {
 
-    /* --- Type safety ---------------------------------------------------------------------------------------------- */
+    /* ━━━ Type Safety ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
     "@typescript-eslint/consistent-type-assertions": [ "error", { "assertionStyle": "never" } ],
 
     "@typescript-eslint/no-base-to-string": "error",
@@ -128,7 +128,12 @@ module.exports = {
 
     "@typescript-eslint/no-misused-new": "error",
 
-    "@typescript-eslint/no-misused-promises": "error",
+    "@typescript-eslint/no-misused-promises": [
+      "error",
+      {
+        "checksVoidReturn": { "arguments": false } /* See https://stackoverflow.com/q/78559257/4818123 */
+      }
+    ],
 
     "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
 
@@ -186,7 +191,7 @@ module.exports = {
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
 
-    "@typescript-eslint/no-useless-template-literals": "warn",
+    "@typescript-eslint/no-unnecessary-template-expression": "warn",
 
     "@typescript-eslint/return-await": "error",
 
