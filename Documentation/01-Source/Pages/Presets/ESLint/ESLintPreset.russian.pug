@@ -11,23 +11,18 @@ block append Metadata
 
   -
 
-    HTML_PAGE_LANGUAGE = "ru";
-    HTML_PAGE_TITLE = buildHTML_PageTitle("ESLint");
-    HTML_PageMetaData = {
-      description: "",
-      author: HTML_PAGE_AUTHOR
-    };
-
-    FAVICON_URI = "@MustBeInPublicRoot/favicon";
-
-    styleSheetsURIs = [
-      "$CommonStyles",
-      "$LayoutsStyles/TwoColumns/TwoColumnsLayout.css",
-      "$PreMadesStyles",
-      "@CustomizedExternalComponents"
-    ];
-
-    scriptsURIs.endOfBody = [ "$CommonLogic" ];
+    RegularWebPageTemplate__YDF.configure({
+      metadata: {
+        title: buildHTML_PageTitle("ESLint"),
+        description: ""
+      },
+      stylesSheetsURIs: [
+        "$CommonStyles",
+        "$LayoutsStyles/TwoColumns/TwoColumnsLayout.css",
+        "$PreMadesStyles",
+        "@CustomizedExternalComponents"
+      ]
+    });
 
     RoutingEmulator.setCurrentRoute("presets.ESLint");
 
@@ -51,7 +46,13 @@ block append SpecificContent
   article
 
     //- ━━━ ESLint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$tableOfContentsTitle }).Article-Heading1
+    +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$heading }).Article-Heading1
+
+    +AdmonitionBlock--YDF({
+      SVG_Icon: true,
+      geometricVariation: AdmonitionBlock__YDF.GeometricVariations.stickyNoteLike,
+      decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.guidance
+    }) Перевод цитат выполнен с улучшением стилистики и добавлением уточнений, а потому не является дословным.
 
     //- ━━━ Общие правила для TypeScript и JavaScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({
@@ -69,8 +70,10 @@ block append SpecificContent
 
     p.Article-Paragraph.
       Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, позволяя писать бессмысленный код
-        (например, можно в #[+Term--YDID классе] объявить #[+Term--YDID геттер], который ничего не возвращает) без
-        ошибок при его выполнении.
+        #[+Keyphrase--YDID без ошибок при его выполнении].
+      Например, можно в #[+Term--YDID классе] объявить #[+Term--YDID геттер], который ничего
+        #[+Keyword--YDID не]&nbsp;возвращает, что противоречит самой концепции геттеров.
+      Задача правил это группы — значительно уменьшить количество такого бессмысленного кода.
 
 
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
@@ -80,15 +83,19 @@ block append SpecificContent
       HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
     }).Article-Heading4
 
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "array-callback-return": "error" }
+
     +Blockquote--YDF
 
       p.Article-Paragraph.
         #[+ImportantEntity__Code--YDID Array] имеет несколько #[+Term--YDID методов] для фильтрации, маппинга и
           сворачивания.
-        Если мы забудем указать инструкцию возврата значения в #[+Term--YDID функциях обратного вызова], которые
-          передаются через #[+Term--YDID параметры] этих #[+Term__Contrast--YDID методов], то, возможно, это ошибка.
-        Если вы не&nbsp;хотите возвращать значение или не&nbsp;нуждаетесь в возвращённом значение, то тогда лучше
-          использовать метод #[+ImportantEntity__Code--YDID .forEach].
+        Если мы забудем указать инструкцию возврата значения в #[+Term--YDID функциях обратного вызова] этих
+          #[+Term--YDID методов], то возможно, это ошибка.
+        Если вы не&nbsp;хотите возвращать значение или не&nbsp;нуждаетесь в возвращённом значении, то вместо этих
+          #[+Term--YDID методов] рассмотрите использование #[+ImportantEntity__Code--YDID .forEach].
 
       p.Article-Paragraph.
         #[+ImportantEntity__Code--YDID Array] has several #[+Term--YDID methods] for filtering, mapping, and folding.
@@ -102,13 +109,11 @@ block append SpecificContent
         }).Article-Link Официальная документация ESLint
 
     p.Article-Paragraph.
-      При использовании языка #[+ImportantEntity--YDID TypeScript] с качественным оповещением об ошибках подобного рода
+      При использовании языка #[+ImportantEntity--YDID TypeScript] с настроенным оповещением об ошибках, подобного рода
         странности будут сразу же обнаружены, поскольку все стандартные #[+Term--YDID методы] (в том числе и
         #[+Term--YDID массивов]) имеют качественные определения #[+Term--YDID TypeScript-типов].
-
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "array-callback-return": "error" }
+      Поэтому #[+Keyphrase--YDID в случае использования #[+ImportantEntity--YDID TypeScript]] это правило —
+        подстраховочное.
 
 
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
@@ -118,15 +123,19 @@ block append SpecificContent
       HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
     }).Article-Heading4
 
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "constructor-super": "error" }
+
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        #[+Term--YDID Конструкторы] #[+Keyword--YDID унаследованных] #[+Term--YDID классов] #[+Keyword--YDID должны] вызывать
-          #[+ImportantEntity__Code--YDID super()].
+        #[+Term--YDID Конструкторы] #[+Keyword--YDID унаследованных] #[+Term--YDID классов] #[+Keyword--YDID должны]
+          вызывать #[+ImportantEntity__Code--YDID super()].
         #[+Term--YDID Конструкторы] #[+Term__Contrast--YDID классов], которые #[+Keyword--YDID не]&nbsp;унаследованы,
           #[+ImportantEntity__Code--YDID super()] вызывать #[+Keyword--YDID не]&nbsp;должны.
-        Если это не замечено (программистом), то среда выполнения #[+ImportantEntity--YDID JavaScript] выбросит
-          ошибку выполнения кода.
+        Если это не&nbsp;замечено (программистом), произойдёт #[+Term--YDID ошибка] выполнения
+          #[+Term--YDID JavaScript-кода].
 
       p.Article-Paragraph.
         #[+Term--YDID Constructors] of #[+Keyword--YDID derived] #[+Term--YDID classes] #[+Keyword--YDID must] call
@@ -142,8 +151,9 @@ block append SpecificContent
 
     p.Article-Paragraph.
       Если в #[+Term--YDID конструкторе] #[+Keyword--YDID унаследованного] #[+Term--YDID класса] обратиться к
-        #[+Term--YDID контекстной переменной] #[+ImportantEntity__Code--YDID this], то язык
-        #[+ImportantEntity__Code--YDID TypeScript] оповестит об ошибке #[+ImportantEntity__Code--YDID TS2377].
+        #[+Term--YDID контекстной переменной] #[+ImportantEntity__Code--YDID this] до вызова
+        #[+ImportantEntity__Code--YDID super()], то язык #[+ImportantEntity__Code--YDID TypeScript] оповестит об
+        #[+Term--YDID ошибке] #[+ImportantEntity__Code--YDID TS2377].
       Что касается #[+ImportantEntity--YDID JavaScript], то без данного #[+ImportantEntity--YDID ESLint]-правила
         это ошибку способны заметить лишь лучшие #[+Term--YDID интегрированные среды разработки], такие как
         #[+ImportantEntity--YDID IntelliJ IDEA].
@@ -236,3 +246,35 @@ block append SpecificContent
       text: pageTableOfContents.typeScriptRules.$children.typeSafety.$heading,
       HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$anchor
     }).Article-Heading3
+
+    //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
+      HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        This rule aims to standardize the use of type assertion style across the codebase.
+        Keeping to one syntax consistently helps with code readability.
+
+      p.Article-Paragraph.
+        (Примечание) Хотя это об этом сводке и не написано, данное правило может и полностью запретить использование
+          данной функциональности.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://typescript-eslint.io/rules/consistent-type-assertions/"
+        }).Article-Link Официальная документация typescript-eslint
+
+    p.Article-Paragraph.
+      В идеале, кастинг использоваться не должен вообще, однако реальность такова, что иногда альтернатив особо и нет.
+      Тем не менее, если кастинг разрешить, то сразу же начнётся злоупотребление этой функциональностью.
+      Поэтому, наш пресет запрещает использование данной функциональности, а если по какой-то причине использовать
+        данную функциональность необходимо, то программист обязан это прокомментировать.
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "@typescript-eslint/consistent-type-assertions": [ "error", { "assertionStyle": "never" } ] }

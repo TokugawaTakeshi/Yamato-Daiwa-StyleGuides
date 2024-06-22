@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.2.7",
+  "version": "0.2.8",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "engines": {
     "node": ">=18.18.0"
@@ -20,27 +20,27 @@
   "license": "MIT",
   "peerDependencies": {
     "@stylistic/eslint-plugin": "~1.7.2",
-    "@typescript-eslint/eslint-plugin": "~7.12.0",
-    "@typescript-eslint/parser": "~7.12.0",
+    "@typescript-eslint/eslint-plugin": "~7.13.0",
+    "@typescript-eslint/parser": "~7.13.0",
     "eslint": "~8.57.0",
     "eslint-plugin-import": "~2.29.1",
     "eslint-plugin-node": "~11.1.0",
     "eslint-plugin-react": "~7.34.2",
     "eslint-plugin-vue": "~9.26.0",
     "eslint-plugin-vue-pug": "~0.6.1",
-    "typescript": "~5.4.0"
+    "typescript": "~5.5.0"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "1.7.2",
-    "@typescript-eslint/eslint-plugin": "7.12.0",
-    "@typescript-eslint/parser": "7.12.0",
+    "@typescript-eslint/eslint-plugin": "7.13.1",
+    "@typescript-eslint/parser": "7.13.1",
     "eslint": "8.57.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-react": "7.34.2",
+    "eslint-plugin-react": "7.34.3",
     "eslint-plugin-vue": "9.26.0",
     "eslint-plugin-vue-pug": "0.6.2",
-    "typescript": "5.4.5"
+    "typescript": "5.5.2"
   },
   "files": [
     "Partials",

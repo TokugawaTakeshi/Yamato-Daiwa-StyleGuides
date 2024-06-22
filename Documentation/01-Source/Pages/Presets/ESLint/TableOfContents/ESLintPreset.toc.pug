@@ -104,6 +104,16 @@
             $anchor: "TYPE_SAFETY--SECTION",
             get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; },
 
+            $children: {
+
+              "consistent-type-assertions": {
+                $heading: "@typescript-eslint/consistent-type-assertions",
+                $anchor: "typescript-eslint--consistent-type-assertions",
+                get $URI() { return `${ PAGE_URI }#${ this.$anchor }`; }
+              }
+
+            }
+
           }
 
         }
