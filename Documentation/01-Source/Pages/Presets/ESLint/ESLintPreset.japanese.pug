@@ -47,3 +47,144 @@ block append SpecificContent
 
     //- ━━━ ESLint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$heading }).Article-Heading1
+
+    +AdmonitionBlock--YDF({
+      SVG_Icon: true,
+      geometricVariation: AdmonitionBlock__YDF.GeometricVariations.stickyNoteLike,
+      decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.guidance
+    }) 引用の和訳は直訳には#[+Keyword--YDID 成っていなく]、表現改善や明徴が追加された事が有る。
+
+    //- ━━━ TypeScript・JavaScript共通規則 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    +Heading--YDF({
+      level: 2,
+      text: pageTableOfContents.ECMAScriptCommonRules.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$anchor
+    }).Article-Heading2
+
+    //- ─── ECMAScriptコードの妥当性 ───────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$anchor
+    }).Article-Heading3
+
+    p.Article-Paragraph.
+      #[+ImportantEntity--YDID ECMA-Script]規格が可成り自由主義らしいので、意味の無いコードを書いても、
+        #[+Keyphrase--YDID 実行の際エラーが発生しない]事が多い。
+      例えば、#[+Term--YDID クラス]に何も返さない#[+Term--YDID ゲッター]を宣言する事が出来るが、#[+Term--YDID ゲッター]の概念上意味の無い事。
+      此の規則群の目的は、こう言った意味の無いコードを大幅に減らす事。
+
+
+    //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
+    }).Article-Heading4
+
+    +CodeViewer--YDF({ title: "規則の設定" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "array-callback-return": "error" }
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+ImportantEntity__Code--YDID Array]はフィルタ、マッピング及び縮小（#[+Term--YDID 配列]を元に単一の値の算出）専用複数の
+          #[+Term--YDID メソッド]が在る。
+        #[+Term--YDID コールバック]の中に値が返されなかったら、間違いの可能性が高い。
+        値を返したくないか、返された値が不要な場合、代わりに#[+ImportantEntity__Code--YDID .forEach]の利用を検討しなさい。
+
+      p.Article-Paragraph.
+        #[+ImportantEntity__Code--YDID Array] has several #[+Term--YDID methods] for filtering, mapping, and folding.
+        If we forget to write return statement in a #[+Term--YDID callback] of those, it’s probably a mistake.
+        If you don’t want to use a return or don’t need the returned results, consider using
+          #[+ImportantEntity__Code--YDID .forEach] instead.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/array-callback-return"
+        }).Article-Link ESLintの正式的説明書
+
+    p.Article-Paragraph.
+      #[+ImportantEntity--YDID TypeScript]言語の利用の上エラーの通知を設定すると、全ての規定#[+Term--YDID メソッド]（#[+Term--YDID 配列]
+        の#[+Term--YDID メソッド]を含めて）が取り組みの型定義が付いているので、こう言った可笑しい所が直ぐ発見される。
+      それで、#[+Keyphrase--YDID #[+ImportantEntity--YDID TypeScript]が利用される環境にとって]此の規則は再保険の役割。
+
+
+    //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
+    }).Article-Heading4
+
+    +CodeViewer--YDF({ title: "規則の設定" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "constructor-super": "error" }
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+Keyword--YDID 継承された]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]は
+          #[+ImportantEntity__Code--YDID super()]を#[+Keyword--YDID 呼び出さなければいけない]。
+        #[+Keyword--YDID 継承されなかった]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]は#[+Keyword--YDID 逆に]
+          #[+ImportantEntity__Code--YDID super()]を#[+Keyword--YDID 呼び出してはならない]。
+        上記の違反が気付かれなかった場合、#[+ImportantEntity--YDID JavaScript]がランタイムエラーを発生させる。
+
+      p.Article-Paragraph.
+        #[+Term--YDID Constructors] of #[+Keyword--YDID derived] #[+Term--YDID classes] #[+Keyword--YDID must] call
+          #[+ImportantEntity__Code--YDID super()].
+        Constructors of #[+Keyword--YDID non] derived #[+Term--YDID classes] must&nbsp;#[+Keyword--YDID not]&nbsp;call
+          #[+ImportantEntity__Code--YDID super()].
+        If this is not observed, the #[+ImportantEntity--YDID JavaScript] engine will raise a runtime error.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/constructor-super"
+        }).Article-Link ESLintの正式的説明書
+
+    p.Article-Paragraph.
+      #[+Keyword--YDID 継承された]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]の中に
+        #[+ImportantEntity__Code--YDID this]と言う#[+Term--YDID コンテキスト変数]にアクセスしてみると、
+        #[+ImportantEntity__Code--YDID TypeScript]#[+Term--YDID 言語]は#[+Term--YDID エラー]
+        #[+ImportantEntity__Code--YDID TS2377]に就いて通知する。
+      #[+ImportantEntity--YDID JavaScript]のみの話しなら、当#[+ImportantEntity--YDID ESLint]規則がなければ、此の間違いが発見出来るのは
+        #[+SecondaryEntity--YDID IntelliJ IDEA]の様に一流の#[+Term--YDID 結合開発環境]くらい。
+
+
+    //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
+    }).Article-Heading4
+
+    +CodeViewer--YDF({ title: "規則の設定" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "getter-return": "error" }
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+ImportantEntity__Code--YDID get]#[+Term--YDID 構文]は#[+Term--YDID オブジェクト]の#[+Term__Contrast--YDID プロパティ]を
+          #[+Term--YDID 関数]に結び付き、当#[+Term--YDID プロパティ]へのアクセスの際此の#[+Term--YDID 関数]が呼び出される。
+        上記の機能は#[+ImportantEntity--YDID ECMAScript 5]規格以降導入された。
+        #[+Keyword--YDID 各]#[+Term--YDID ゲッター]が値を返す#[+Keyword--YDID 前提]。
+
+      p.Article-Paragraph.
+        The #[+ImportantEntity__Code--YDID get] #[+Term--YDID syntax] binds an #[+Term--YDID object]
+          #[+Term__Contrast--YDID property] to a #[+Term--YDID function] that will be called when that
+          #[+Term--YDID property] is looked up.
+        It was first introduced in #[+ImportantEntity--YDID ECMAScript 5].
+        Note that #[+Keyword--YDID every] #[+Term--YDID getter] is #[+Keyword--YDID expected] to return a value.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/getter-return"
+        }).Article-Link ESLintの正式的説明書
+
+    p.Article-Paragraph.
+      コードが#[+ImportantEntity--YDID TypeScript]で書かれた場合、コンパイラ（もっと確実的に言えば、トランスパイラ）は
+        #[+ImportantEntity--YDID TS2378]エラーに就いて通知する。
+      #[+ImportantEntity--YDID JavaScript]で書かれた場合、#[+SecondaryEntity--YDID IntelliJ IDEA](バージョン
+       #[+ImportantEntity--YDID 2024.1.1]で確認)の様に一流の#[+Term--YDID 結合開発県境]でも当間違いを発見しない事が有る。

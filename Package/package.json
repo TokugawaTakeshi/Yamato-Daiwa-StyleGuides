@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.2.8",
+  "version": "0.2.9",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "engines": {
     "node": ">=18.18.0"
@@ -20,8 +20,8 @@
   "license": "MIT",
   "peerDependencies": {
     "@stylistic/eslint-plugin": "~1.7.2",
-    "@typescript-eslint/eslint-plugin": "~7.13.0",
-    "@typescript-eslint/parser": "~7.13.0",
+    "@typescript-eslint/eslint-plugin": "~7.14.0",
+    "@typescript-eslint/parser": "~7.14.0",
     "eslint": "~8.57.0",
     "eslint-plugin-import": "~2.29.1",
     "eslint-plugin-node": "~11.1.0",
@@ -32,8 +32,8 @@
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "1.7.2",
-    "@typescript-eslint/eslint-plugin": "7.13.1",
-    "@typescript-eslint/parser": "7.13.1",
+    "@typescript-eslint/eslint-plugin": "7.14.1",
+    "@typescript-eslint/parser": "7.14.1",
     "eslint": "8.57.0",
     "eslint-plugin-import": "2.29.1",
     "eslint-plugin-node": "11.1.0",

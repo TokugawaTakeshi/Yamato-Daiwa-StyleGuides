@@ -70,9 +70,9 @@ block append SpecificContent
 
     p.Article-Paragraph.
       Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, позволяя писать бессмысленный код
-        #[+Keyphrase--YDID без ошибок при его выполнении].
+        зачастую #[+Keyphrase--YDID без ошибок при его выполнении].
       Например, можно в #[+Term--YDID классе] объявить #[+Term--YDID геттер], который ничего
-        #[+Keyword--YDID не]&nbsp;возвращает, что противоречит самой концепции геттеров.
+        #[+Keyword--YDID не]&nbsp;возвращает, что противоречит самой концепции #[+Term--YDID геттеров].
       Задача правил это группы — значительно уменьшить количество такого бессмысленного кода.
 
 
@@ -92,7 +92,7 @@ block append SpecificContent
       p.Article-Paragraph.
         #[+ImportantEntity__Code--YDID Array] имеет несколько #[+Term--YDID методов] для фильтрации, маппинга и
           сворачивания.
-        Если мы забудем указать инструкцию возврата значения в #[+Term--YDID функциях обратного вызова] этих
+        Если мы не укажем инструкцию возврата значения в #[+Term--YDID функциях обратного вызова] этих
           #[+Term--YDID методов], то возможно, это ошибка.
         Если вы не&nbsp;хотите возвращать значение или не&nbsp;нуждаетесь в возвращённом значении, то вместо этих
           #[+Term--YDID методов] рассмотрите использование #[+ImportantEntity__Code--YDID .forEach].
@@ -113,7 +113,7 @@ block append SpecificContent
         странности будут сразу же обнаружены, поскольку все стандартные #[+Term--YDID методы] (в том числе и
         #[+Term--YDID массивов]) имеют качественные определения #[+Term--YDID TypeScript-типов].
       Поэтому #[+Keyphrase--YDID в случае использования #[+ImportantEntity--YDID TypeScript]] это правило —
-        подстраховочное.
+        перестраховочное.
 
 
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
@@ -156,11 +156,7 @@ block append SpecificContent
         #[+Term--YDID ошибке] #[+ImportantEntity__Code--YDID TS2377].
       Что касается #[+ImportantEntity--YDID JavaScript], то без данного #[+ImportantEntity--YDID ESLint]-правила
         это ошибку способны заметить лишь лучшие #[+Term--YDID интегрированные среды разработки], такие как
-        #[+ImportantEntity--YDID IntelliJ IDEA].
-
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "constructor-super": "error" }
+        #[+SecondaryEntity--YDID IntelliJ IDEA].
 
 
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
@@ -170,12 +166,26 @@ block append SpecificContent
       HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
     }).Article-Heading4
 
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "getter-return": "error" }
+
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        The get syntax binds an object property to a function that will be called when that property is looked up.
-        It was first introduced in ECMAScript 5.
-        Note that every #[+Term--YDID getter] is expected to return a value.
+        #[+Term--YDID Синтаксис] #[+ImportantEntity__Code--YDID get] привязывает #[+Term--YDID свойство]
+          #[+Term__Contrast--YDID объекта] к #[+Term--YDID функции], которая будет вызвана при обращении к этому
+          #[+Term--YDID свойству].
+        Эта функциональнсоть доступная начиная со стандарта #[+ImportantEntity--YDID ECMAScript 5].
+        Предполагается, что #[+Keyword--YDID каждый] #[+Term--YDID геттер] #[+Keyword__Contrast--YDID должен]
+          вернуть значение.
+
+      p.Article-Paragraph.
+        The #[+ImportantEntity__Code--YDID get] #[+Term--YDID syntax] binds an #[+Term--YDID object]
+          #[+Term__Contrast--YDID property] to a #[+Term--YDID function] that will be called when that
+          #[+Term--YDID property] is looked up.
+        It was first introduced in #[+ImportantEntity--YDID ECMAScript 5].
+        Note that #[+Keyword--YDID every] #[+Term--YDID getter] is #[+Keyword--YDID expected] to return a value.
 
       +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
         +Link--YDF({
@@ -183,8 +193,8 @@ block append SpecificContent
         }).Article-Link Официальная документация ESLint
 
     p.Article-Paragraph.
-      Если код написан на #[+ImportantEntity--YDID TypeScript], то компилятор (вернее сказать, транспайлер) сразу же
-        заметит это в виде ошибки #[+ImportantEntity--YDID TS2378].
+      Если код написан на #[+ImportantEntity--YDID TypeScript], то компилятор (вернее сказать, транспайлер) оповестит
+        об ошибке #[+ImportantEntity--YDID TS2378].
       Если же код написан на #[+ImportantEntity--YDID JavaScript], то даже такие передовые интегрированные среды
         разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] не поднимут тревоги (проверено на версии
         #[+ImportantEntity--YDID 2024.1.1]).
@@ -194,6 +204,7 @@ block append SpecificContent
         { "getter-return": "error" }
 
 
+        #[+SecondaryEntity--YDID 2024.1.1]).
     //- ─── Предотвращение алгоритмических ошибок ──────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
@@ -231,6 +242,92 @@ block append SpecificContent
     +CodeViewer--YDF
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "for-direction": "error" }
+
+
+    //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        The #[+Term--YDID executor function] can also be an async function.
+        However, this is usually a mistake, for a few reasons:
+
+      ul.Article-UnorderedList
+
+        li.
+          If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
+            #[+Term--YDID error] will be #[+Keyword--YDID lost] and won’t cause the newly-constructed
+            #[+ImportantEntity__Code--YDID Promise] to reject.
+          This could make it difficult to debug and handle some errors.
+
+        li.
+          If a #[+ImportantEntity__Code--YDID Promise] executor function is using #[+ImportantEntity__Code--YDID await],
+            this is usually a sign that it is not actually necessary to use the
+            #[+ImportantEntity__Code--YDID new Promise] constructor, or the scope of the
+            #[+ImportantEntity__Code--YDID new Promise] constructor can be reduced.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
+        }).Article-Link Официальная документация ESLint
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-async-promise-executor": "error" }
+
+
+    //- ─── Другие правила ─────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.other.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.other.$anchor
+    }).Article-Heading3
+
+    //- ─── no-await-in-loop ──────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+
+        Performing an operation on each element of an iterable is a common task.
+        However, performing an await as part of each operation is an indication that the program is not taking
+          full advantage of the parallelization benefits of async/await.
+
+      p.Article-Paragraph.
+
+        Usually, the code should be refactored to create all the promises at once, then get access to the results
+          using Promise.all().
+        Otherwise, each successive operation will not start until the previous one has completed.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-await-in-loop"
+        }).Article-Link Официальная документация ESLint
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-await-in-loop": "error" }
+
+    p.Article-Paragraph.
+      Данное правило применимо тогда и только тогда, когда промисы независимы друг от друга.
+      Однако это далеко не всегда так (например, последовательное выполнение асинхронных функций-посредников,
+        обрабатывающих HTTP-запрос, где каждый следующий посредник должен быть выполнен тогда и только тогда,
+        когда предыдущий отработал и передал управление).
+
+    p.Article-Paragraph.
+      Тем не менее, поскольку по возможности следует использовать параллелизм, как и рекомендовано официальной
+        документацией, то нарушая данное правило, необходимо добавить комментарий, явно указывающий, почему промисы
+        действительно выполняться последовательно.
 
 
     //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
