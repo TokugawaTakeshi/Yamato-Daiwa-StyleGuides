@@ -191,6 +191,7 @@ module.exports = {
     "no-useless-constructor": "off",
     "@typescript-eslint/no-useless-constructor": "error",
 
+    "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
     "@typescript-eslint/no-unnecessary-template-expression": "warn",
 
     "@typescript-eslint/return-await": "error",

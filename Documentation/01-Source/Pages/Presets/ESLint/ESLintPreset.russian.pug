@@ -69,12 +69,11 @@ block append SpecificContent
     }).Article-Heading3
 
     p.Article-Paragraph.
-      Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, позволяя писать бессмысленный код
-        зачастую #[+Keyphrase--YDID без ошибок при его выполнении].
+      Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, что позволяет писать бессмысленный
+        код зачастую #[+Keyphrase--YDID без ошибок при его выполнении].
       Например, можно в #[+Term--YDID классе] объявить #[+Term--YDID геттер], который ничего
-        #[+Keyword--YDID не]&nbsp;возвращает, что противоречит самой концепции #[+Term--YDID геттеров].
+        не&nbsp;возвращает, что противоречит самой концепции #[+Term--YDID геттеров].
       Задача правил это группы — значительно уменьшить количество такого бессмысленного кода.
-
 
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
@@ -90,12 +89,13 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        #[+ImportantEntity__Code--YDID Array] имеет несколько #[+Term--YDID методов] для фильтрации, маппинга и
-          сворачивания.
-        Если мы не укажем инструкцию возврата значения в #[+Term--YDID функциях обратного вызова] этих
-          #[+Term--YDID методов], то возможно, это ошибка.
+        #[+Term--YDID Объект] #[+ImportantEntity__Code--YDID Array] имеет несколько #[+Term--YDID методов] для
+          фильтрации, поэлементного преобразования и сворачивания.
+        Если мы не&nbsp;укажем #[+Term--YDID инструкцию возврата значения] в передаваемых через #[+Term--YDID параметр]
+          #[+Term__Contrast--YDID функциях обратного вызова] при вызове этих #[+Term--YDID методов], то, возможно,
+          это ошибка.
         Если вы не&nbsp;хотите возвращать значение или не&nbsp;нуждаетесь в возвращённом значении, то вместо этих
-          #[+Term--YDID методов] рассмотрите использование #[+ImportantEntity__Code--YDID .forEach].
+          #[+Term--YDID методов] Вам подойдёт #[+Term--YDID метод] #[+ImportantEntity__Code--YDID .forEach].
 
       p.Article-Paragraph.
         #[+ImportantEntity__Code--YDID Array] has several #[+Term--YDID methods] for filtering, mapping, and folding.
@@ -110,8 +110,9 @@ block append SpecificContent
 
     p.Article-Paragraph.
       При использовании языка #[+ImportantEntity--YDID TypeScript] с настроенным оповещением об ошибках, подобного рода
-        странности будут сразу же обнаружены, поскольку все стандартные #[+Term--YDID методы] (в том числе и
-        #[+Term--YDID массивов]) имеют качественные определения #[+Term--YDID TypeScript-типов].
+        странности будут сразу же обнаружены, поскольку #[+Keyword--YDID все] #[+Keyword__Contrast--YDID стандартные]
+        #[+Term--YDID методы] (в том числе и #[+Term--YDID массивов]) имеют #[+Keyword--YDID встроенные] качественные
+        определения #[+Term--YDID TypeScript-типов].
       Поэтому #[+Keyphrase--YDID в случае использования #[+ImportantEntity--YDID TypeScript]] это правило —
         перестраховочное.
 
@@ -134,8 +135,7 @@ block append SpecificContent
           вызывать #[+ImportantEntity__Code--YDID super()].
         #[+Term--YDID Конструкторы] #[+Term__Contrast--YDID классов], которые #[+Keyword--YDID не]&nbsp;унаследованы,
           #[+ImportantEntity__Code--YDID super()] вызывать #[+Keyword--YDID не]&nbsp;должны.
-        Если это не&nbsp;замечено (программистом), произойдёт #[+Term--YDID ошибка] выполнения
-          #[+Term--YDID JavaScript-кода].
+        При нарушении этих правил произойдёт #[+Term--YDID ошибка] выполнения #[+Term--YDID JavaScript-кода].
 
       p.Article-Paragraph.
         #[+Term--YDID Constructors] of #[+Keyword--YDID derived] #[+Term--YDID classes] #[+Keyword--YDID must] call
@@ -152,10 +152,10 @@ block append SpecificContent
     p.Article-Paragraph.
       Если в #[+Term--YDID конструкторе] #[+Keyword--YDID унаследованного] #[+Term--YDID класса] обратиться к
         #[+Term--YDID контекстной переменной] #[+ImportantEntity__Code--YDID this] до вызова
-        #[+ImportantEntity__Code--YDID super()], то язык #[+ImportantEntity__Code--YDID TypeScript] оповестит об
+        #[+ImportantEntity__Code--YDID super()], то проекта #[+ImportantEntity__Code--YDID TypeScript]-типов оповестит об
         #[+Term--YDID ошибке] #[+ImportantEntity__Code--YDID TS2377].
       Что касается #[+ImportantEntity--YDID JavaScript], то без данного #[+ImportantEntity--YDID ESLint]-правила
-        это ошибку способны заметить лишь лучшие #[+Term--YDID интегрированные среды разработки], такие как
+        это ошибку способны заметить лишь лучшие #[+Term--YDID интегрированные среды разработки] такие как
         #[+SecondaryEntity--YDID IntelliJ IDEA].
 
 
@@ -197,14 +197,9 @@ block append SpecificContent
         об ошибке #[+ImportantEntity--YDID TS2378].
       Если же код написан на #[+ImportantEntity--YDID JavaScript], то даже такие передовые интегрированные среды
         разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] не поднимут тревоги (проверено на версии
-        #[+ImportantEntity--YDID 2024.1.1]).
-
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "getter-return": "error" }
-
-
         #[+SecondaryEntity--YDID 2024.1.1]).
+
+
     //- ─── Предотвращение алгоритмических ошибок ──────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
@@ -213,10 +208,10 @@ block append SpecificContent
     }).Article-Heading3
 
     p.Article-Paragraph.
-      В отличие от предыдущей группы правил, нарушения данной могут быть представлены валидным кодом, однако с высокой
-        вероятностью являются алгоритмической ошибкой.
-      Данные правила также достаточно хорошо прокомментированы официальной документацией, для многих из них мы
-        ограничимся ещё переводом с улучшением стилистики.
+      В отличие от предыдущей группы правил, нарушения данной группы хотя и могут представлять собой валидный код,
+        но с высокой вероятностью являться алгоритмической ошибкой.
+      Соответствующие правила также достаточно хорошо прокомментированы официальной документацией, потому для многих
+        из них мы ограничимся переводом с улучшением стилистики.
 
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
@@ -228,11 +223,18 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
+        Цикл #[+ImportantEntity__Code--YDID «for»] с условием, которое никогда не&nbsp;будет выполнено (например
+          из-за меняющегося в неверном направлении счётчика), будет повторяться бесконечно.
+        Хотя бывают случаи, когда бесконечный цикл создаётся намеренно, для таких случаев принято использовать
+          цикл #[+ImportantEntity__Code--YDID «while»].
+        Если же цикл #[+ImportantEntity__Code--YDID «for»] является бесконечным, то, скорее всего, это ошибка.
+
+      p.Article-Paragraph.
         A #[+ImportantEntity--YDID for] loop with a stop condition that can never be reached, such as one with a
           counter that moves in the wrong direction, will run infinitely.
         While there are occasions when an infinite loop is intended, the convention is to construct such loops as
           #[+ImportantEntity__Code--YDID while] loops.
-        More typically, an infinite for loop is a bug.
+        More typically, an infinite #[+ImportantEntity__Code--YDID for] loop is a bug.
 
       +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
         +Link--YDF({
@@ -254,22 +256,41 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        The #[+Term--YDID executor function] can also be an async function.
-        However, this is usually a mistake, for a few reasons:
+        #[+Term--YDID Параметр] #[+Term__Contrast--YDID промиса], называемый #[+Term--YDID «исполнителем»], может быть
+          #[+Term--YDID асинхронной функцией] (функцией, явно или неявно возвращающей #[+Term--YDID промис]).
+        Однако скорее всего это ошибка по следующим причинам:
+
+      ul.Article-UnorderedList
+
+        li.
+          Если асинхронная функция в роли исполнителя бросает ошибку, эта ошибка будет потеряна и не&nbsp;образует
+            нового #[+Term--YDID промиса], в котором возникновение ошибки может быть обнаружено.
+          Это может создаст трудности с отладкой и обработкой некоторых ошибок.
+
+        li.
+          Если параметр промиса использует ключевое слово #[+ImportantEntity__Code--YDID await], то обычно это означает,
+            что использовать конструктор #[+ImportantEntity__Code--YDID new Promise] незачем или можно уменьшить
+            вложенность промисов.
+
+
+      p.Article-Paragraph.
+        The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
+        However, this is #[+Keyword--YDID usually] a mistake, for a few reasons:
 
       ul.Article-UnorderedList
 
         li.
           If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
-            #[+Term--YDID error] will be #[+Keyword--YDID lost] and won’t cause the newly-constructed
-            #[+ImportantEntity__Code--YDID Promise] to reject.
+            #[+Term--YDID error] will be #[+Keyword--YDID lost] and #[+Keyword__Contrast--YDID won’t] cause the
+            newly-constructed #[+ImportantEntity__Code--YDID Promise] to reject.
           This could make it difficult to debug and handle some errors.
 
         li.
-          If a #[+ImportantEntity__Code--YDID Promise] executor function is using #[+ImportantEntity__Code--YDID await],
-            this is usually a sign that it is not actually necessary to use the
-            #[+ImportantEntity__Code--YDID new Promise] constructor, or the scope of the
-            #[+ImportantEntity__Code--YDID new Promise] constructor can be reduced.
+          If a #[+ImportantEntity__Code--YDID Promise] #[+Term--YDID executor function] is using
+            #[+ImportantEntity__Code--YDID await], this is #[+Keyword--YDID usually] a sign that it
+            is&nbsp;#[+Keyword--YDID not]&nbsp;actually necessary to use the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor], or the scope of the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor] can be reduced.
 
       +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
         +Link--YDF({
@@ -298,13 +319,21 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
+        Считается нормой выполнять какие-либо манипуляции с итерируемым элементом на каждой итерации.
+        Однако, если на каждой итерации используется ключевое слово #[+ImportantEntity__Code--YDID await], то
+          преимущества параллелизм, которые дают промисы, не задействуются.
 
+      p.Article-Paragraph.
+        Обычно, код может быть отрефакторен таким образом, чтобы выполнить все промисы разом, а доступ к результатам
+          получить через #[+ImportantEntity__Code--YDID Promise.all()].
+        В противном случае, новый шаг цикла не начнётся, пока текущей не завершиться.
+
+      p.Article-Paragraph.
         Performing an operation on each element of an iterable is a common task.
         However, performing an await as part of each operation is an indication that the program is not taking
           full advantage of the parallelization benefits of async/await.
 
       p.Article-Paragraph.
-
         Usually, the code should be refactored to create all the promises at once, then get access to the results
           using Promise.all().
         Otherwise, each successive operation will not start until the previous one has completed.
@@ -319,7 +348,7 @@ block append SpecificContent
         { "no-await-in-loop": "error" }
 
     p.Article-Paragraph.
-      Данное правило применимо тогда и только тогда, когда промисы независимы друг от друга.
+      Данное правило применимо тогда и только тогда, когда операции, которые выполняются в промисах, независимы друг от друга.
       Однако это далеко не всегда так (например, последовательное выполнение асинхронных функций-посредников,
         обрабатывающих HTTP-запрос, где каждый следующий посредник должен быть выполнен тогда и только тогда,
         когда предыдущий отработал и передал управление).
@@ -330,48 +359,49 @@ block append SpecificContent
         действительно выполняться последовательно.
 
 
-    //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({
-      level: 2,
-      text: pageTableOfContents.typeScriptRules.$heading,
-      HTML_ID: pageTableOfContents.typeScriptRules.$anchor
-    }).Article-Heading2
+    //-
+      //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+      +Heading--YDF({
+        level: 2,
+        text: pageTableOfContents.typeScriptRules.$heading,
+        HTML_ID: pageTableOfContents.typeScriptRules.$anchor
+      }).Article-Heading2
 
-    //- ─── Безопасность типизации ─────────────────────────────────────────────────────────────────────────────────────
-    +Heading--YDF({
-      level: 3,
-      text: pageTableOfContents.typeScriptRules.$children.typeSafety.$heading,
-      HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$anchor
-    }).Article-Heading3
+      //- ─── Безопасность типизации ─────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: pageTableOfContents.typeScriptRules.$children.typeSafety.$heading,
+        HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$anchor
+      }).Article-Heading3
 
-    //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
-    +Heading--YDF({
-      level: 4,
-      text: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
-      HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
-    }).Article-Heading4
+      //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 4,
+        text: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
+        HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
+      }).Article-Heading4
 
-    +Blockquote--YDF
+      +Blockquote--YDF
+
+        p.Article-Paragraph.
+          This rule aims to standardize the use of type assertion style across the codebase.
+          Keeping to one syntax consistently helps with code readability.
+
+        p.Article-Paragraph.
+          (Примечание) Хотя это об этом сводке и не написано, данное правило может и полностью запретить использование
+            данной функциональности.
+
+        +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+          +Link--YDF({
+            unendorsedExternalURI: "https://typescript-eslint.io/rules/consistent-type-assertions/"
+          }).Article-Link Официальная документация typescript-eslint
 
       p.Article-Paragraph.
-        This rule aims to standardize the use of type assertion style across the codebase.
-        Keeping to one syntax consistently helps with code readability.
+        В идеале, кастинг использоваться не должен вообще, однако реальность такова, что иногда альтернатив особо и нет.
+        Тем не менее, если кастинг разрешить, то сразу же начнётся злоупотребление этой функциональностью.
+        Поэтому, наш пресет запрещает использование данной функциональности, а если по какой-то причине использовать
+          данную функциональность необходимо, то программист обязан это прокомментировать.
 
-      p.Article-Paragraph.
-        (Примечание) Хотя это об этом сводке и не написано, данное правило может и полностью запретить использование
-          данной функциональности.
-
-      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
-        +Link--YDF({
-          unendorsedExternalURI: "https://typescript-eslint.io/rules/consistent-type-assertions/"
-        }).Article-Link Официальная документация typescript-eslint
-
-    p.Article-Paragraph.
-      В идеале, кастинг использоваться не должен вообще, однако реальность такова, что иногда альтернатив особо и нет.
-      Тем не менее, если кастинг разрешить, то сразу же начнётся злоупотребление этой функциональностью.
-      Поэтому, наш пресет запрещает использование данной функциональности, а если по какой-то причине использовать
-        данную функциональность необходимо, то программист обязан это прокомментировать.
-
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "@typescript-eslint/consistent-type-assertions": [ "error", { "assertionStyle": "never" } ] }
+      +CodeViewer--YDF
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "@typescript-eslint/consistent-type-assertions": [ "error", { "assertionStyle": "never" } ] }

@@ -95,9 +95,10 @@ block append SpecificContent
         }).Article-Link Official ESLint documentation
 
     p.Article-Paragraph.
-      If to use the #[+ImportantEntity--YDID TypeScript] with set up of notification about error, such weird this will
-        be detected immideatly because all standard #[+Term--YDID methods] (including the #[+Term--YDID methods] of
-        #[+Term__Contrast--YDID arrays]) are known for #[+ImportantEntity--YDID TypeScript].
+      If to use the #[+ImportantEntity--YDID TypeScript] with set up of notification about errors, such weird things will
+        be detected immideatly because #[+Keyword--YDID all] #[+Keyword__Contrast--YDID standard] #[+Term--YDID methods]
+        (including the #[+Term--YDID arrays'] #[+Term__Contrast--YDID methods]) has #[+Keyword--YDID built-in]
+        #[+ImportantEntity--YDID TypeScript] types definitions..
       Thus, #[+Keyphrase--YDID in the case of #[+ImportantEntity--YDID TypeScript] usage], such rule is like the
         fallback.
 
@@ -130,9 +131,9 @@ block append SpecificContent
     p.Article-Paragraph.
       If to access to #[+ImportantEntity__Code--YDID this] (the #[+Term--YDID context variable]) is the
         #[+Keyphrase--YDID inherited] #[+Term--YDID class] before #[+ImportantEntity__Code--YDID super()]
-        #[+Term--YDID invocation], the #[+ImportantEntity--YDID TypeScript] will emit the
+        #[+Term--YDID invocation], the #[+ImportantEntity--YDID TypeScript] type checker will emit the
         #[+ImportantEntity__Code--YDID TS2377] #[+Term--YDID error].
-      About pure #[+ImportantEntity--YDID JavaScript], without this #[+Term--YDID ESLint] rule such error could be
+      About pure #[+ImportantEntity--YDID JavaScript], without this #[+Term--YDID ESLint] rule, such error could be
         detected only by best #[+Term--YDID IDEs] such as #[+SecondaryEntity--YDID IntelliJ IDEA].
 
 
@@ -159,7 +160,7 @@ block append SpecificContent
       +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
         +Link--YDF({
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/getter-return"
-        }).Article-Link Официальная документация ESLint
+        }).Article-Link Official ESLint documentation
 
     p.Article-Paragraph.
       If the code has been written on #[+ImportantEntity--YDID TypeScript], the compiler (if more exactly — transpiler)
@@ -167,3 +168,80 @@ block append SpecificContent
       If the code has been written on plain #[+ImportantEntity--YDID JavaScript], even leading IDEs like
         #[+ImportantEntity--YDID IntelliJ IDEA] will not notify about this issue (checked on
         #[+SecondaryEntity--YDID 2024.1.1] version).
+
+
+    //- ─── Algorithmic Errors Preventing ──────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+    }).Article-Heading3
+
+    p.Article-Paragraph.
+      Unlike the previous group, the violations of the current group could be represented by completely valid code, but
+        with high probability be the algorithmic error.
+      The corresponding rules also has been documented well, so for most rules of this group the is nothing to comment
+        from us.
+
+    //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+    }).Article-Heading4
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "for-direction": "error" }
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        A #[+ImportantEntity--YDID for] loop with a stop condition that can never be reached, such as one with a
+          counter that moves in the wrong direction, will run infinitely.
+        While there are occasions when an infinite loop is intended, the convention is to construct such loops as
+          #[+ImportantEntity__Code--YDID while] loops.
+        More typically, an infinite #[+ImportantEntity__Code--YDID for] loop is a bug.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/for-direction"
+        }).Article-Link Official ESLint documentation
+
+
+    //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
+    }).Article-Heading4
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-async-promise-executor": "error" }
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
+        However, this is #[+Keyword--YDID usually] a mistake, for a few reasons:
+
+      ul.Article-UnorderedList
+
+        li.
+          If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
+            #[+Term--YDID error] will be #[+Keyword--YDID lost] and #[+Keyword__Contrast--YDID won’t] cause the
+            newly-constructed #[+ImportantEntity__Code--YDID Promise] to reject.
+          This could make it difficult to debug and handle some errors.
+
+        li.
+          If a #[+ImportantEntity__Code--YDID Promise] #[+Term--YDID executor function] is using
+            #[+ImportantEntity__Code--YDID await], this is #[+Keyword--YDID usually] a sign that it
+            is&nbsp;#[+Keyword--YDID not]&nbsp;actually necessary to use the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor], or the scope of the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor] can be reduced.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
+        }).Article-Link Official ESLint documentation

@@ -71,7 +71,8 @@ block append SpecificContent
     p.Article-Paragraph.
       #[+ImportantEntity--YDID ECMA-Script]規格が可成り自由主義らしいので、意味の無いコードを書いても、
         #[+Keyphrase--YDID 実行の際エラーが発生しない]事が多い。
-      例えば、#[+Term--YDID クラス]に何も返さない#[+Term--YDID ゲッター]を宣言する事が出来るが、#[+Term--YDID ゲッター]の概念上意味の無い事。
+      例えば、#[+Term--YDID クラス]宣言の中に何も返さない#[+Term--YDID ゲッター]を追加する事は出来るが、#[+Term--YDID ゲッター]の概念上意味が無い
+        事だ。
       此の規則群の目的は、こう言った意味の無いコードを大幅に減らす事。
 
 
@@ -89,9 +90,9 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        #[+ImportantEntity__Code--YDID Array]はフィルタ、マッピング及び縮小（#[+Term--YDID 配列]を元に単一の値の算出）専用複数の
-          #[+Term--YDID メソッド]が在る。
-        #[+Term--YDID コールバック]の中に値が返されなかったら、間違いの可能性が高い。
+        #[+ImportantEntity__Code--YDID Array]#[+Term--YDID オブジェクト]はフィルタリング、各要素の変換及び縮小
+          （#[+Term--YDID 配列]を元に単一の値の算出）専用複数の#[+Term--YDID メソッド]が在る。
+        これらの呼び出しの際、#[+Term--YDID 引数]として渡される#[+Term--YDID コールバック]の中に値が返されなかったら、間違いの可能性が高い。
         値を返したくないか、返された値が不要な場合、代わりに#[+ImportantEntity__Code--YDID .forEach]の利用を検討しなさい。
 
       p.Article-Paragraph.
@@ -106,9 +107,10 @@ block append SpecificContent
         }).Article-Link ESLintの正式的説明書
 
     p.Article-Paragraph.
-      #[+ImportantEntity--YDID TypeScript]言語の利用の上エラーの通知を設定すると、全ての規定#[+Term--YDID メソッド]（#[+Term--YDID 配列]
-        の#[+Term--YDID メソッド]を含めて）が取り組みの型定義が付いているので、こう言った可笑しい所が直ぐ発見される。
-      それで、#[+Keyphrase--YDID #[+ImportantEntity--YDID TypeScript]が利用される環境にとって]此の規則は再保険の役割。
+      #[+ImportantEntity--YDID TypeScript]言語の利用の上エラーの通知を設定すると、
+        #[+Keyword--YDID 全]#[+Keyword__Contrast--YDID 規定]#[+Term--YDID メソッド]（#[+Term--YDID 配列]
+        の#[+Term--YDID メソッド]を含めて）が#[+Keyword--YDID 取り組みの]型定義が付いているので、こう言った可笑しい所が直ぐ発見される。
+      それで、#[+Keyphrase--YDID #[+ImportantEntity--YDID TypeScript]が利用される環境にとって]此の規則は再保険役。
 
 
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
@@ -127,9 +129,9 @@ block append SpecificContent
       p.Article-Paragraph.
         #[+Keyword--YDID 継承された]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]は
           #[+ImportantEntity__Code--YDID super()]を#[+Keyword--YDID 呼び出さなければいけない]。
-        #[+Keyword--YDID 継承されなかった]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]は#[+Keyword--YDID 逆に]
-          #[+ImportantEntity__Code--YDID super()]を#[+Keyword--YDID 呼び出してはならない]。
-        上記の違反が気付かれなかった場合、#[+ImportantEntity--YDID JavaScript]がランタイムエラーを発生させる。
+        #[+Keyword__Contrast--YDID 継承されなかった]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]は
+          #[+Keyword--YDID 逆に]#[+ImportantEntity__Code--YDID super()]を#[+Keyword--YDID 呼び出してはならない]。
+        上記の違反をすると#[+ImportantEntity--YDID JavaScript]がランタイムエラーを発生させる。
 
       p.Article-Paragraph.
         #[+Term--YDID Constructors] of #[+Keyword--YDID derived] #[+Term--YDID classes] #[+Keyword--YDID must] call
@@ -146,12 +148,14 @@ block append SpecificContent
     p.Article-Paragraph.
       #[+Keyword--YDID 継承された]#[+Term--YDID クラス]の#[+Term__Contrast--YDID コンストラクタ]の中に
         #[+ImportantEntity__Code--YDID this]と言う#[+Term--YDID コンテキスト変数]にアクセスしてみると、
-        #[+ImportantEntity__Code--YDID TypeScript]#[+Term--YDID 言語]は#[+Term--YDID エラー]
+        #[+ImportantEntity__Code--YDID TypeScript]#[+Term--YDID 言語]は#[+Term__Contrast--YDID エラー]
         #[+ImportantEntity__Code--YDID TS2377]に就いて通知する。
       #[+ImportantEntity--YDID JavaScript]のみの話しなら、当#[+ImportantEntity--YDID ESLint]規則がなければ、此の間違いが発見出来るのは
         #[+SecondaryEntity--YDID IntelliJ IDEA]の様に一流の#[+Term--YDID 結合開発環境]くらい。
 
 
+      #[+ImportantEntity--YDID JavaScript]のみの話しなら、当#[+ImportantEntity--YDID ESLint]規則が無いと、此の間違いが発見出来るのは
+        #[+SecondaryEntity--YDID IntelliJ IDEA]の様に一流の#[+Term--YDID 結合開発環境]ぐらい。
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
@@ -188,3 +192,46 @@ block append SpecificContent
         #[+ImportantEntity--YDID TS2378]エラーに就いて通知する。
       #[+ImportantEntity--YDID JavaScript]で書かれた場合、#[+SecondaryEntity--YDID IntelliJ IDEA](バージョン
        #[+ImportantEntity--YDID 2024.1.1]で確認)の様に一流の#[+Term--YDID 結合開発県境]でも当間違いを発見しない事が有る。
+
+
+    //- ─── アルゴリズムエラー予防 ────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+    }).Article-Heading3
+
+    p.Article-Paragraph.
+      前の群と違って、当群の違反は完全に妥当なコードに成っている事が多いが、アルゴリズム的なエラーを含める可能性も高い。
+      該当している規則にとって既に高品質な説明書が既に存在しているので、過半数の規則を和訳で済ませさてもらう。
+
+    //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        条件を満たす事が不可能（例えば正しくない方向へ変化しているカウンター）なら、#[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]
+          が無限に成る。
+        無限ループが意識的に作られる場合は有るが、其の時#[+ImportantEntity__Code--YDID while]ループが使われている事に成っている。
+        #[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]が無限に成っていれば、バグである可能性が高い。
+
+      p.Article-Paragraph.
+        A #[+ImportantEntity--YDID for] loop with a stop condition that can never be reached, such as one with a
+          counter that moves in the wrong direction, will run infinitely.
+        While there are occasions when an infinite loop is intended, the convention is to construct such loops as
+          #[+ImportantEntity__Code--YDID while] loops.
+        More typically, an infinite #[+ImportantEntity__Code--YDID for] loop is a bug.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/for-direction"
+        }).Article-Link ESLintの正式的説明書
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "for-direction": "error" }
