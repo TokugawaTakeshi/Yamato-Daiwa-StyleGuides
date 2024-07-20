@@ -31,10 +31,10 @@ block append Metadata
       japanese: "./ESLintPreset.japanese.html",
     });
 
-    const pageTableOfContents = localizedRouting.presets.$children.ESLint.$sectioning;
+    const localizedSectioning = localizedRouting.presets.$children.ESLint.$sectioning;
 
 
-block append HeadScriptsLinks
+block append HeadScripts
 
   if __IS_PRODUCTION_BUILDING_MODE__
 
@@ -57,15 +57,15 @@ block append SpecificContent
     //- ━━━ Общие правила для TypeScript и JavaScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({
       level: 2,
-      text: pageTableOfContents.ECMAScriptCommonRules.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$anchor
     }).Article-Heading2
 
     //- ─── Валидность ECMAScript-кода ─────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
@@ -75,11 +75,12 @@ block append SpecificContent
         не&nbsp;возвращает, что противоречит самой концепции #[+Term--YDID геттеров].
       Задача правил это группы — значительно уменьшить количество такого бессмысленного кода.
 
+
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
@@ -120,8 +121,8 @@ block append SpecificContent
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
@@ -162,8 +163,8 @@ block append SpecificContent
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
@@ -173,10 +174,9 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        #[+Term--YDID Синтаксис] #[+ImportantEntity__Code--YDID get] привязывает #[+Term--YDID свойство]
-          #[+Term__Contrast--YDID объекта] к #[+Term--YDID функции], которая будет вызвана при обращении к этому
-          #[+Term--YDID свойству].
-        Эта функциональнсоть доступная начиная со стандарта #[+ImportantEntity--YDID ECMAScript 5].
+        #[+Term--YDID Синтаксис] #[+ImportantEntity__Code--YDID get], доступный со стандарта
+          #[+ImportantEntity--YDID ECMAScript 5], привязывает #[+Term--YDID свойство] #[+Term__Contrast--YDID объекта] к
+          #[+Term--YDID функции], которая будет вызвана при обращении к этому #[+Term--YDID свойству].
         Предполагается, что #[+Keyword--YDID каждый] #[+Term--YDID геттер] #[+Keyword__Contrast--YDID должен]
           вернуть значение.
 
@@ -193,18 +193,27 @@ block append SpecificContent
         }).Article-Link Официальная документация ESLint
 
     p.Article-Paragraph.
-      Если код написан на #[+ImportantEntity--YDID TypeScript], то компилятор (вернее сказать, транспайлер) оповестит
-        об ошибке #[+ImportantEntity--YDID TS2378].
+      Нарушение данного правило противоречит самой #[+Keyword--YDID концепции] #[+Term--YDID геттеров], согласно которой
+        #[+Term--YDID геттеры] задуманы как #[+Term--YDID члены], возвращающие определённые значения (с вычислениями или
+        без).
+      Если код #[+Keyphrase--YDID ничего не&nbsp;возвращающего] геттера написан сознательно, значит программист
+        не&nbsp;понимает своих действий.
+
+    p.Article-Paragraph.
+      Если с использованием #[+ImportantEntity--YDID TypeScript] в #[+Term--YDID классе] или #[+Term--YDID объекте]
+        создать #[+Term--YDID геттер], который ничего не&nbsp;возвращает, то проверщик #[+Term--YDID TypeScript-типов]
+        оповестит об ошибке #[+ImportantEntity--YDID TS2378], где будет чётко сказано, что #[+Term--YDID геттер]
+        должен что-то возвращать.
       Если же код написан на #[+ImportantEntity--YDID JavaScript], то даже такие передовые интегрированные среды
-        разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] не поднимут тревоги (проверено на версии
+        разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] ни о чём не оповестят (проверено на версии
         #[+SecondaryEntity--YDID 2024.1.1]).
 
 
     //- ─── Предотвращение алгоритмических ошибок ──────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
@@ -216,8 +225,8 @@ block append SpecificContent
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
     +Blockquote--YDF
@@ -249,33 +258,36 @@ block append SpecificContent
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
     }).Article-Heading4
 
     +Blockquote--YDF
 
       p.Article-Paragraph.
         #[+Term--YDID Параметр] #[+Term__Contrast--YDID промиса], называемый #[+Term--YDID «исполнителем»], может быть
-          #[+Term--YDID асинхронной функцией] (функцией, явно или неявно возвращающей #[+Term--YDID промис]).
-        Однако скорее всего это ошибка по следующим причинам:
+          #[+Term--YDID асинхронной функцией] (#[+Term--YDID функцией], явно #[+Keyword--YDID или] неявно возвращающей
+          #[+Term--YDID промис]).
+        Однако, #[+Keyphrase--YDID скорее всего] это #[+Term--YDID ошибка] — по следующим причинам:
 
       ul.Article-UnorderedList
 
         li.
-          Если асинхронная функция в роли исполнителя бросает ошибку, эта ошибка будет потеряна и не&nbsp;образует
-            нового #[+Term--YDID промиса], в котором возникновение ошибки может быть обнаружено.
-          Это может создаст трудности с отладкой и обработкой некоторых ошибок.
+          Если #[+Keyword--YDID асинхронная] #[+Term--YDID функция]
+            #[+Keyphrase--YDID в роли #[+Term--YDID исполнителя]] бросает #[+Term--YDID ошибку], эта
+            #[+Term--YDID ошибка] будет #[+Keyword--YDID потеряна] и #[+Keyword__Contrast--YDID не]&nbsp;создаст
+            нового #[+Term--YDID промиса], в котором #[+Term__Contrast--YDID ошибка] может быть перехвачена.
+          Это может создаст трудности с отладкой и обработкой некоторых #[+Term--YDID ошибок].
 
         li.
-          Если параметр промиса использует ключевое слово #[+ImportantEntity__Code--YDID await], то обычно это означает,
-            что использовать конструктор #[+ImportantEntity__Code--YDID new Promise] незачем или можно уменьшить
-            вложенность промисов.
+          Если #[+Term--YDID параметр] #[+Term__Contrast--YDID промиса] использует #[+Term--YDID ключевое слово]
+            #[+ImportantEntity__Code--YDID await], то обычно это означает, что использовать #[+Term--YDID конструктор]
+            #[+ImportantEntity__Code--YDID new Promise] незачем или можно уменьшить вложенность #[+Term--YDID промисов].
 
 
       p.Article-Paragraph.
         The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
-        However, this is #[+Keyword--YDID usually] a mistake, for a few reasons:
+        However, this is #[+Keyword--YDID usually] a #[+Keyword__Contrast--YDID mistake], for a few reasons:
 
       ul.Article-UnorderedList
 
@@ -283,7 +295,7 @@ block append SpecificContent
           If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
             #[+Term--YDID error] will be #[+Keyword--YDID lost] and #[+Keyword__Contrast--YDID won’t] cause the
             newly-constructed #[+ImportantEntity__Code--YDID Promise] to reject.
-          This could make it difficult to debug and handle some errors.
+          This could make it difficult to debug and handle some #[+Term--YDID errors].
 
         li.
           If a #[+ImportantEntity__Code--YDID Promise] #[+Term--YDID executor function] is using
@@ -305,38 +317,41 @@ block append SpecificContent
     //- ─── Другие правила ─────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.other.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.other.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
     }).Article-Heading3
 
     //- ─── no-await-in-loop ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
     }).Article-Heading4
 
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        Считается нормой выполнять какие-либо манипуляции с итерируемым элементом на каждой итерации.
-        Однако, если на каждой итерации используется ключевое слово #[+ImportantEntity__Code--YDID await], то
-          преимущества параллелизм, которые дают промисы, не задействуются.
+        Выполнение каких-либо преобразований с итерируемым элементом на каждом шаге цикла является стандартным сценарием.
+        Однако, если на каждом шаге цикла используется #[+Term--YDID ключевое слово]
+          #[+ImportantEntity__Code--YDID await], то преимущества #[+Term--YDID параллелизма], которые дают
+          #[+Term--YDID промисы], не&nbsp;используются.
 
       p.Article-Paragraph.
-        Обычно, код может быть отрефакторен таким образом, чтобы выполнить все промисы разом, а доступ к результатам
-          получить через #[+ImportantEntity__Code--YDID Promise.all()].
-        В противном случае, новый шаг цикла не начнётся, пока текущей не завершиться.
+        Обычно, код может быть отрефакторен таким образом, чтобы начать выполнение #[+Keyword--YDID всех]
+          #[+Term--YDID промисов] #[+Keyword--YDID разом], а доступ к результатам получить через
+          #[+ImportantEntity__Code--YDID Promise.all()].
+        В противном случае, новый шаг цикла не&nbsp;начнётся, пока текущей не&nbsp;завершиться.
 
       p.Article-Paragraph.
         Performing an operation on each element of an iterable is a common task.
-        However, performing an await as part of each operation is an indication that the program is not taking
-          full advantage of the parallelization benefits of async/await.
+        However, performing an #[+ImportantEntity__Code--YDID await] as part of #[+Keyword--YDID each] operation is an
+          indication that the program is not taking full advantage of the parallelization benefits of
+          #[+Keyword__Contrast--YDID async]/#[+ImportantEntity__Code--YDID await].
 
       p.Article-Paragraph.
-        Usually, the code should be refactored to create all the promises at once, then get access to the results
-          using Promise.all().
-        Otherwise, each successive operation will not start until the previous one has completed.
+        Usually, the code should be refactored to create all the #[+Term--YDID promises] at #[+Keyword--YDID once],
+          then get access to the results using #[+ImportantEntity__Code--YDID Promise.all()].
+        Otherwise, each successive operation will not&nbsp;start until the previous one has completed.
 
       +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
         +Link--YDF({
@@ -348,37 +363,47 @@ block append SpecificContent
         { "no-await-in-loop": "error" }
 
     p.Article-Paragraph.
-      Данное правило применимо тогда и только тогда, когда операции, которые выполняются в промисах, независимы друг от друга.
-      Однако это далеко не всегда так (например, последовательное выполнение асинхронных функций-посредников,
-        обрабатывающих HTTP-запрос, где каждый следующий посредник должен быть выполнен тогда и только тогда,
-        когда предыдущий отработал и передал управление).
+      Данное правило применимо #[+Keyphrase--YDID тогда и только тогда], когда процедуры, которые выполняются в
+        #[+Term--YDID промисах], #[+Keyphrase--YDID независимы друг от друга].
+      Однако это #[+Keyphrase--YDID далеко #[+Keyword--YDID не]&nbsp;всегда] так.
+      Например, при выполнении #[+Term--YDID функций-посредников], обрабатывающих #[+Term--YDID HTTP-запрос],
+        которые зачастую выполняют асинхронные операции, #[+Keyword--YDID каждый] #[+Keyword__Contrast--YDID следующий]
+        #[+Term--YDID посредник] #[+Keyword--YDID должен] дождаться, пока #[+Keyword--YDID предыдущий]
+        отработает и передаст управление.
 
     p.Article-Paragraph.
-      Тем не менее, поскольку по возможности следует использовать параллелизм, как и рекомендовано официальной
-        документацией, то нарушая данное правило, необходимо добавить комментарий, явно указывающий, почему промисы
-        действительно выполняться последовательно.
+      Кроме того, иногда выполнение большого количества #[+Term--YDID промисов] #[+Keyword--YDID разом] может вызывать
+        некоторые проблемы.
+      Например, если каждый #[+Term--YDID промис] отправляет #[+Term--YDID HTTP-запрос], то сервер, на который этот
+        запрос отправляется, может расценить такие массовые запросы с одного IP-адреса как #[+Term--YDID DoS-атаку]
+        и отказать в обработке запросов.
+      Чтобы этого избежать, придётся либо отправлять запросы с большей периодичностью, либо отправлять меньше запросов
+        за раз, либо и то и другое.
 
-
+    p.Article-Paragraph.
+      Тем не менее, поскольку #[+Keyphrase--YDID по возможности] следует использовать #[+Term--YDID параллелизм],
+        как и рекомендовано официальной документацией, то нарушая данное правило, необходимо добавить комментарий,
+        явно указывающий, почему промисы действительно выполняться последовательно.
     //-
       //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       +Heading--YDF({
         level: 2,
-        text: pageTableOfContents.typeScriptRules.$heading,
-        HTML_ID: pageTableOfContents.typeScriptRules.$anchor
+        text: localizedSectioning.typeScriptRules.$heading,
+        HTML_ID: localizedSectioning.typeScriptRules.$anchor
       }).Article-Heading2
 
       //- ─── Безопасность типизации ─────────────────────────────────────────────────────────────────────────────────────
       +Heading--YDF({
         level: 3,
-        text: pageTableOfContents.typeScriptRules.$children.typeSafety.$heading,
-        HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$anchor
+        text: localizedSectioning.typeScriptRules.$children.typeSafety.$heading,
+        HTML_ID: localizedSectioning.typeScriptRules.$children.typeSafety.$anchor
       }).Article-Heading3
 
       //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
       +Heading--YDF({
         level: 4,
-        text: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
-        HTML_ID: pageTableOfContents.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
+        text: localizedSectioning.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
+        HTML_ID: localizedSectioning.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
       }).Article-Heading4
 
       +Blockquote--YDF

@@ -81,10 +81,30 @@ module.exports = {
 
   validateAttributeQuoteMarks: "\"",
 
+  /*
+
   validateAttributeSeparator: {
     separator: " ",
     multiLineSeparator: "\n  "
   },
+
+  Disabled because of bugs like in:
+
+  ```
+  each person in people
+
+      li
+
+        figure
+
+          img(
+            src=person.photoURI
+            alt=""
+          )
+
+          figcaption= person.fullName
+  ```
+ */
 
   validateDivTags: true,
 

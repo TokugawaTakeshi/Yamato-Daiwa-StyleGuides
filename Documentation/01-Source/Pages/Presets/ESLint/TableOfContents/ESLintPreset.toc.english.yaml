@@ -1,0 +1,14 @@
+ECMAScriptCommonRules:
+
+  $heading: "Common Rules for TypeScript and JavaScript"
+
+  codeValidity: { $heading: "ECMAScript Code Validity" }
+  algorithmicErrorsPreventing: { $heading: "Algorithmic Errors Preventing" }
+  other: { $heading: "Other" }
+
+
+typeScriptRules:
+
+  $heading: "TypeScript Rules"
+
+  typeSafety: { $heading: "Typing Safety" }

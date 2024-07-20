@@ -31,10 +31,10 @@ block append Metadata
       russian: "./ESLintPreset.russian.html",
     });
 
-    const pageTableOfContents = localizedRouting.presets.$children.ESLint.$sectioning;
+    const localizedSectioning = localizedRouting.presets.$children.ESLint.$sectioning;
 
 
-block append HeadScriptsLinks
+block append HeadScripts
 
   if __IS_PRODUCTION_BUILDING_MODE__
 
@@ -51,15 +51,15 @@ block append SpecificContent
     //- ━━━ Common Rules for TypeScript and JavaScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({
       level: 2,
-      text: pageTableOfContents.ECMAScriptCommonRules.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$anchor
     }).Article-Heading2
 
     //- ─── ECMAScript Code Validity ───────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
@@ -73,8 +73,8 @@ block append SpecificContent
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Rule Configuration" })
@@ -106,8 +106,8 @@ block append SpecificContent
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Rule Configuration" })
@@ -140,8 +140,8 @@ block append SpecificContent
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "Rule Configuration" })
@@ -163,31 +163,40 @@ block append SpecificContent
         }).Article-Link Official ESLint documentation
 
     p.Article-Paragraph.
-      If the code has been written on #[+ImportantEntity--YDID TypeScript], the compiler (if more exactly — transpiler)
-        will notify about #[+ImportantEntity--YDID TS2378] error.
+      The violation of this rule is contradicting to #[+Term--YDID getter] #[+Keyword--YDID concept].
+      According to it, the #[+Term--YDID getter] is the member which returns some value either with preliminary
+        computing or without it.
+      If the code of #[+Term--YDID getter] #[+Keyphrase--YDID which returns nothing] has been written consciously,
+        the programmer does&nbsp;not&nbsp;understand own actions.
+
+    p.Article-Paragraph.
+      If ot create the #[+Term--YDID getter] at the #[+Term__Contrast--YDID class] or #[+Term__Contrast--YDID object]
+        by #[+ImportantEntity--YDID TypeScript] language, the #[+ImportantEntity--YDID TypeScript] types checker will
+        emit the #[+ImportantEntity--YDID TS2378] error where will be clearly said that the #[+Term--YDID getter]
+        #[+Keyword--YDID must] return something.
       If the code has been written on plain #[+ImportantEntity--YDID JavaScript], even leading IDEs like
-        #[+ImportantEntity--YDID IntelliJ IDEA] will not notify about this issue (checked on
+        #[+ImportantEntity--YDID IntelliJ IDEA] will #[+Keyword--YDID not]&nbsp;notify about this issue (checked on
         #[+SecondaryEntity--YDID 2024.1.1] version).
 
 
     //- ─── Algorithmic Errors Preventing ──────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
       Unlike the previous group, the violations of the current group could be represented by completely valid code, but
         with high probability be the algorithmic error.
-      The corresponding rules also has been documented well, so for most rules of this group the is nothing to comment
-        from us.
+      The corresponding rules also has been documented well, so for most rules of this group there is nothing to comment
+        from our side.
 
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF
@@ -212,8 +221,8 @@ block append SpecificContent
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF
@@ -224,7 +233,7 @@ block append SpecificContent
 
       p.Article-Paragraph.
         The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
-        However, this is #[+Keyword--YDID usually] a mistake, for a few reasons:
+        However, this is #[+Keyword--YDID usually] a #[+Keyword__Contrast--YDID mistake], for a few reasons:
 
       ul.Article-UnorderedList
 
@@ -232,7 +241,7 @@ block append SpecificContent
           If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
             #[+Term--YDID error] will be #[+Keyword--YDID lost] and #[+Keyword__Contrast--YDID won’t] cause the
             newly-constructed #[+ImportantEntity__Code--YDID Promise] to reject.
-          This could make it difficult to debug and handle some errors.
+          This could make it difficult to debug and handle some #[+Term--YDID errors].
 
         li.
           If a #[+ImportantEntity__Code--YDID Promise] #[+Term--YDID executor function] is using

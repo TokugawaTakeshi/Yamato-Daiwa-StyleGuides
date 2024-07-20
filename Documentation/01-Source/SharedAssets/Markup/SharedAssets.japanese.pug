@@ -2,7 +2,6 @@ include _HTML_PageMetadata.pug
 include _generateLocalizedRouting.pug
 include _generateSharedExternalLinks.pug
 
-include Localizations/Japanese/RoutingLocalization.japanese.pug
 include Localizations/Japanese/SharedExternalLinksLocalization.japanese.pug
 
 include ThirdPartyEmbeddableScripts/GoogleAnalyticsScript.pug
@@ -12,17 +11,7 @@ include ThirdPartyEmbeddableScripts/GoogleAnalyticsScript.pug
 
   RegularWebPageTemplate__YDF.metadata.locale = "ja";
 
-  const localizedRouting = generateLocalizedRouting(routingJapaneseLocalization);
-  let generatePageTableOfContents;
-
-
-include ../../Pages/Presets/ESLint/TableOfContents/ESLintPreset.toc.japanese.pug
-
-
--
-
-  generatePageTableOfContents = null;
-
+  const localizedRouting = routing.japanese;
   RoutingEmulator.initialize(localizedRouting);
 
   const sharedExternalLinks = generateSharedExternalLinks(sharedExternalLinksJapaneseLocalization);

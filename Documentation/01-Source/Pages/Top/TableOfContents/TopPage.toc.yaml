@@ -1,0 +1,9 @@
+presetsFeatures:
+
+  $heading: `presetsFeatures.$heading`
+  $anchor: PRESETS_FEATURES--SECTION
+
+psychologicalReference:
+
+  $heading: `psychologicalReference.$heading`
+  $anchor: PSYCHOLOGICAL_REFERENCE--SECTION

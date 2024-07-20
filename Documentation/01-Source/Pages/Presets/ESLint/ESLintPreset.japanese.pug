@@ -31,10 +31,10 @@ block append Metadata
       russian: "./ESLintPreset.russian.html",
     });
 
-    const pageTableOfContents = localizedRouting.presets.$children.ESLint.$sectioning;
+    const localizedSectioning = localizedRouting.presets.$children.ESLint.$sectioning;
 
 
-block append HeadScriptsLinks
+block append HeadScripts
 
   if __IS_PRODUCTION_BUILDING_MODE__
 
@@ -57,15 +57,15 @@ block append SpecificContent
     //- ━━━ TypeScript・JavaScript共通規則 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({
       level: 2,
-      text: pageTableOfContents.ECMAScriptCommonRules.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$anchor
     }).Article-Heading2
 
     //- ─── ECMAScriptコードの妥当性 ───────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
@@ -79,8 +79,8 @@ block append SpecificContent
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "規則の設定" })
@@ -116,8 +116,8 @@ block append SpecificContent
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "規則の設定" })
@@ -150,17 +150,15 @@ block append SpecificContent
         #[+ImportantEntity__Code--YDID this]と言う#[+Term--YDID コンテキスト変数]にアクセスしてみると、
         #[+ImportantEntity__Code--YDID TypeScript]#[+Term--YDID 言語]は#[+Term__Contrast--YDID エラー]
         #[+ImportantEntity__Code--YDID TS2377]に就いて通知する。
-      #[+ImportantEntity--YDID JavaScript]のみの話しなら、当#[+ImportantEntity--YDID ESLint]規則がなければ、此の間違いが発見出来るのは
-        #[+SecondaryEntity--YDID IntelliJ IDEA]の様に一流の#[+Term--YDID 結合開発環境]くらい。
-
-
       #[+ImportantEntity--YDID JavaScript]のみの話しなら、当#[+ImportantEntity--YDID ESLint]規則が無いと、此の間違いが発見出来るのは
         #[+SecondaryEntity--YDID IntelliJ IDEA]の様に一流の#[+Term--YDID 結合開発環境]ぐらい。
+
+
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
     }).Article-Heading4
 
     +CodeViewer--YDF({ title: "規則の設定" })
@@ -170,9 +168,9 @@ block append SpecificContent
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        #[+ImportantEntity__Code--YDID get]#[+Term--YDID 構文]は#[+Term--YDID オブジェクト]の#[+Term__Contrast--YDID プロパティ]を
-          #[+Term--YDID 関数]に結び付き、当#[+Term--YDID プロパティ]へのアクセスの際此の#[+Term--YDID 関数]が呼び出される。
-        上記の機能は#[+ImportantEntity--YDID ECMAScript 5]規格以降導入された。
+        #[+ImportantEntity__Code--YDID get]#[+Term--YDID 構文]と言う#[+ImportantEntity--YDID ECMAScript 5]規格に導入された機能
+          はは#[+Term--YDID オブジェクト]の#[+Term__Contrast--YDID プロパティ]を#[+Term--YDID 関数]に結び付き、当#[+Term--YDID プロパティ]
+          へのアクセスの際此の#[+Term--YDID 関数]が呼び出される。
         #[+Keyword--YDID 各]#[+Term--YDID ゲッター]が値を返す#[+Keyword--YDID 前提]。
 
       p.Article-Paragraph.
@@ -188,8 +186,13 @@ block append SpecificContent
         }).Article-Link ESLintの正式的説明書
 
     p.Article-Paragraph.
-      コードが#[+ImportantEntity--YDID TypeScript]で書かれた場合、コンパイラ（もっと確実的に言えば、トランスパイラ）は
-        #[+ImportantEntity--YDID TS2378]エラーに就いて通知する。
+      当規則の違反は#[+Term--YDID ゲッター]の#[+Keyword--YDID 概念]自体に逆らっているのだ。
+      概念に依ると、ゲッターは事前算出の上か、其の算出無しか、値を返しているメンバーである。
+      其れで、値を返さなない#[+Term--YDID ゲッター]のコードが意識的に書かれたとしたら、エンジニアはやっている事を理解していない様だ。
+
+    p.Article-Paragraph.
+      コードが#[+ImportantEntity--YDID TypeScript]で書かれた場合、#[+ImportantEntity--YDID TypeScript]の#[+Term--YDID 型確認]が
+        #[+ImportantEntity--YDID TS2378]エラーに就いて通知し、#[+Term--YDID ゲッター]が何かを返さなければいけないとはっきり伝えられる。
       #[+ImportantEntity--YDID JavaScript]で書かれた場合、#[+SecondaryEntity--YDID IntelliJ IDEA](バージョン
        #[+ImportantEntity--YDID 2024.1.1]で確認)の様に一流の#[+Term--YDID 結合開発県境]でも当間違いを発見しない事が有る。
 
@@ -197,28 +200,28 @@ block append SpecificContent
     //- ─── アルゴリズムエラー予防 ────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 3,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
     }).Article-Heading3
 
     p.Article-Paragraph.
-      前の群と違って、当群の違反は完全に妥当なコードに成っている事が多いが、アルゴリズム的なエラーを含める可能性も高い。
+      前の群と違って、当群の違反は完全に妥当なコードに成っている事が多いと共に、アルゴリズム的なエラーを含める可能性も高い。
       該当している規則にとって既に高品質な説明書が既に存在しているので、過半数の規則を和訳で済ませさてもらう。
 
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
-      text: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
-      HTML_ID: pageTableOfContents.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
     +Blockquote--YDF
 
       p.Article-Paragraph.
-        条件を満たす事が不可能（例えば正しくない方向へ変化しているカウンター）なら、#[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]
-          が無限に成る。
-        無限ループが意識的に作られる場合は有るが、其の時#[+ImportantEntity__Code--YDID while]ループが使われている事に成っている。
-        #[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]が無限に成っていれば、バグである可能性が高い。
+        条件を満たす事が不可能（例えば正しくない方向へ変化しているカウンターの為）なら、
+          #[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]が無限に成る。
+        無限ループが意識的に作られる場合は有るが、其の時#[+ImportantEntity__Code--YDID while]ループが一般的に使われている。
+        無限な#[+ImportantEntity__Code--YDID for]#[+Term--YDID ループ]なら、バグである可能性が高い。
 
       p.Article-Paragraph.
         A #[+ImportantEntity--YDID for] loop with a stop condition that can never be reached, such as one with a
@@ -235,3 +238,60 @@ block append SpecificContent
     +CodeViewer--YDF
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "for-direction": "error" }
+
+
+    //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        #[+Term--YDID プロミス]の#[+Term__Contrast--YDID 執行者]（#[+Term--YDID promise executor]）と呼ぶ
+          #[+Term__Contrast--YDID プロミス]の#[+Term--YDID 引数]は#[+Term--YDID 非同期関数]（明示的#[+Keyword--YDID 又は]暗黙的
+          に#[+Term--YDID プロミス]のを返している#[+Term--YDID 関数]）に成っていても、妥当なコードだ。
+        然し、下記の理由で、#[+Keyword--YDID 間違い]に成っている可能性が#[+Keyword--YDID 高い]。
+
+      ul.Article-UnorderedList
+
+        li.
+          #[+Term__Contrast--YDID 執行者]の役割として、#[+Term--YDID 非同期関数]は#[+Term__Contrast--YDID エラー]を投げてるなら、
+            此の#[+Term--YDID エラー]が#[+Keyword--YDID 失われ]、#[+Term--YDID エラー]処理可能な新規#[+Term--YDID プロミス]を作らない。
+          デバッグが難しく成り、特定の#[+Term--YDID エラー]の処理関連問題も発生する事がある。
+
+        li.
+          #[+Term--YDID プロミス]の#[+Term__Contrast--YDID 引数]は#[+ImportantEntity__Code--YDID await]#[+Term--YDID キーワード]
+            を利用しているなら、#[+Term--YDID プロミス]の#[+Term__Contrast--YDID コンストラクタ]
+            （#[+ImportantEntity__Code--YDID new Promise]）を利用する必要は無かったか、#[+Term--YDID プロミス]のネスティングを減らす事が
+            出来る兆し。
+
+      p.Article-Paragraph.
+        The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
+        However, this is #[+Keyword--YDID usually] a #[+Keyword__Contrast--YDID mistake], for a few reasons:
+
+      ul.Article-UnorderedList
+
+        li.
+          If an #[+Keyword--YDID async] #[+Term--YDID executor function] throws an #[+Term__Contrast--YDID error], the
+            #[+Term--YDID error] will be #[+Keyword--YDID lost] and #[+Keyword__Contrast--YDID won’t] cause the
+            newly-constructed #[+ImportantEntity__Code--YDID Promise] to reject.
+          This could make it difficult to debug and handle some #[+Term--YDID errors].
+
+        li.
+          If a #[+ImportantEntity__Code--YDID Promise] #[+Term--YDID executor function] is using
+            #[+ImportantEntity__Code--YDID await], this is #[+Keyword--YDID usually] a sign that it
+            is&nbsp;#[+Keyword--YDID not]&nbsp;actually necessary to use the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor], or the scope of the #[+ImportantEntity__Code--YDID new Promise]
+            #[+Term--YDID constructor] can be reduced.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
+        }).Article-Link ESLintの正式的説明書
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-async-promise-executor": "error" }

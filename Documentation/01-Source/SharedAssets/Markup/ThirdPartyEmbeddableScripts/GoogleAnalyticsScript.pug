@@ -1,3 +1,17 @@
 mixin GoogleAnalyticsScript
 
-  //-
+  script(
+    async
+    src="https://www.googletagmanager.com/gtag/js?id=G-HB5276PSH2"
+  )
+
+  script.
+
+    window.dataLayer = window.dataLayer || [];
+
+    function gtag() {
+      dataLayer.push(arguments);
+    }
+
+    gtag("js", new Date());
+    gtag("config", "G-HB5276PSH2");

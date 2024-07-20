@@ -1,0 +1,8 @@
+fileNameLocalizationExtensions: russian
+
+topPage:
+
+  $heading: Главная страница
+  $URI: @All/Top/TopPage.russian
+
+presets: { $heading: "Готовые настройки" }

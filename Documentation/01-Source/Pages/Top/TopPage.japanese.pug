@@ -14,7 +14,8 @@ block append Metadata
     RegularWebPageTemplate__YDF.configure({
       metadata: {
         title: buildHTML_PageTitle("ESLint"),
-        description: ""
+        description: "「Yamato Daiwa Styles Guides」と言うnpmパッケージは非常に厳しく、手抜きや自分の行動を理解していない事を許さない特性なので、" +
+          "高品質開発での利用に向いている。"
       },
       stylesSheetsURIs: [
         "$CommonStyles",
@@ -33,7 +34,7 @@ block append Metadata
     });
 
 
-block append HeadScriptsLinks
+block append HeadScripts
 
   if __IS_PRODUCTION_BUILDING_MODE__
 
@@ -56,14 +57,14 @@ block append SpecificContent
         span.TopPage-ImageAndTopHeadingGroup-Heading-SecondLine Style Guides
 
     p.TopPage-ShortDescription-Heading.
-      スタイルガイド
+      最大品質の開発専用ESLint・pug-lintの超厳しいプリセット
 
-    +AdmonitionBlock--YDF({
-      decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.warning,
-      SVG_Icon: true
-    }).TopPage-Disclaimer.
-      説明書（ウェブサイト）は現在開発中です。
-      高品質な資料の作製には開発よりも多くの時間を要しますが、新規機能の追加がライブラリに必要な為、そちらの作業を優先的に行っています。
-      何卒御了承下さい。
+    +SingleImageViewer--YDF({
+      imageURI: "@AssociatedWithPages/Top/Images/MainVisual",
+      imageAlternateText: "",
+      autoAspectRatioByYDA: true,
+      geometry: SingleImageViewer__YDF.GeometricVariations.minimalistic,
+      decoration: SingleImageViewer__YDF.DecorativeVariations.minimalistic
+    })
 
     +CompactTableOfContents--YDF_DK(localizedRouting).TopPage-TableOfContents

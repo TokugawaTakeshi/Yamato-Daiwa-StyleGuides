@@ -1,0 +1,8 @@
+fileNameLocalizationExtensions: english
+
+topPage:
+
+  $heading: Top Page
+  $URI: @All/index
+
+presets: { $heading: "Presets" }
