@@ -229,7 +229,7 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "for-direction": "error" }
 
@@ -255,7 +255,6 @@ block append SpecificContent
         }).Article-Link Официальная документация ESLint
 
 
-    //- TODO Сведение ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
@@ -263,7 +262,7 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
     }).Article-Heading4
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "no-async-promise-executor": "error" }
 
@@ -282,7 +281,7 @@ block append SpecificContent
             #[+Keyphrase--YDID в роли #[+Term--YDID исполнителя]] бросает #[+Term--YDID ошибку], эта
             #[+Term--YDID ошибка] будет #[+Keyword--YDID потеряна] и #[+Keyword__Contrast--YDID не]&nbsp;создаст
             нового #[+Term--YDID промиса], в котором #[+Term__Contrast--YDID ошибка] может быть перехвачена.
-          Это может создаст трудности с отладкой и обработкой некоторых #[+Term--YDID ошибок].
+          Это может создать трудности с отладкой и обработкой некоторых #[+Term--YDID ошибок].
 
         li.
           Если #[+Term--YDID параметр] #[+Term__Contrast--YDID промиса] использует #[+Term--YDID ключевое слово]
@@ -321,12 +320,16 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
     }).Article-Heading3
 
-    //- ─── no-await-in-loop ──────────────────────────────────────────────────────────────────────────────────
+    //- ─── no-await-in-loop ───────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
       text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
     }).Article-Heading4
+
+    +CodeViewer--YDF({ title: "Конфигурация правила" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-await-in-loop": "error" }
 
     +Blockquote--YDF
 
@@ -340,7 +343,7 @@ block append SpecificContent
         Обычно, код может быть отрефакторен таким образом, чтобы начать выполнение #[+Keyword--YDID всех]
           #[+Term--YDID промисов] #[+Keyword--YDID разом], а доступ к результатам получить через
           #[+ImportantEntity__Code--YDID Promise.all()].
-        В противном случае, новый шаг цикла не&nbsp;начнётся, пока текущей не&nbsp;завершиться.
+        В противном случае, новый шаг цикла не&nbsp;начнётся, пока текущий не&nbsp;завершиться.
 
       p.Article-Paragraph.
         Performing an operation on each element of an iterable is a common task.
@@ -358,10 +361,6 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-await-in-loop"
         }).Article-Link Официальная документация ESLint
 
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "no-await-in-loop": "error" }
-
     p.Article-Paragraph.
       Данное правило применимо #[+Keyphrase--YDID тогда и только тогда], когда процедуры, которые выполняются в
         #[+Term--YDID промисах], #[+Keyphrase--YDID независимы друг от друга].
@@ -374,16 +373,16 @@ block append SpecificContent
     p.Article-Paragraph.
       Кроме того, иногда выполнение большого количества #[+Term--YDID промисов] #[+Keyword--YDID разом] может вызывать
         проблемы.
-      Например, если каждый #[+Term--YDID промис] отправляет #[+Term--YDID HTTP-запрос], то сервер, на который этот
-        запрос отправляется, может расценить такие массовые запросы с одного #[+Term--YDID IP-адреса] как
+      Например, если каждый #[+Term--YDID промис] отправляет #[+Term--YDID HTTP-запрос], то сервер, на который эти
+        запросы отправляются, может расценить такую массовую отправку запросов с одного #[+Term--YDID IP-адреса] как
         #[+Term--YDID DoS-атаку] и отказать в дальнейшей обработке запросов.
-      Чтобы этого избежать, придётся либо отправлять запросы с большей периодичностью, либо отправлять меньше запросов
-        за раз, либо и то и другое.
+      Чтобы этого избежать, придётся либо отправлять меньше запросов за раз, либо отправлять запросы с большей
+        периодичностью, либо и то и другое.
 
     p.Article-Paragraph
       | Тем не&nbsp;менее, поскольку #[+Keyphrase--YDID по возможности] следует использовать #[+Term--YDID параллелизм],
       |   как и рекомендовано официальной документацией, то нарушая данное правило, #[+Keyword--YDID необходимо]
-      |   добавить комментарий, явно указывающий, почему #[+Term--YDID промисы] выполняться последовательно.
+      |   добавить комментарий, явно указывающий, почему #[+Term--YDID промисы] должны выполняться последовательно.
       | Вот, например, какой комментарий был добавлен во фреймворке
       |
       +Link--YDF({
@@ -392,7 +391,7 @@ block append SpecificContent
       |
       | при последовательном вызове #[+Term--YDID функций-посредников]:
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "Пример обоснованного невыполнения правила \"no-await-in-loop\"" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.TypeScript }).
 
         for (const middleware of this.middlewares) {

@@ -235,7 +235,7 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/for-direction"
         }).Article-Link ESLintの正式的説明書
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "for-direction": "error" }
 
@@ -292,6 +292,108 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
         }).Article-Link ESLintの正式的説明書
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "no-async-promise-executor": "error" }
+
+
+    //- ─── 其の他の規則 ─────────────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
+    }).Article-Heading3
+
+    //- ─── no-await-in-loop ───────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        ループの際、反復される要素を処理する事は普通。
+        然し、#[+Keyword--YDID 各]ステップ中#[+ImportantEntity__Code--YDID await]#[+Term--YDID キーボード]が使われるなら、
+          #[+Term--YDID プロミス]に提供される平行処理の利点が使われていない訳。
+
+      p.Article-Paragraph.
+        普通は#[+Term--YDID プロミス]を#[+Keyword--YDID 一括]に実行し、#[+ImportantEntity__Code--YDID Promise.all()]で結果に
+          アクセスする様にコードをリファクタリング出来る。
+        さもなくば、以前の反復が終わらない限り、新しいのは始まらない。
+
+      p.Article-Paragraph.
+        Performing an operation on each element of an iterable is a common task.
+        However, performing an #[+ImportantEntity__Code--YDID await] as part of #[+Keyword--YDID each] operation is an
+          indication that the program is not taking full advantage of the parallelization benefits of
+          #[+ImportantEntity__Code--YDID async]/#[+ImportantEntity__Code--YDID await].
+
+      p.Article-Paragraph.
+        Usually, the code should be refactored to create all the #[+Term--YDID promises] at #[+Keyword--YDID once],
+          then get access to the results using #[+ImportantEntity__Code--YDID Promise.all()].
+        Otherwise, each successive operation will not&nbsp;start until the previous one has completed.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-await-in-loop"
+        }).Article-Link ESLintの正式的説明書
+
+    +CodeViewer--YDF({ title: "規則の設定" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-await-in-loop": "error" }
+
+    p.Article-Paragraph.
+      当規則は各#[+Term--YDID プロミス]内処理の間に#[+Keyphrase--YDID 依存性が全く無い]場合に限って対象と成っている。
+      然し、依存性が無いとは#[+Keyword--YDID 限らない]。
+      例えば、#[+Term--YDID HTTPリクエスト]の処理の際、非同期の処理を実行している事が多い#[+Term--YDID ミドルウェア関数]が呼び出され、
+        #[+Keyword--YDID 各]#[+Term--YDID 関数]が以前の#[+Term--YDID 関数]の実行完了を#[+Keyword--YDID 待たなければいけない]。
+
+    p.Article-Paragraph.
+      尚且つ、多数の#[+Term--YDID プロミス]を同時に実行する事は問題を起こす事がある。
+      例えば、各#[+Term--YDID プロミス]が#[+Term__Contrast--YDID HTTPリクエスト]を送信するとしたら、宛先のサーバが#[+Term--YDID DoS攻撃]
+        と見做し、送信元の#[+Term--YDID IPアドレス]から其れ以降のリクエストを拒否する恐れがある。
+      予防するには、送信頻度を平須か、一括で送信されるリクエストを減らすか、其の両方の対策を取らざる得ない場合ある。
+
+    p.Article-Paragraph
+      | とは言え、一般的に可能な時、#[+Term--YDID 平行処理]を使う事は推薦なので、当規則が対象外と判断した先、理由を明確に説明するコメントを残さなければ
+      |   いけない。
+      | 例えば、
+      +Link--YDF({
+        unendorsedExternalURI: sharedExternalLinks.yamatoDaiwaBackend.npm
+      }).Article-Link Yamato Daiwa Backend
+      | フレームワークで、#[+Term--YDID ミドルウェア関数]の際、下記のコメントが残された。
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.TypeScript }).
+
+        for (const middleware of this.middlewares) {
+
+          let middlewareCompletionSignal: Middleware.CompletionSignal;
+
+          try {
+
+            /* eslint-disable-next-line no-await-in-loop --
+             * The middleware handlers must be executed sequentially.
+             * ミドルウェア関数は一個ずつ順番通り実行されなければいけない。 */
+            middlewareCompletionSignal = await middleware(normalizedRequest, response, this.configuration);
+
+          } catch (error: unknown) {
+
+            Logger.logError({
+              errorType: "MiddlewareExecutionError",
+              ...Server.localization.errors.middlewareExecutionFailed,
+              occurrenceLocation: "Server.requestMasterHandler(compoundParameter)",
+              caughtError: error
+            });
+
+            return response.submitWithError({ statusCode: ServerErrorsHTTP_StatusCodes.internalServerError });
+
+          }
+
+
+          if (middlewareCompletionSignal === Middleware.CompletionSignal.finishRequestHandling) {
+            return;
+          }
+
+        }
