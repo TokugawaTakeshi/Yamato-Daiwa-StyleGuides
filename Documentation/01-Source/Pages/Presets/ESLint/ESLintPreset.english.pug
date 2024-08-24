@@ -254,3 +254,104 @@ block append SpecificContent
         +Link--YDF({
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
         }).Article-Link Official ESLint documentation
+
+
+      //- ─── Other Rules ─────────────────────────────────────────────────────────────────────────────────────────────-
+    +Heading--YDF({
+      level: 3,
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
+    }).Article-Heading3
+
+    //- ─── no-await-in-loop ───────────────────────────────────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 4,
+      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
+    }).Article-Heading4
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        Performing an operation on each element of an iterable is a common task.
+        However, performing an #[+ImportantEntity__Code--YDID await] as part of #[+Keyword--YDID each] operation is an
+          indication that the program is not taking full advantage of the parallelization benefits of
+          #[+ImportantEntity__Code--YDID async]/#[+ImportantEntity__Code--YDID await].
+
+      p.Article-Paragraph.
+        Usually, the code should be refactored to create all the #[+Term--YDID promises] at #[+Keyword--YDID once],
+          then get access to the results using #[+ImportantEntity__Code--YDID Promise.all()].
+        Otherwise, each successive operation will not&nbsp;start until the previous one has completed.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-await-in-loop"
+        }).Article-Link Official ESLint documentation
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-await-in-loop": "error" }
+
+    p.Article-Paragraph.
+      This rule actual #[+Keyphrase--YDID if and only if] the procedures being executed in #[+Term--YDID promises]
+        are #[+Keyphrase--YDID independent on each other].
+      However, is is #[+Keyword--YDID not]&nbsp;always such as.
+      For example, when call the #[+Term--YDID middleware functions] handling the #[+Term--YDID HTTP request] which are
+        commonly executing asynchronous operations, #[+Keyword--YDID each] #[+Term--YDID middleware]
+        #[+Keyword--YDID must] be called #[+Keyword--YDID only] when the #[+Keyword--YDID previous] one will
+        done and transfer the control flow.
+
+    p.Article-Paragraph.
+      Besides, sometimes the simultaneous executing of the large number of #[+Term--YDID promises] could cause the
+        problems.
+      For example, if each #[+Term--YDID promise] submitting the #[+Term--YDID HTTP request], the server to which
+        these requests has been submitted could consider such mass submitting from same #[+Term--YDID IP address] as
+        #[+Term--YDID DoS attack] and deny the subsequent requests.
+      To avoid this, it is required to submit the request with smaller frequency, or submit less requests at once,
+        or both.
+
+    p.Article-Paragraph
+      | However, because the usage of the #[+Term--YDID parallelism] is #[+Keyword--YDID commonly] recommended,
+      |   violating this rule, the comment with clear explanation why this rule has been violated #[+Keyword--YDID must]
+      |   be left.
+      | For example, in
+      |
+      +Link--YDF({
+        unendorsedExternalURI: sharedExternalLinks.yamatoDaiwaBackend.npm
+      }).Article-Link Yamato Daiwa Backend
+      |
+      | framework, when sequentially invoke the #[+Term--YDID middleware functions], the following comment has been left:
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.TypeScript }).
+
+        for (const middleware of this.middlewares) {
+
+          let middlewareCompletionSignal: Middleware.CompletionSignal;
+
+          try {
+
+            /* eslint-disable-next-line no-await-in-loop --
+             * The middleware handlers must be executed sequentially.
+             * Посредники должны быть выполнены последовательно. */
+            middlewareCompletionSignal = await middleware(normalizedRequest, response, this.configuration);
+
+          } catch (error: unknown) {
+
+            Logger.logError({
+              errorType: "MiddlewareExecutionError",
+              ...Server.localization.errors.middlewareExecutionFailed,
+              occurrenceLocation: "Server.requestMasterHandler(compoundParameter)",
+              caughtError: error
+            });
+
+            return response.submitWithError({ statusCode: ServerErrorsHTTP_StatusCodes.internalServerError });
+
+          }
+
+
+          if (middlewareCompletionSignal === Middleware.CompletionSignal.finishRequestHandling) {
+            return;
+          }
+
+        }

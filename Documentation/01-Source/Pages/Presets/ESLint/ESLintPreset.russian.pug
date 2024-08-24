@@ -229,6 +229,10 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "for-direction": "error" }
+
     +Blockquote--YDF
 
       p.Article-Paragraph.
@@ -250,17 +254,18 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/for-direction"
         }).Article-Link Официальная документация ESLint
 
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "for-direction": "error" }
 
-
+    //- TODO Сведение ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
       level: 4,
       text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
     }).Article-Heading4
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-async-promise-executor": "error" }
 
     +Blockquote--YDF
 
@@ -283,7 +288,6 @@ block append SpecificContent
           Если #[+Term--YDID параметр] #[+Term__Contrast--YDID промиса] использует #[+Term--YDID ключевое слово]
             #[+ImportantEntity__Code--YDID await], то обычно это означает, что использовать #[+Term--YDID конструктор]
             #[+ImportantEntity__Code--YDID new Promise] незачем или можно уменьшить вложенность #[+Term--YDID промисов].
-
 
       p.Article-Paragraph.
         The #[+Term--YDID executor function] can also be an #[+Term--YDID async function].
@@ -309,10 +313,6 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-async-promise-executor"
         }).Article-Link Официальная документация ESLint
 
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "no-async-promise-executor": "error" }
-
 
     //- ─── Другие правила ─────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
@@ -332,7 +332,7 @@ block append SpecificContent
 
       p.Article-Paragraph.
         Выполнение каких-либо преобразований с итерируемым элементом на каждом шаге цикла является стандартным сценарием.
-        Однако, если на каждом шаге цикла используется #[+Term--YDID ключевое слово]
+        Однако, если на #[+Keyword--YDID каждом] шаге цикла используется #[+Term--YDID ключевое слово]
           #[+ImportantEntity__Code--YDID await], то преимущества #[+Term--YDID параллелизма], которые дают
           #[+Term--YDID промисы], не&nbsp;используются.
 
@@ -346,7 +346,7 @@ block append SpecificContent
         Performing an operation on each element of an iterable is a common task.
         However, performing an #[+ImportantEntity__Code--YDID await] as part of #[+Keyword--YDID each] operation is an
           indication that the program is not taking full advantage of the parallelization benefits of
-          #[+Keyword__Contrast--YDID async]/#[+ImportantEntity__Code--YDID await].
+          #[+ImportantEntity__Code--YDID async]/#[+ImportantEntity__Code--YDID await].
 
       p.Article-Paragraph.
         Usually, the code should be refactored to create all the #[+Term--YDID promises] at #[+Keyword--YDID once],
@@ -366,24 +366,66 @@ block append SpecificContent
       Данное правило применимо #[+Keyphrase--YDID тогда и только тогда], когда процедуры, которые выполняются в
         #[+Term--YDID промисах], #[+Keyphrase--YDID независимы друг от друга].
       Однако это #[+Keyphrase--YDID далеко #[+Keyword--YDID не]&nbsp;всегда] так.
-      Например, при выполнении #[+Term--YDID функций-посредников], обрабатывающих #[+Term--YDID HTTP-запрос],
+      Например, при вызове #[+Term--YDID функций-посредников], обрабатывающих #[+Term--YDID HTTP-запрос],
         которые зачастую выполняют асинхронные операции, #[+Keyword--YDID каждый] #[+Keyword__Contrast--YDID следующий]
         #[+Term--YDID посредник] #[+Keyword--YDID должен] дождаться, пока #[+Keyword--YDID предыдущий]
         отработает и передаст управление.
 
     p.Article-Paragraph.
       Кроме того, иногда выполнение большого количества #[+Term--YDID промисов] #[+Keyword--YDID разом] может вызывать
-        некоторые проблемы.
+        проблемы.
       Например, если каждый #[+Term--YDID промис] отправляет #[+Term--YDID HTTP-запрос], то сервер, на который этот
-        запрос отправляется, может расценить такие массовые запросы с одного IP-адреса как #[+Term--YDID DoS-атаку]
-        и отказать в обработке запросов.
+        запрос отправляется, может расценить такие массовые запросы с одного #[+Term--YDID IP-адреса] как
+        #[+Term--YDID DoS-атаку] и отказать в дальнейшей обработке запросов.
       Чтобы этого избежать, придётся либо отправлять запросы с большей периодичностью, либо отправлять меньше запросов
         за раз, либо и то и другое.
 
-    p.Article-Paragraph.
-      Тем не менее, поскольку #[+Keyphrase--YDID по возможности] следует использовать #[+Term--YDID параллелизм],
-        как и рекомендовано официальной документацией, то нарушая данное правило, необходимо добавить комментарий,
-        явно указывающий, почему промисы действительно выполняться последовательно.
+    p.Article-Paragraph
+      | Тем не&nbsp;менее, поскольку #[+Keyphrase--YDID по возможности] следует использовать #[+Term--YDID параллелизм],
+      |   как и рекомендовано официальной документацией, то нарушая данное правило, #[+Keyword--YDID необходимо]
+      |   добавить комментарий, явно указывающий, почему #[+Term--YDID промисы] выполняться последовательно.
+      | Вот, например, какой комментарий был добавлен во фреймворке
+      |
+      +Link--YDF({
+        unendorsedExternalURI: sharedExternalLinks.yamatoDaiwaBackend.npm
+      }).Article-Link Yamato Daiwa Backend
+      |
+      | при последовательном вызове #[+Term--YDID функций-посредников]:
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.TypeScript }).
+
+        for (const middleware of this.middlewares) {
+
+          let middlewareCompletionSignal: Middleware.CompletionSignal;
+
+          try {
+
+            /* eslint-disable-next-line no-await-in-loop --
+             * The middleware handlers must be executed sequentially.
+             * Посредники должны быть выполнены последовательно. */
+            middlewareCompletionSignal = await middleware(normalizedRequest, response, this.configuration);
+
+          } catch (error: unknown) {
+
+            Logger.logError({
+              errorType: "MiddlewareExecutionError",
+              ...Server.localization.errors.middlewareExecutionFailed,
+              occurrenceLocation: "Server.requestMasterHandler(compoundParameter)",
+              caughtError: error
+            });
+
+            return response.submitWithError({ statusCode: ServerErrorsHTTP_StatusCodes.internalServerError });
+
+          }
+
+
+          if (middlewareCompletionSignal === Middleware.CompletionSignal.finishRequestHandling) {
+            return;
+          }
+
+        }
+
     //-
       //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       +Heading--YDF({
