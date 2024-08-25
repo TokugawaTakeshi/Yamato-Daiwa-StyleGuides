@@ -2,7 +2,15 @@ fileNameLocalizationExtensions: russian
 
 topPage:
 
-  $heading: Главная страница
+  $heading: "Главная страница"
   $URI: @All/Top/TopPage.russian
 
-presets: { $heading: "Готовые настройки" }
+presets:
+
+  $heading: "Готовые настройки"
+
+  ESLint:
+
+    general:
+
+      $heading: "Общие для TypeScript и JavaScript правила"

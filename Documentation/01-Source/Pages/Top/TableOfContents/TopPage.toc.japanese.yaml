@@ -1,5 +1,7 @@
-presetsFeatures: { $heading: "プリセットの特性" }
+presetsFeatures:
+
+  $heading: "プリセットの特性"
 
 psychologicalReference:
 
-  $heading: "Psychological Reference"
+  $heading: "心理学的な参考"

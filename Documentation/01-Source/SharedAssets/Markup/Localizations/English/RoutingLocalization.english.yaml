@@ -2,7 +2,15 @@ fileNameLocalizationExtensions: english
 
 topPage:
 
-  $heading: Top Page
+  $heading: "Top Page"
   $URI: @All/index
 
-presets: { $heading: "Presets" }
+presets:
+
+  $heading: "Presets"
+
+  ESLint:
+
+    general:
+
+      $heading: "General Rules for Both TypeScript and JavaScript"

@@ -13,7 +13,7 @@ block append Metadata
 
     RegularWebPageTemplate__YDF.configure({
       metadata: {
-        title: buildHTML_PageTitle("ESLint"),
+        title: buildHTML_PageTitle("Yamato Daiwa Styles Guides"),
         description:
             "The npm package \"Yamato Daiwa Styles Guides\" suggests the ESlint preset featuring by strictness and " +
               "not forgiving the negligence and incomprehension of own actions thus suited for high quality development."
@@ -30,9 +30,11 @@ block append Metadata
     RoutingEmulator.setCurrentRoute("top");
 
     LanguageDropDownList__YDF_DK.setLinks({
-      japanese: "./Top/TopPage.japanese.html",
-      russian: "./Top/TopPage.russian.html"
+      japanese: routing.japanese.top.$URI,
+      russian: routing.russian.top.$URI
     });
+
+    const localizedSectioning = localizedRouting.top.$sectioning;
 
 
 block append HeadScripts
@@ -61,11 +63,11 @@ block append SpecificContent
       Extremely Strict Presets for ESLint and pug-lint for Best Quality Development
 
     +SingleImageViewer--YDF({
-      imageURI: "@AssociatedWithPages/Top/Images/MainVisual",
+      imageURI: "@AssociatedWithPages/Top/Images/TopPage-MainVisual.english",
       imageAlternateText: "",
       autoAspectRatioByYDA: true,
       geometry: SingleImageViewer__YDF.GeometricVariations.minimalistic,
       decoration: SingleImageViewer__YDF.DecorativeVariations.minimalistic
-    })
+    }).TopPage-MainVisual
 
     +CompactTableOfContents--YDF_DK(localizedRouting).TopPage-TableOfContents

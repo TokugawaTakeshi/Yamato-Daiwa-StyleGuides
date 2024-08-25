@@ -1,0 +1,115 @@
+codeValidity:
+
+  $heading: `codeValidity.$heading`
+  $anchor: CODE_VALIDITY--SECTION
+
+  $children:
+
+    array-callback-return:
+      $heading: array-callback-return
+      $anchor: array-callback-return
+
+    constructor-super:
+      $heading: constructor-super
+      $anchor: constructor-super
+
+    getter-return:
+      $heading: getter-return
+      $anchor: getter-return
+
+    no-class-assign:
+      $heading: no-class-assign
+      $anchor: no-class-assign
+
+    no-const-assign:
+      $heading: no-const-assign
+      $anchor: no-const-assign
+
+    no-constructor-return:
+      $heading: no-constructor-return
+      $anchor: no-constructor-return
+
+algorithmicErrorsPreventing:
+
+  $heading: `algorithmicErrorsPreventing.$heading`
+  $anchor: ALGORITHMIC_ERRORS_PREVENTING--SECTION
+
+  $children:
+
+    for-direction:
+      $heading: for-direction
+      $anchor: for-direction
+
+    no-async-promise-executor:
+      $heading: no-async-promise-executor
+      $anchor: no-async-promise-executor
+
+    no-compare-neg-zero:
+      $heading: no-compare-neg-zero
+      $anchor: no-compare-neg-zero
+
+    no-cond-assign:
+      $heading: no-cond-assign
+      $anchor: no-cond-assign
+
+    no-constant-condition:
+      $heading: no-constant-condition
+      $anchor: no-constant-condition
+
+    no-control-regex:
+      $heading: no-control-regex
+      $anchor: no-control-regex
+
+    no-dupe-args:
+      $heading: no-dupe-args
+      $anchor: no-dupe-args
+
+preventionOfConfusingAndStupidMistakes:
+
+  $heading: `preventionOfConfusingAndStupidMistakes.$heading`
+  $anchor: PREVENTION_OF_CONFUSING_AND_STUPID_MISTAKES--SECTION
+
+  $children:
+
+    no-constant-binary-expression:
+      $heading: no-constant-binary-expression
+      $anchor: no-constant-binary-expression
+
+mustNotBeInProductionCode:
+
+  $heading: `mustNotBeInProductionCode.$heading`
+  $anchor: MUST_NOT_BE_IN_PRODUCTION_CODE--SECTION
+
+  $children:
+
+    no-debugger:
+      $heading: no-debugger
+      $anchor: no-debugger
+
+other:
+
+  $heading: `other.$heading`
+  $anchor: ECMA_SCRIPT_COMMON_RULES-OTHER--SECTION
+
+  $children:
+
+    no-await-in-loop:
+      $heading: no-await-in-loop
+      $anchor: no-await-in-loop
+#      typeScriptRules:
+#
+#        $heading: typeScriptRules.$heading
+#        $anchor: "TYPE_SCRIPT_RULES--SECTION"
+#
+#        $children:
+#
+#          typeSafety:
+#
+#            $heading: typeScriptRules.typeSafety.$heading
+#            $anchor: "TYPE_SAFETY--SECTION"
+#
+#            $children:
+#
+#              "consistent-type-assertions":
+#                $heading: "@typescript-eslint/consistent-type-assertions"
+#                $anchor: "typescript-eslint--consistent-type-assertions"

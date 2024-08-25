@@ -1,10 +1,10 @@
-extends ../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
+extends ../../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
 
 
 block append Requirements
 
-  include ../../../SharedAssets/Markup/SharedAssets.russian.pug
-  include ../../../SharedComponents/SharedComponents.russian.pug
+  include ../../../../SharedAssets/Markup/SharedAssets.russian.pug
+  include ../../../../SharedComponents/SharedComponents.russian.pug
 
 
 block append Metadata
@@ -24,14 +24,17 @@ block append Metadata
       ]
     });
 
-    RoutingEmulator.setCurrentRoute("presets.ESLint");
+    RoutingEmulator.setCurrentRoute("presets.ESLint.general");
 
     LanguageDropDownList__YDF_DK.setLinks({
-      english: "./ESLintPreset.english.html",
-      japanese: "./ESLintPreset.japanese.html",
+      english: routing.english.presets.$children.ESLint.$children.general.$URI,
+      japanese: routing.japanese.presets.$children.ESLint.$children.general.$URI
     });
 
-    const localizedSectioning = localizedRouting.presets.$children.ESLint.$sectioning;
+    const {
+      $sectioning: localizedSectioning,
+      $heading: topHeading
+    } = routing.russian.presets.$children.ESLint.$children.general;
 
 
 block append HeadScripts
@@ -45,8 +48,8 @@ block append SpecificContent
 
   article
 
-    //- ━━━ ESLint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$heading }).Article-Heading1
+    //- ━━━ Общие для TypeScript и JavaScript правила ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    h1.Article-Heading1= topHeading
 
     +AdmonitionBlock--YDF({
       SVG_Icon: true,
@@ -54,19 +57,13 @@ block append SpecificContent
       decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.guidance
     }) Перевод цитат выполнен с улучшением стилистики и добавлением уточнений, а потому не является дословным.
 
-    //- ━━━ Общие правила для TypeScript и JavaScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({
-      level: 2,
-      text: localizedSectioning.ECMAScriptCommonRules.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$anchor
-    }).Article-Heading2
 
     //- ─── Валидность ECMAScript-кода ─────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.codeValidity.$heading,
+      HTML_ID: localizedSectioning.codeValidity.$anchor
+    }).Article-Heading2
 
     p.Article-Paragraph.
       Стандарт #[+ImportantEntity--YDID ECMA-Script] является довольно либеральным, что позволяет писать бессмысленный
@@ -78,10 +75,10 @@ block append SpecificContent
 
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["array-callback-return"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -120,10 +117,10 @@ block append SpecificContent
 
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["constructor-super"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -162,10 +159,10 @@ block append SpecificContent
 
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["getter-return"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -208,13 +205,50 @@ block append SpecificContent
         разработки, как #[+ImportantEntity--YDID IntelliJ IDEA] ни о чём не оповестят (проверено на версии
         #[+SecondaryEntity--YDID 2024.1.1]).
 
+    //- TODO Ожидает документирования ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //-
+      //- ─── no-class-assign ────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.codeValidity.$children["no-class-assign"].$heading,
+        HTML_ID: localizedSectioning.codeValidity.$children["no-class-assign"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-class-assign": "error" }
+
+
+      //- ─── no-const-assign ────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.codeValidity.$children["no-const-assign"].$heading,
+        HTML_ID: localizedSectioning.codeValidity.$children["no-const-assign"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-const-assign": "error" }
+
+
+      //- ─── no-constructor-return ──────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.codeValidity.$children["no-constructor-return"].$heading,
+        HTML_ID: localizedSectioning.codeValidity.$children["no-constructor-return"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-constructor-return": "error" }
+
 
     //- ─── Предотвращение алгоритмических ошибок ──────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.algorithmicErrorsPreventing.$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$anchor
+    }).Article-Heading2
 
     p.Article-Paragraph.
       В отличие от предыдущей группы правил, нарушения данной группы хотя и могут представлять собой валидный код,
@@ -224,10 +258,10 @@ block append SpecificContent
 
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -257,10 +291,10 @@ block append SpecificContent
 
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.algorithmicErrorsPreventing.$children["no-async-promise-executor"].$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-async-promise-executor"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -313,19 +347,117 @@ block append SpecificContent
         }).Article-Link Официальная документация ESLint
 
 
+    //- TODO Ожидает документирования ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //-
+      //- ─── no-compare-neg-zero ────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-compare-neg-zero"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-compare-neg-zero"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-compare-neg-zero": "error" }
+
+
+      //- ─── no-cond-assign ─────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-cond-assign"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-cond-assign"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-cond-assign": "error" }
+
+
+      //- ─── no-constant-condition ──────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-constant-condition"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-constant-condition"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-constant-condition": "error" }
+
+
+      //- ─── no-control-regex ───────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-control-regex"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-control-regex"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-control-regex": "error" }
+
+
+      //- ─── no-dupe-args ───────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-dupe-args"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-dupe-args"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-dupe-args": "error" }
+
+
+    //- TODO Ожидает документирования ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    //-
+      //- ─── Предотвращение запутывания и глупых ошибок ─────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 2,
+        text: localizedSectioning.preventionOfConfusingAndStupidMistakes.$heading,
+        HTML_ID: localizedSectioning.preventionOfConfusingAndStupidMistakes.$anchor
+      }).Article-Heading2
+
+      //- ─── no-constant-binary-expression ──────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.other.$children["no-constant-binary-expression"].$heading,
+        HTML_ID: localizedSectioning.other.$children["no-constant-binary-expression"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-constant-binary-expression": "error" }
+
+    //-
+      //- ─── Не должно быть в чистовом коде ─────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 2,
+        text: localizedSectioning.mustNotBeInProductionCode.$children.other.$heading,
+        HTML_ID: localizedSectioning.mustNotBeInProductionCode.$children.other.$anchor
+      }).Article-Heading2
+
+      //- ─── no-debugger ────────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.mustNotBeInProductionCode.$children.other.$children["no-debugger"].$heading,
+        HTML_ID: localizedSectioning.mustNotBeInProductionCode.$children.other.$children["no-debugger"].$anchor
+      }).Article-Heading3
+
+
     //- ─── Другие правила ─────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.other.$heading,
+      HTML_ID: localizedSectioning.other.$anchor
+    }).Article-Heading2
 
     //- ─── no-await-in-loop ───────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: localizedSectioning.other.$children["no-await-in-loop"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "Конфигурация правила" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -435,17 +567,17 @@ block append SpecificContent
 
       //- ─── Безопасность типизации ─────────────────────────────────────────────────────────────────────────────────────
       +Heading--YDF({
-        level: 3,
+        level: 2,
         text: localizedSectioning.typeScriptRules.$children.typeSafety.$heading,
         HTML_ID: localizedSectioning.typeScriptRules.$children.typeSafety.$anchor
-      }).Article-Heading3
+      }).Article-Heading2
 
       //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
       +Heading--YDF({
-        level: 4,
+        level: 3,
         text: localizedSectioning.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$heading,
         HTML_ID: localizedSectioning.typeScriptRules.$children.typeSafety.$children["consistent-type-assertions"].$anchor
-      }).Article-Heading4
+      }).Article-Heading3
 
       +Blockquote--YDF
 

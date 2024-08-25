@@ -1,4 +1,6 @@
-presetsFeatures: { $heading: "Особенности пресетов" }
+presetsFeatures:
+
+  $heading: "Особенности пресетов"
 
 psychologicalReference:
 

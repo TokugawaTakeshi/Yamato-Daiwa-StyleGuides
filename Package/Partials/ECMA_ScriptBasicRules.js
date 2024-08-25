@@ -1,6 +1,6 @@
 module.exports = {
 
-  /* --- ECMAScript code validity ----------------------------------------------------------------------------------- */
+  /* ━━━ ECMAScript Code Validity ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   "array-callback-return": "error",
   "constructor-super": "error",
   "getter-return": "error",
@@ -19,7 +19,7 @@ module.exports = {
   "no-delete-var": "error",
 
 
-  /* --- Algorithmic errors preventing ------------------------------------------------------------------------------ */
+  /* ━━━ Algorithmic Errors Preventing ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   "for-direction": "error",
   "no-async-promise-executor": "error",
   "no-compare-neg-zero": "error",
@@ -66,17 +66,17 @@ module.exports = {
   "no-shadow-restricted-names": "error",
   "operator-assignment": [ "error", "never" ],
   "prefer-object-has-own": [ "error" ],
-  "radix": "error",
+  radix: "error",
   "require-unicode-regexp": "error",
-  "yoda": "error",
+  yoda: "error",
 
 
-  /* --- Must not be in production building ------------------------------------------------------------------------- */
-  "no-debugger": "error",
-  "no-console": "error",
+  /* ━━━ Must not be in Production Code ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  "no-debugger": "warn",
+  "no-console": "warn",
 
 
-  /* --- Prevention of the confusing / Stupid errors ---------------------------------------------------------------- */
+  /* ━━━ Prevention of the Confusing & Stupid Mistakes ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   "no-constant-binary-expression": "error",
   "no-self-assign": "error",
   "no-self-compare": "error",
@@ -124,7 +124,8 @@ module.exports = {
   "symbol-description": "error",
 
 
-  /* --- Elimination of useless code -------------------------------------------------------------------------------- */
+  /* ━━━ Elimination of Useless Code ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  "no-useless-assignment": "error",
   "no-useless-backreference": "error",
   "arrow-body-style": [ "warn", "as-needed" ],
   "no-else-return": "error",
@@ -152,14 +153,14 @@ module.exports = {
     "warn",
     "all",
     {
-      "nestedBinaryExpressions": false,
-      "enforceForArrowConditionals": false
+      nestedBinaryExpressions: false,
+      enforceForArrowConditionals: false
     }
   ],
 
 
-  /* --- Unification of equivalent writings ------------------------------------------------------------------------- */
-  "curly": "error",
+  /* ━━━ Unification of Equivalent Writings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  curly: "error",
   "dot-notation": "warn",
   "one-var": [ "error", "never" ],
   "@stylistic/one-var-declaration-per-line": [ "error", "initializations" ],
@@ -169,37 +170,50 @@ module.exports = {
   "@stylistic/array-bracket-spacing": [ "warn", "always" ],
   "@stylistic/array-element-newline": [ "warn", "consistent" ],
   "@stylistic/arrow-parens": [ "warn", "always" ],
-  "@stylistic/arrow-spacing": [ "warn", { "before": true, "after": true } ],
+  "@stylistic/arrow-spacing": [ "warn", { before: true, after: true } ],
   "@stylistic/block-spacing": [ "warn", "always" ],
   "@stylistic/brace-style": [ "warn", "1tbs", { allowSingleLine: true } ],
   "@stylistic/comma-dangle": [ "warn", "never" ],
-  "@stylistic/comma-spacing": [ "warn", { "before": false, "after": true } ],
-  "@stylistic/comma-style": [　"error",　"last"　],
-  "@stylistic/computed-property-spacing": [　"warn",　"never"　],
+  "@stylistic/comma-spacing": [ "warn", { before: false, after: true } ],
+  "@stylistic/comma-style": [ "error", "last" ],
+  "@stylistic/computed-property-spacing": [ "warn", "never" ],
   "@stylistic/dot-location": [ "warn", "object" ],
   "@stylistic/function-call-argument-newline": [ "warn", "consistent" ],
   "@stylistic/function-call-spacing": "warn",
   "@stylistic/function-paren-newline": [ "warn", "consistent" ],
-  "@stylistic/generator-star-spacing": [ "warn", { "before": true, "after": false } ],
+  "@stylistic/generator-star-spacing": [ "warn", { before: true, after: false } ],
   "@stylistic/jsx-quotes": [ "error", "prefer-double" ],
   "@stylistic/key-spacing": [
     "warn",
     {
-      "beforeColon": false,
-      "afterColon": true,
-      "mode": "strict"
+      beforeColon: false,
+      afterColon: true,
+      mode: "strict"
     }
   ],
   "@stylistic/keyword-spacing": [
     "warn",
     {
-      "before": true,
-      "after": true
+      before: true,
+      after: true
     }
   ],
 
   "logical-assignment-operators": [ "warn", "never" ],
   "@stylistic/max-statements-per-line": [ "warn", { max: 2 } ],
+  "@stylistic/member-delimiter-style": [
+    "warn",
+    {
+      multiline: {
+        delimiter: "semi",
+        requireLast: true
+      },
+      singleline: {
+        delimiter: "semi",
+        requireLast: true
+      }
+    }
+  ],
   "@stylistic/new-parens": "error",
   "@stylistic/newline-per-chained-call": [ "warn", { ignoreChainWithDepth: 2 } ],
   "@stylistic/no-floating-decimal": "error",
@@ -211,10 +225,10 @@ module.exports = {
   "@stylistic/quotes": [ "error", "double", { avoidEscape: true } ],
   "@stylistic/rest-spread-spacing": [ "warn", "never" ],
   "@stylistic/semi": "error",
-  "@stylistic/semi-spacing": [ "warn", { "before": false, "after": true } ],
+  "@stylistic/semi-spacing": [ "warn", { before: false, after: true } ],
   "@stylistic/semi-style": [ "warn", "last" ],
   "@stylistic/space-before-blocks": "warn",
-  "@stylistic/space-before-function-paren": [ "warn", { "anonymous": "always", "named": "never", "asyncArrow": "always" } ],
+  "@stylistic/space-before-function-paren": [ "warn", { anonymous: "always", named: "never", asyncArrow: "always" } ],
   "@stylistic/space-in-parens": [ "warn", "never" ],
   "@stylistic/space-infix-ops": "warn",
   "@stylistic/space-unary-ops": "warn",
@@ -226,11 +240,8 @@ module.exports = {
   "@stylistic/yield-star-spacing": "warn",
 
 
-  /* --- Neatness --------------------------------------------------------------------------------------------------- */
-  "@stylistic/lines-around-comment": [
-    "warn",
-    { "beforeBlockComment": true }
-  ],
+  /* ━━━ Neatness ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  "@stylistic/lines-around-comment": [ "warn", { beforeBlockComment: true } ],
 
   "@stylistic/lines-between-class-members": [
     "warn",
@@ -261,6 +272,7 @@ module.exports = {
   "capitalized-comments": "warn",
   "grouped-accessor-pairs": [ "warn", "getBeforeSet" ],
   "id-denylist": [
+    "error",
     "args",
     "argv",
     "brsr",
@@ -272,9 +284,11 @@ module.exports = {
   "id-length": [
     "error",
     {
+
       min: 4,
       properties: "never",
-      /* Case is matters */
+
+      /* [ API ] Case is matters */
       exceptions: [
         "add",
         "id",
@@ -285,6 +299,7 @@ module.exports = {
         "Vue",
         "vue"
       ]
+
     }
   ],
   "max-classes-per-file": "error",
@@ -316,7 +331,7 @@ module.exports = {
   "no-nested-ternary": "error",
   "no-warning-comments": "warn",
   "prefer-named-capture-group": "error",
-  "@stylistic/spaced-comment": [ "warn", "always", { "block": { "markers": [ "!" ], "balanced": true } } ],
+  "@stylistic/spaced-comment": [ "warn", "always", { block: { markers: [ "!" ], balanced: true } } ],
   "@stylistic/no-mixed-spaces-and-tabs": "warn",
   "@stylistic/no-multi-spaces": "warn",
   "@stylistic/no-multiple-empty-lines": [
@@ -330,8 +345,8 @@ module.exports = {
   "@stylistic/object-curly-newline": [ "warn", { consistent: true } ],
 
 
-  /* --- Preventing of deprecated or not recommended functionality -------------------------------------------------- */
-  "eqeqeq": [ "error", "always" ],
+  /* ━━━ Preventing of Deprecated or not Recommended Functionality ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  eqeqeq: [ "error", "always" ],
   "no-alert": "error",
   "no-caller": "error",
   "no-eq-null": "error",
@@ -347,16 +362,14 @@ module.exports = {
   "no-script-url": "error",
   "no-var": "error",
   "no-with": "error",
-  "strict": "error",
+  strict: "error",
 
 
-  /* --- Other ------------------------------------------------------------------------------------------------------ */
+  /* ━━━ Other ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   "no-await-in-loop": "error",
   "prefer-arrow-callback": "warn",
   "prefer-const": "error",
-  "@stylistic/eol-last": [　"warn"　],
+  "@stylistic/eol-last": [ "warn" ],
   "unicode-bom": "error"
 
-
-  /* --- Experimental ----------------------------------------------------------------------------------------------- */
-}
+};

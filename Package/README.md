@@ -1,6 +1,6 @@
 # Yamato Daiwa Style Guides
 
-![Main Visual of "@yamato-daiwa/style_guides", the npm package](https://repository-images.githubusercontent.com/427835358/6ca6544e-ae7a-4c3b-a3bd-14e5ba160411)
+![Main Visual of "@yamato-daiwa/style_guides", the npm package](https://repository-images.githubusercontent.com/427835358/83fb7417-fd53-4d0d-908d-eb38133e1f9a)
 
 
 The strict style guides for the high quality development with TypeScript and Pug.

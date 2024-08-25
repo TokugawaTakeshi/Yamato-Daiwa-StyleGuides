@@ -13,9 +13,10 @@ block append Metadata
 
     RegularWebPageTemplate__YDF.configure({
       metadata: {
-        title: buildHTML_PageTitle("ESLint"),
-        description: "「Yamato Daiwa Styles Guides」と言うnpmパッケージは非常に厳しく、手抜きや自分の行動を理解していない事を許さない特性なので、" +
-          "高品質開発での利用に向いている。"
+        title: buildHTML_PageTitle("Yamato Daiwa Styles Guides"),
+        description:
+          "「Yamato Daiwa Styles Guides」と言うnpmパッケージは非常に厳しく、手抜きや自分の行動を理解していない事を許さない特性なので、" +
+            "高品質開発での利用に向いている。"
       },
       stylesSheetsURIs: [
         "$CommonStyles",
@@ -29,9 +30,11 @@ block append Metadata
     RoutingEmulator.setCurrentRoute("top");
 
     LanguageDropDownList__YDF_DK.setLinks({
-      english: "./../index.html",
-      russian: "./TopPage.russian.html"
+      english: routing.english.top.$URI,
+      russian: routing.russian.top.$URI
     });
+
+    const localizedSectioning = localizedRouting.top.$sectioning;
 
 
 block append HeadScripts
@@ -60,11 +63,11 @@ block append SpecificContent
       最大品質の開発専用ESLint・pug-lintの超厳しいプリセット
 
     +SingleImageViewer--YDF({
-      imageURI: "@AssociatedWithPages/Top/Images/MainVisual",
+      imageURI: "@AssociatedWithPages/Top/Images/TopPage-MainVisual.japanese",
       imageAlternateText: "",
       autoAspectRatioByYDA: true,
       geometry: SingleImageViewer__YDF.GeometricVariations.minimalistic,
       decoration: SingleImageViewer__YDF.DecorativeVariations.minimalistic
-    })
+    }).TopPage-MainVisual
 
     +CompactTableOfContents--YDF_DK(localizedRouting).TopPage-TableOfContents

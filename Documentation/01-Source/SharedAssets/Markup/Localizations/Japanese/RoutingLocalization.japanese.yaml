@@ -2,7 +2,15 @@ fileNameLocalizationExtensions: japanese
 
 topPage:
 
-  $heading: トップ
+  $heading: "トップ"
   $URI: @All/Top/TopPage.japanese
 
-presets: { $heading: "プリセット" }
+presets:
+
+  $heading: "プリセット"
+
+  ESLint:
+
+    general:
+
+      $heading: "TypeScript・JavaScript共通規則"

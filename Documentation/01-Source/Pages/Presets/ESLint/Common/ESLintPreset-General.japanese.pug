@@ -1,10 +1,10 @@
-extends ../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
+extends ../../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
 
 
 block append Requirements
 
-  include ../../../SharedAssets/Markup/SharedAssets.japanese.pug
-  include ../../../SharedComponents/SharedComponents.japanese.pug
+  include ../../../../SharedAssets/Markup/SharedAssets.japanese.pug
+  include ../../../../SharedComponents/SharedComponents.japanese.pug
 
 
 block append Metadata
@@ -24,14 +24,17 @@ block append Metadata
       ]
     });
 
-    RoutingEmulator.setCurrentRoute("presets.ESLint");
+    RoutingEmulator.setCurrentRoute("presets.ESLint.general");
 
     LanguageDropDownList__YDF_DK.setLinks({
-      english: "./ESLintPreset.english.html",
-      russian: "./ESLintPreset.russian.html",
+      english: routing.english.presets.$children.ESLint.$children.general.$URI,
+      russian: routing.russian.presets.$children.ESLint.$children.general.$URI
     });
 
-    const localizedSectioning = localizedRouting.presets.$children.ESLint.$sectioning;
+    const {
+      $sectioning: localizedSectioning,
+      $heading: topHeading
+    } = routing.japanese.presets.$children.ESLint.$children.general;
 
 
 block append HeadScripts
@@ -45,8 +48,8 @@ block append SpecificContent
 
   article
 
-    //- ━━━ ESLint ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({ level: 1, text: localizedRouting.presets.$children.ESLint.$heading }).Article-Heading1
+    //- ━━━ TypeScript・JavaScript共通規則 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    h1.Article-Heading1= topHeading
 
     +AdmonitionBlock--YDF({
       SVG_Icon: true,
@@ -54,19 +57,13 @@ block append SpecificContent
       decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.guidance
     }) 引用の和訳は直訳には#[+Keyword--YDID 成っていなく]、表現改善や明徴が追加された事が有る。
 
-    //- ━━━ TypeScript・JavaScript共通規則 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-    +Heading--YDF({
-      level: 2,
-      text: localizedSectioning.ECMAScriptCommonRules.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$anchor
-    }).Article-Heading2
 
     //- ─── ECMAScriptコードの妥当性 ───────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.codeValidity.$heading,
+      HTML_ID: localizedSectioning.codeValidity.$anchor
+    }).Article-Heading2
 
     p.Article-Paragraph.
       #[+ImportantEntity--YDID ECMA-Script]規格が可成り自由主義らしいので、意味の無いコードを書いても、
@@ -78,10 +75,10 @@ block append SpecificContent
 
     //- ─── array-callback-return ──────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["array-callback-return"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["array-callback-return"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["array-callback-return"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -115,10 +112,10 @@ block append SpecificContent
 
     //- ─── constructor-super ──────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["constructor-super"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["constructor-super"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["constructor-super"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -156,10 +153,10 @@ block append SpecificContent
 
     //- ─── getter-return ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["getter-return"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.codeValidity.$children["getter-return"].$heading,
+      HTML_ID: localizedSectioning.codeValidity.$children["getter-return"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
@@ -199,10 +196,10 @@ block append SpecificContent
 
     //- ─── アルゴリズムエラー予防 ────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.algorithmicErrorsPreventing.$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$anchor
+    }).Article-Heading2
 
     p.Article-Paragraph.
       前の群と違って、当群の違反は完全に妥当なコードに成っている事が多いと共に、アルゴリズム的なエラーを含める可能性も高い。
@@ -210,10 +207,10 @@ block append SpecificContent
 
     //- ─── for-direction ──────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.algorithmicErrorsPreventing.$children["for-direction"].$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["for-direction"].$anchor
+    }).Article-Heading3
 
     +Blockquote--YDF
 
@@ -242,10 +239,10 @@ block append SpecificContent
 
     //- ─── no-async-promise-executor ──────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.algorithmicErrorsPreventing.$children["no-async-promise-executor"].$heading,
+      HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-async-promise-executor"].$anchor
+    }).Article-Heading3
 
     +Blockquote--YDF
 
@@ -299,17 +296,17 @@ block append SpecificContent
 
     //- ─── 其の他の規則 ─────────────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 3,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$anchor
-    }).Article-Heading3
+      level: 2,
+      text: localizedSectioning.other.$heading,
+      HTML_ID: localizedSectioning.other.$anchor
+    }).Article-Heading2
 
     //- ─── no-await-in-loop ───────────────────────────────────────────────────────────────────────────────────────────
     +Heading--YDF({
-      level: 4,
-      text: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$heading,
-      HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
-    }).Article-Heading4
+      level: 3,
+      text: localizedSectioning.other.$children["no-await-in-loop"].$heading,
+      HTML_ID: localizedSectioning.other.$children["no-await-in-loop"].$anchor
+    }).Article-Heading3
 
     +CodeViewer--YDF({ title: "規則の設定" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).

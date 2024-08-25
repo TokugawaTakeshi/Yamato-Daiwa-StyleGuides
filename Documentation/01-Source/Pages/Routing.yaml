@@ -18,10 +18,17 @@ presets:
     ESLint:
 
       $heading: ESLint
-      $URI: `@All/Presets/ESLint/ESLintPreset.${ fileNameLocalizationExtensions }`
-      $sectioning:
-        $specificationFileRelativePath: 01-Source/Pages/Presets/ESLint/TableOfContents/ESLintPreset.toc.yaml
-        $localizations:
-          english: 01-Source/Pages/Presets/ESLint/TableOfContents/ESLintPreset.toc.english.yaml
-          japanese: 01-Source/Pages/Presets/ESLint/TableOfContents/ESLintPreset.toc.japanese.yaml
-          russian: 01-Source/Pages/Presets/ESLint/TableOfContents/ESLintPreset.toc.russian.yaml
+
+      $children:
+
+        general:
+
+          $heading: `presets.ESLint.general.$heading`
+          $URI: `@All/Presets/ESLint/Common/ESLintPreset-General.${ fileNameLocalizationExtensions }`
+
+          $sectioning:
+            $specificationFileRelativePath: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.yaml
+            $localizations:
+              english: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.english.yaml
+              japanese: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.japanese.yaml
+              russian: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.russian.yaml

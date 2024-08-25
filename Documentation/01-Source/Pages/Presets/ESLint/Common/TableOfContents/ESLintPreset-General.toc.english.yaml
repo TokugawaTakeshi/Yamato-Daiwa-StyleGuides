@@ -1,0 +1,30 @@
+$heading: "Common Rules for TypeScript and JavaScript"
+
+codeValidity:
+
+  $heading: "ECMAScript Code Validity"
+
+algorithmicErrorsPreventing:
+
+  $heading: "Algorithmic Errors Preventing"
+
+preventionOfConfusingAndStupidMistakes:
+
+  $heading: "Prevention of the Confusing and Stupid Mistakes"
+
+mustNotBeInProductionCode:
+
+  $heading: "Must not be in Production-ready Code"
+
+other:
+
+  $heading: "Other Rules"
+
+
+#typeScriptRules:
+#
+#  $heading: "TypeScript Rules"
+#
+#  typeSafety:
+#
+#    $heading: "Typing Safety"
