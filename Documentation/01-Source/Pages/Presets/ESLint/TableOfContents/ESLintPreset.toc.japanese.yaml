@@ -4,7 +4,7 @@ ECMAScriptCommonRules:
 
   codeValidity: { $heading: "ECMAScriptコードの妥当性" }
   algorithmicErrorsPreventing: { $heading: "アルゴリズムエラー予防" }
-  other: { $heading: "其の他" }
+  other: { $heading: "其の他の規則" }
 
 
 typeScriptRules:

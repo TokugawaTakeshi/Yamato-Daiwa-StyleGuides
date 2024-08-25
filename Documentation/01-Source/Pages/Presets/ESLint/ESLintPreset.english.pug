@@ -199,7 +199,7 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.algorithmicErrorsPreventing.$children["for-direction"].$anchor
     }).Article-Heading4
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "Rule Configuration" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "for-direction": "error" }
 
@@ -225,7 +225,7 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.codeValidity.$children["no-async-promise-executor"].$anchor
     }).Article-Heading4
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "Rule Configuration" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
         { "no-async-promise-executor": "error" }
 
@@ -270,6 +270,10 @@ block append SpecificContent
       HTML_ID: localizedSectioning.ECMAScriptCommonRules.$children.other.$children["no-await-in-loop"].$anchor
     }).Article-Heading4
 
+    +CodeViewer--YDF({ title: "Rule Configuration" })
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "no-await-in-loop": "error" }
+
     +Blockquote--YDF
 
       p.Article-Paragraph.
@@ -288,10 +292,6 @@ block append SpecificContent
           unendorsedExternalURI: "https://eslint.org/docs/latest/rules/no-await-in-loop"
         }).Article-Link Official ESLint documentation
 
-    +CodeViewer--YDF
-      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
-        { "no-await-in-loop": "error" }
-
     p.Article-Paragraph.
       This rule actual #[+Keyphrase--YDID if and only if] the procedures being executed in #[+Term--YDID promises]
         are #[+Keyphrase--YDID independent on each other].
@@ -307,13 +307,13 @@ block append SpecificContent
       For example, if each #[+Term--YDID promise] submitting the #[+Term--YDID HTTP request], the server to which
         these requests has been submitted could consider such mass submitting from same #[+Term--YDID IP address] as
         #[+Term--YDID DoS attack] and deny the subsequent requests.
-      To avoid this, it is required to submit the request with smaller frequency, or submit less requests at once,
+      To avoid this, it is required to submit less requests at once, or submit the requests with smaller frequency,
         or both.
 
     p.Article-Paragraph
       | However, because the usage of the #[+Term--YDID parallelism] is #[+Keyword--YDID commonly] recommended,
-      |   violating this rule, the comment with clear explanation why this rule has been violated #[+Keyword--YDID must]
-      |   be left.
+      |   violating this rule, the comment with clear explanation why this rule has been violated
+      |   #[+Keyword--YDID must] be left.
       | For example, in
       |
       +Link--YDF({
@@ -322,7 +322,7 @@ block append SpecificContent
       |
       | framework, when sequentially invoke the #[+Term--YDID middleware functions], the following comment has been left:
 
-    +CodeViewer--YDF
+    +CodeViewer--YDF({ title: "The Example of Reasonable Violation of \"no-await-in-loop\" Rule" })
       +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.TypeScript }).
 
         for (const middleware of this.middlewares) {
@@ -332,8 +332,7 @@ block append SpecificContent
           try {
 
             /* eslint-disable-next-line no-await-in-loop --
-             * The middleware handlers must be executed sequentially.
-             * Посредники должны быть выполнены последовательно. */
+             * The middleware handlers must be executed sequentially. */
             middlewareCompletionSignal = await middleware(normalizedRequest, response, this.configuration);
 
           } catch (error: unknown) {
