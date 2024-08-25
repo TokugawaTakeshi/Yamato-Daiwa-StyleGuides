@@ -261,16 +261,13 @@ module.exports = {
   "capitalized-comments": "warn",
   "grouped-accessor-pairs": [ "warn", "getBeforeSet" ],
   "id-denylist": [
-    "error",
     "args",
     "argv",
-    "array",
     "brsr",
-    "data",
-    "list",
+    "param",
+    "params",
     "prop",
-    "props",
-    "string"
+    "props"
   ],
   "id-length": [
     "error",

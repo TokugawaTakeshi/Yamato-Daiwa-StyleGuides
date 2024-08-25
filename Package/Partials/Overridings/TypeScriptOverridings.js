@@ -69,9 +69,6 @@ module.exports = {
     "no-loop-func": "off",
     "@typescript-eslint/no-loop-func": "error",
 
-    "no-loss-of-precision": "off",
-    "@typescript-eslint/no-loss-of-precision": "error",
-
     "no-redeclare": "off",
     "@typescript-eslint/no-redeclare": [ "error", { ignoreDeclarationMerge: true } ],
 
@@ -141,8 +138,7 @@ module.exports = {
 
     "@typescript-eslint/no-this-alias": "error",
 
-    "no-throw-literal": "off",
-    "@typescript-eslint/no-throw-literal": "error",
+    "@typescript-eslint/only-throw-error": "error",
 
     "@typescript-eslint/no-unnecessary-condition": "error",
 
@@ -334,15 +330,16 @@ module.exports = {
       }
     ],
 
-    "@typescript-eslint/ban-types": "error",
-
     "@typescript-eslint/explicit-member-accessibility": [ "error", { accessibility: "explicit" } ],
 
     "@typescript-eslint/no-empty-interface": "error",
+    "@typescript-eslint/no-empty-object-type": "error",
 
     "@typescript-eslint/no-floating-promises": "error",
 
+    "@typescript-eslint/no-unsafe-function-type": "error",
     "@typescript-eslint/no-useless-empty-export": "error",
+    "@typescript-eslint/no-wrapper-object-types": "error",
 
     "@typescript-eslint/prefer-enum-initializers": "error",
 
