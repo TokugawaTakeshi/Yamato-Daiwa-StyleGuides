@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.3.0-alpha.3",
+  "version": "0.3.0-alpha.4",
   "description": "The guidelines for ESLint, Pug and Stylus.",
   "engines": {
     "node": ">=18.18.0"
@@ -19,26 +19,27 @@
   ],
   "license": "MIT",
   "peerDependencies": {
-    "@stylistic/eslint-plugin": "~2.7.0",
-    "@typescript-eslint/eslint-plugin": "~8.4.0",
-    "@typescript-eslint/parser": "~8.4.0",
+    "@stylistic/eslint-plugin": "~2.8.0",
+    "@typescript-eslint/eslint-plugin": "~8.5.0",
+    "@typescript-eslint/parser": "~8.5.0",
     "eslint": "~9.10.0",
-    "eslint-plugin-node": "~11.1.0",
-    "eslint-plugin-react": "~7.35.0",
+    "eslint-plugin-n": "~17.10.0",
+    "eslint-plugin-react": "~7.36.0",
     "eslint-plugin-vue": "~9.28.0",
     "eslint-plugin-vue-pug": "~0.6.2",
     "typescript": "~5.5.0"
   },
   "devDependencies": {
-    "@stylistic/eslint-plugin": "2.7.2",
-    "@typescript-eslint/eslint-plugin": "8.4.0",
-    "@typescript-eslint/parser": "8.4.0",
+    "@stylistic/eslint-plugin": "2.8.0",
+    "@typescript-eslint/eslint-plugin": "8.5.0",
+    "@typescript-eslint/parser": "8.5.0",
     "eslint": "9.10.0",
-    "eslint-plugin-node": "11.1.0",
-    "eslint-plugin-react": "7.35.2",
+    "eslint-plugin-n": "17.10.2",
+    "eslint-plugin-react": "7.36.1",
     "eslint-plugin-vue": "9.28.0",
     "eslint-plugin-vue-pug": "0.6.2",
-    "typescript": "5.5.4"
+    "typescript": "5.5.4",
+    "vue-facing-decorator": "3.0.4"
   },
   "files": [
     "Partials",
@@ -47,6 +48,8 @@
   ],
   "scripts": {
     "JavaScript Test": "eslint Tests/JavaScriptTest.js --config ECMAScript.js",
-    "TypeScript Test": "eslint Tests/TypeScriptTest.ts --config ECMAScript.js"
+    "TypeScript Test": "eslint Tests/TypeScriptTest.ts --config ECMAScript.js",
+    "Testing File Test": "eslint Tests/Test.test.ts --config ECMAScript.js",
+    "Vue Single File Component Test": "eslint Tests/SampleVueSingleFileComponent.vue --config ECMAScript.js"
   }
 }

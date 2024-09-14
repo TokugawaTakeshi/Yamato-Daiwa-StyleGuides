@@ -1,0 +1,98 @@
+extends ../../../../../node_modules/@yamato-daiwa/programming_documentation/Layouts/TwoColumns/TwoColumnsLayout.pug
+
+
+block append Requirements
+
+  include ../../../../SharedAssets/Markup/SharedAssets.russian.pug
+  include ../../../../SharedComponents/SharedComponents.russian.pug
+
+
+block append Metadata
+
+  -
+
+    RegularWebPageTemplate__YDF.configure({
+      metadata: {
+        title: buildHTML_PageTitle("ESLint — Правила для TypeScript"),
+        description: ""
+      },
+      stylesSheetsURIs: [
+        "$CommonStyles",
+        "$LayoutsStyles/TwoColumns/TwoColumnsLayout.css",
+        "$PreMadesStyles",
+        "@CustomizedExternalComponents"
+      ]
+    });
+
+    RoutingEmulator.setCurrentRoute("presets.ESLint.TypeScript");
+
+    LanguageDropDownList__YDF_DK.setLinks({
+      english: routing.english.presets.$children.ESLint.$children.TypeScript.$URI,
+      japanese: routing.japanese.presets.$children.ESLint.$children.TypeScript.$URI
+    });
+
+    const {
+      $sectioning: localizedSectioning,
+      $heading: topHeading
+    } = routing.russian.presets.$children.ESLint.$children.TypeScript;
+
+
+block append HeadScripts
+
+  if __IS_PRODUCTION_BUILDING_MODE__
+
+    +GoogleAnalyticsScript
+
+
+block append SpecificContent
+
+  article
+
+    //- ━━━ Правила для TypeScript ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    h1.Article-Heading1= topHeading
+
+    +AdmonitionBlock--YDF({
+      SVG_Icon: true,
+      geometricVariation: AdmonitionBlock__YDF.GeometricVariations.stickyNoteLike,
+      decorativeVariation: AdmonitionBlock__YDF.DecorativeVariations.guidance
+    }) Перевод цитат выполнен с улучшением стилистики и добавлением уточнений, а потому не является дословным.
+
+
+    //- ━━━ Безопасность типизации ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+    +Heading--YDF({
+      level: 2,
+      text: localizedSectioning.typeSafety.$heading,
+      HTML_ID: localizedSectioning.typeSafety.$anchor
+    }).Article-Heading2
+
+    //- ─── @typescript-eslint/consistent-type-assertions ──────────────────────────────────────────────────────────────
+    +Heading--YDF({
+      level: 3,
+      text: localizedSectioning.typeSafety.$children["consistent-type-assertions"].$heading,
+      HTML_ID: localizedSectioning.typeSafety.$children["consistent-type-assertions"].$anchor
+    }).Article-Heading3
+
+    +Blockquote--YDF
+
+      p.Article-Paragraph.
+        This rule aims to standardize the use of type assertion style across the codebase.
+        Keeping to one syntax consistently helps with code readability.
+
+      p.Article-Paragraph.
+        (Примечание) Хотя это об этом сводке и не написано, данное правило может и полностью запретить использование
+          данной функциональности.
+
+      +InformationSourceReference--YDF.Blockquote--YDF-ReferenceToSource
+        +Link--YDF({
+          unendorsedExternalURI: "https://typescript-eslint.io/rules/consistent-type-assertions/"
+        }).Article-Link Официальная документация typescript-eslint
+
+    p.Article-Paragraph.
+      В идеале, кастинг использоваться не должен вообще, однако реальность такова, что иногда альтернатив особо и нет.
+      Тем не менее, если кастинг разрешить, то сразу же начнётся злоупотребление этой функциональностью.
+      Поэтому, наш пресет запрещает использование данной функциональности, а если по какой-то причине использовать
+        данную функциональность необходимо, то программист обязан это прокомментировать.
+
+    +CodeViewer--YDF
+      +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+        { "@typescript-eslint/consistent-type-assertions": [ "error", { "assertionStyle": "never" } ] }

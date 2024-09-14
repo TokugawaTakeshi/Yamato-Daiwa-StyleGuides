@@ -14,3 +14,7 @@ presets:
     general:
 
       $heading: "General Rules for Both TypeScript and JavaScript"
+
+    TypeScript:
+
+      $heading: "Rules for TypeScript"

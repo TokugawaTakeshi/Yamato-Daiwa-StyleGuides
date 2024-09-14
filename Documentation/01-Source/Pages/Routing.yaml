@@ -32,3 +32,15 @@ presets:
               english: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.english.yaml
               japanese: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.japanese.yaml
               russian: 01-Source/Pages/Presets/ESLint/Common/TableOfContents/ESLintPreset-General.toc.russian.yaml
+
+        TypeScript:
+
+          $heading: `presets.ESLint.TypeScript.$heading`
+          $URI: `@All/Presets/ESLint/TypeScript/ESLintPreset-TypeScript.${ fileNameLocalizationExtensions }`
+
+          $sectioning:
+            $specificationFileRelativePath: 01-Source/Pages/Presets/ESLint/TypeScript/TableOfContents/ESLintPreset-TypeScript.toc.yaml
+            $localizations:
+              english: 01-Source/Pages/Presets/ESLint/TypeScript/TableOfContents/ESLintPreset-TypeScript.toc.english.yaml
+              japanese: 01-Source/Pages/Presets/ESLint/TypeScript/TableOfContents/ESLintPreset-TypeScript.toc.japanese.yaml
+              russian: 01-Source/Pages/Presets/ESLint/TypeScript/TableOfContents/ESLintPreset-TypeScript.toc.russian.yaml

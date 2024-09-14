@@ -16,6 +16,18 @@ mustNotBeInProductionCode:
 
   $heading: "プロダクションレディコードに有ってはならない"
 
+eliminationOfUselessCode:
+
+  $heading: "無駄なコードの排除"
+
+unificationOfEquivalentWritings:
+
+  $heading: "同等な書き方の統一"
+
+neatness:
+
+  $heading: "丁寧さ"
+
 other:
 
   $heading: "其の他の規則"

@@ -10,7 +10,7 @@ module.exports = {
   "@stylistic/jsx-first-prop-new-line": [ "warn", "multiline" ],
   "@stylistic/jsx-indent-props": [ "warn", 2 ],
   "@stylistic/jsx-max-props-per-line": [ "warn" ],
-  "@stylistic/jsx-one-expression-per-line": [ "warn", { "allow": "single-child" } ],
+  "@stylistic/jsx-one-expression-per-line": [ "warn", { allow: "single-child" } ],
   "@stylistic/jsx-props-no-multi-spaces": [ "warn" ],
   "@stylistic/jsx-quotes": [ "error" ],
   "@stylistic/jsx-self-closing-comp": [ "error" ],

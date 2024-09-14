@@ -64,16 +64,25 @@ algorithmicErrorsPreventing:
       $heading: no-dupe-args
       $anchor: no-dupe-args
 
-preventionOfConfusingAndStupidMistakes:
+    no-dupe-class-members:
+      $heading: no-dupe-class-members
+      $anchor: no-dupe-class-members
 
-  $heading: `preventionOfConfusingAndStupidMistakes.$heading`
-  $anchor: PREVENTION_OF_CONFUSING_AND_STUPID_MISTAKES--SECTION
+    no-dupe-else-if:
+      $heading: no-dupe-else-if
+      $anchor: no-dupe-else-if
 
-  $children:
+    no-dupe-keys:
+      $heading: no-dupe-keys
+      $anchor: no-dupe-keys
 
-    no-constant-binary-expression:
-      $heading: no-constant-binary-expression
-      $anchor: no-constant-binary-expression
+    no-duplicate-case:
+      $heading: no-duplicate-case
+      $anchor: no-duplicate-case
+
+    no-empty-character-class:
+      $heading: no-empty-character-class
+      $anchor: no-empty-character-class
 
 mustNotBeInProductionCode:
 
@@ -85,6 +94,43 @@ mustNotBeInProductionCode:
     no-debugger:
       $heading: no-debugger
       $anchor: no-debugger
+
+#eliminationOfUselessCode:
+#
+#  $heading: `eliminationOfUselessCode.$heading`
+#  $anchor: ELIMINATION_OF_USELESS_CODE--SECTION
+#
+#  $children:
+
+#unificationOfEquivalentWritings:
+#
+#  $heading: `unificationOfEquivalentWritings.$heading`
+#  $anchor: UNIFICATION_OF_EQUIVALENT_WRITINGS--SECTION
+#
+#  $children:
+
+neatness:
+
+  $heading: `neatness.$heading`
+  $anchor: NEATNESS--SECTION
+
+  $children:
+
+    no-duplicate-imports:
+
+      $heading: no-duplicate-imports
+      $anchor: no-duplicate-imports
+
+preventionOfConfusingAndStupidMistakes:
+
+  $heading: `preventionOfConfusingAndStupidMistakes.$heading`
+  $anchor: PREVENTION_OF_CONFUSING_AND_STUPID_MISTAKES--SECTION
+
+  $children:
+
+    no-constant-binary-expression:
+      $heading: no-constant-binary-expression
+      $anchor: no-constant-binary-expression
 
 other:
 

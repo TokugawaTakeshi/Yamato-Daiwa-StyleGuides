@@ -1,0 +1,10 @@
+typeSafety:
+
+  $heading: `typeSafety.$heading`
+  $anchor: "TYPE_SAFETY--SECTION"
+
+  $children:
+
+    "consistent-type-assertions":
+      $heading: "@typescript-eslint/consistent-type-assertions"
+      $anchor: "typescript-eslint--consistent-type-assertions"

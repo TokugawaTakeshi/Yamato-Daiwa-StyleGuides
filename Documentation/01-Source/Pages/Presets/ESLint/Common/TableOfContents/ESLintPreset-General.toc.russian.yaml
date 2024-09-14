@@ -16,6 +16,18 @@ mustNotBeInProductionCode:
 
   $heading: "Не должно быть на продакшене"
 
+eliminationOfUselessCode:
+
+  $heading: "Устранение бесполезного кода"
+
+unificationOfEquivalentWritings:
+
+  $heading: "Унификация эквивалентных записей"
+
+neatness:
+
+  $heading: "Опрятность"
+
 other:
 
   $heading: "Другие правила"

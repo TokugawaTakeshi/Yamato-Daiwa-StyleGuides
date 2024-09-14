@@ -1,29 +1,27 @@
-const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules")
-const NodeJS_BasicRules  = require("./Partials/NodeJS_Rules")
-const TypeScriptOverridings = require("./Partials/Overridings/TypeScriptOverridings");
-const TestFilesOverridings = require("./Partials/Overridings/TestFilesOverridings")
-const VueComponentsFilesOverridings = require("./Partials/Overridings/Vue/VueComponentsFilesOverridings")
-const VuexModuleComponentsOverridings = require("./Partials/Overridings/Vue/VuexModuleComponentsOverridings")
-const JSX_FilesOverridings = require("./Partials/Overridings/React/JSX_FilesOverridings")
-const TypeScriptPlugin = require("@typescript-eslint/eslint-plugin");
-const StylisticPlugin = require("@stylistic/eslint-plugin");
-const VuePlugin = require("eslint-plugin-vue");
-const ReactPlugin = require("eslint-plugin-react");
+/* ─── Plugins ────────────────────────────────────────────────────────────────────────────────────────────────────── */
+const stylisticPlugin = require("@stylistic/eslint-plugin");
+const nodePlugin = require("eslint-plugin-n");
+const vuePlugin = require("eslint-plugin-vue");
+const reactPlugin = require("eslint-plugin-react");
+const typeScriptPlugin = require("@typescript-eslint/eslint-plugin");
 
+/* ─── Rules ──────────────────────────────────────────────────────────────────────────────────────────────────────── */
+const ecmaScriptBasicRules = require("./Rules/ECMA_ScriptBasicRules");
+const nodeJS_Rules = require("./Rules/NodeJS_Rules");
+const typeScriptRules = require("./Rules/TypeScriptRules");
+const reactRules = require("./Rules/ReactRules");
+const vueRules = require("./Rules/VueRules");
 
-const ECMA_ScriptBasicRules = require("./Partials/ECMA_ScriptBasicRules");
-const TypeScriptRules = require("./Partials/TypeScriptRules");
-/* Migration to another plugin required https://github.com/mysticatea/eslint-plugin-node/issues/358 */
-// const NodeJS_Rules  = require("./Partials/NodeJS_Rules");
-const RulesForTestFiles = require("./Partials/RulesForTestFiles");
-const ReactRules = require("./Partials/ReactRules")
+/* ─── Overridings ────────────────────────────────────────────────────────────────────────────────────────────────── */
+const overridingsForTestingFiles = require("./Overridings/OverridingsForTestingFiles");
 
+/* ─── Parsers ────────────────────────────────────────────────────────────────────────────────────────────────────── */
+const typeScriptESLintParser = require("@typescript-eslint/parser");
+const vueESLintParser = require("vue-eslint-parser");
+
+/* ─── Native ─────────────────────────────────────────────────────────────────────────────────────────────────────── */
 const globals = require("globals");
 
-const TypeScriptESLintParser = require("@typescript-eslint/parser");
-const VueESLintParser = require("vue-eslint-parser");
-
-  parser: "@typescript-eslint/parser",
 
 module.exports = [
   {
@@ -39,23 +37,18 @@ module.exports = [
     },
 
     plugins: {
-      "@stylistic": StylisticPlugin,
-      vue: VuePlugin,
-      react: ReactPlugin
+      "@stylistic": stylisticPlugin,
+      n: nodePlugin,
+      vue: vuePlugin,
+      react: reactPlugin
     },
 
-  rules: {
-    ...ECMA_ScriptBasicRules,
-    ...NodeJS_BasicRules
+    rules: {
+      ...ecmaScriptBasicRules,
+      ...nodeJS_Rules
+    }
   },
 
-  overrides: [
-    TypeScriptOverridings,
-    TestFilesOverridings,
-    VueComponentsFilesOverridings,
-    VuexModuleComponentsOverridings,
-    JSX_FilesOverridings
-  ],
   {
 
     files: [ "**/*.ts" ],
@@ -86,10 +79,10 @@ module.exports = [
     },
 
     plugins: {
-      "@typescript-eslint": TypeScriptPlugin
+      "@typescript-eslint": typeScriptPlugin
     },
 
-    rules: TypeScriptRules
+    rules: typeScriptRules
 
   },
 
@@ -100,12 +93,12 @@ module.exports = [
         ecmaFeatures: { jsx: true }
       }
     },
-    rules: ReactRules
+    rules: reactRules
   },
 
   {
     files: [ "**/*.test.ts" ],
-    rules: RulesForTestFiles
+    rules: overridingsForTestingFiles
   }
 
 ];

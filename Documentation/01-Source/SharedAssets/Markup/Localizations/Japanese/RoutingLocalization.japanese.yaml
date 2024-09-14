@@ -14,3 +14,7 @@ presets:
     general:
 
       $heading: "TypeScript・JavaScript共通規則"
+
+    TypeScript:
+
+      $heading: "TypeScript専用規則"

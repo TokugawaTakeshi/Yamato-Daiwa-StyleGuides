@@ -16,6 +16,18 @@ mustNotBeInProductionCode:
 
   $heading: "Must not be in Production-ready Code"
 
+eliminationOfUselessCode:
+
+  $heading: "Elimination of Useless Code"
+
+unificationOfEquivalentWritings:
+
+  $heading: "Unification of Equivalent Writings"
+
+neatness:
+
+  $heading: "Neatness"
+
 other:
 
   $heading: "Other Rules"
