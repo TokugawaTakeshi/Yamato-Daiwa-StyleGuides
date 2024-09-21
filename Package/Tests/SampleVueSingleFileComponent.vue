@@ -9,7 +9,7 @@
 
   import { Component as VueComponentOptions, Vue as VueComponent } from "vue-facing-decorator";
 
-
+  // @vue/component
   @VueComponentOptions({
     name: "SampleVueComponent",
     components: {

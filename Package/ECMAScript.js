@@ -47,6 +47,7 @@ module.exports = [
       ...ecmaScriptBasicRules,
       ...nodeJS_Rules
     }
+
   },
 
   {
@@ -55,21 +56,12 @@ module.exports = [
 
     languageOptions: {
 
-      parser: TypeScriptESLintParser,
+      parser: typeScriptESLintParser,
       parserOptions: {
         project: "tsconfig.json"
       },
       sourceType: "module",
 
-  globals: {
-    ReadonlyMap: "readonly",
-    ReadonlySet: "readonly",
-    MapConstructor: "readonly",
-    BigInt: "readonly",
-    NodeJS: "readonly",
-    BufferEncoding: "readonly"
-  }
-};
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -84,6 +76,18 @@ module.exports = [
 
     rules: typeScriptRules
 
+  },
+
+  {
+    files: [ "**/*.vue", "**/*.vue.ts" ],
+    languageOptions: {
+      parser: vueESLintParser,
+      parserOptions: {
+        parser: "@typescript-eslint/parser",
+        sourceType: "module"
+      }
+    },
+    rules: vueRules
   },
 
   {
