@@ -38,9 +38,7 @@ module.exports = [
 
     plugins: {
       "@stylistic": stylisticPlugin,
-      n: nodePlugin,
-      vue: vuePlugin,
-      react: reactPlugin
+      n: nodePlugin
     },
 
     rules: {
@@ -87,6 +85,10 @@ module.exports = [
         sourceType: "module"
       }
     },
+    plugins: {
+      vue: vuePlugin
+    },
+    processor: "vue/vue",
     rules: vueRules
   },
 
@@ -96,6 +98,9 @@ module.exports = [
       parserOptions: {
         ecmaFeatures: { jsx: true }
       }
+    },
+    plugins: {
+      react: reactPlugin
     },
     rules: reactRules
   },
