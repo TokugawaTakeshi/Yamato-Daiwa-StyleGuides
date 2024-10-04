@@ -229,10 +229,8 @@ module.exports = {
     }
   ],
 
-  /*
   "no-duplicate-imports": "off",
   "import/no-duplicates": "error",
-   */
 
   "no-empty-function": "off",
   "@typescript-eslint/no-empty-function": "error",

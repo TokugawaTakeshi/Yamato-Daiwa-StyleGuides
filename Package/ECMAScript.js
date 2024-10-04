@@ -1,6 +1,7 @@
 /* ─── Plugins ────────────────────────────────────────────────────────────────────────────────────────────────────── */
 const stylisticPlugin = require("@stylistic/eslint-plugin");
 const nodePlugin = require("eslint-plugin-n");
+const importPlugin = require("eslint-plugin-import");
 const vuePlugin = require("eslint-plugin-vue");
 const reactPlugin = require("eslint-plugin-react");
 const typeScriptPlugin = require("@typescript-eslint/eslint-plugin");
@@ -38,7 +39,8 @@ module.exports = [
 
     plugins: {
       "@stylistic": stylisticPlugin,
-      n: nodePlugin
+      n: nodePlugin,
+      import: importPlugin
     },
 
     rules: {
