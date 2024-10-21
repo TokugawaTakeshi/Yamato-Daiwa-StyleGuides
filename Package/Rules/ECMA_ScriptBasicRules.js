@@ -105,7 +105,6 @@ module.exports = {
   "no-new-func": "error",
   "no-param-reassign": "error",
   "no-regex-spaces": "error",
-  "no-return-assign": "error",
   "no-sequences": "error",
   "no-throw-literal": "error",
   "no-undefined": "error",

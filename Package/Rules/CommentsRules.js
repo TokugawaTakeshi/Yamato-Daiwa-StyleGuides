@@ -9,5 +9,12 @@ module.exports = {
     "error",
     "@typescript-eslint/typedef"
   ],
-  "@eslint-community/eslint-comments/require-description": "error"
+  "@eslint-community/eslint-comments/require-description": [
+    "error",
+    {
+      ignore: [
+        "eslint-enable"
+      ]
+    }
+  ]
 };
