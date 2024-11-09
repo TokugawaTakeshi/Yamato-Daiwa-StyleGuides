@@ -17,6 +17,7 @@ const vueRules = require("./Rules/VueRules");
 
 /* ─── Overridings ────────────────────────────────────────────────────────────────────────────────────────────────── */
 const overridingsForTestingFiles = require("./Overridings/OverridingsForTestingFiles");
+const overridingsForESLintPresetFiles = require("./Overridings/OverridingsForESLintPresetFiles");
 
 /* ─── Parsers ────────────────────────────────────────────────────────────────────────────────────────────────────── */
 const typeScriptESLintParser = require("@typescript-eslint/parser");
@@ -114,6 +115,21 @@ module.exports = [
   {
     files: [ "**/*.test.ts" ],
     rules: overridingsForTestingFiles
+  },
+
+  {
+
+    files: [
+      "eslint.config.js",
+      "eslint.config.mjs",
+      "eslint.config.cjs",
+      "eslint.config.ts",
+      "eslint.config.mts",
+      "eslint.config.cts"
+    ],
+
+    rules: overridingsForESLintPresetFiles
+
   }
 
 ];

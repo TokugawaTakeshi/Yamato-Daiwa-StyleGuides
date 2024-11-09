@@ -7,6 +7,10 @@ module.exports = {
   "no-class-assign": "error",
   "no-const-assign": "error",
   "no-constructor-return": "error",
+  "no-ex-assign": "error",
+  "no-func-assign": "error",
+
+
   "no-import-assign": "error",
   "no-invalid-regexp": "error",
   "no-new-native-nonconstructor": "error",
@@ -32,10 +36,9 @@ module.exports = {
   "no-dupe-keys": "error",
   "no-duplicate-case": "error",
   "no-empty-character-class": "error",
-  "no-empty-pattern": "error",
-  "no-ex-assign": "error",
   "no-fallthrough": "error",
-  "no-func-assign": "error",
+
+
   "no-inner-declarations": "error",
   "no-irregular-whitespace": [
     "error",
@@ -263,6 +266,9 @@ module.exports = {
   ],
 
   "no-duplicate-imports": "error",
+
+  "no-empty-pattern": "error",
+
   "no-unused-private-class-members": "error",
   "no-unused-vars": [
     "error",

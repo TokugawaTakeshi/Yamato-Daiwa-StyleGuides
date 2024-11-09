@@ -1,6 +1,6 @@
 # Yamato Daiwa Style Guides
 
-![Main Visual of "@yamato-daiwa/style_guides", the npm package](https://repository-images.githubusercontent.com/427835358/83fb7417-fd53-4d0d-908d-eb38133e1f9a)
+![Main Visual of "@yamato-daiwa/style_guides", the npm package](https://raw.githubusercontent.com/TokugawaTakeshi/Yamato-Daiwa-StyleGuides/refs/heads/master/Documentation/01-Source/Pages/Top/Images/TopPage-MainVisual.english.png)
 
 
 The strict style guides for the high quality development with TypeScript and Pug.
@@ -20,13 +20,27 @@ npm i @yamato-daiwa/style_guides -D -E
 
 ### Usage
 #### Extending of ESLint preset
+##### CommonJS
 
-For the **.eslintrc.yaml** case, it will be:
+```js
+const YamatoDaiwaStyleGuides = require("@yamato-daiwa/style_guides/ECMAScript");
 
-```yaml
-extends: ./node_modules/@yamato-daiwa/style_guides/ECMAScript.js
+
+module.exports = [
+  ...YamatoDaiwaStyleGuides
+];
 ```
 
+##### ES Modules
+
+```js
+import YamatoDaiwaStyleGuides from "@yamato-daiwa/style_guides/ECMAScript";
+
+
+export default [
+  ...YamatoDaiwaStyleGuides
+];
+```
 
 #### Extending of pug-lint preset
 
@@ -38,7 +52,7 @@ For the **.pug-lintrc** case, it will be:
 }
 ```
 
-Depending on the project building tool, the excluding of **node_modules** could require.
+Depending on the project building tool, the excluding of **node_modules** may require.
 
 ```json
 {
