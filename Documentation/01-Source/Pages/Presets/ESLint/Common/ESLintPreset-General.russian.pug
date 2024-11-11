@@ -243,6 +243,30 @@ block append SpecificContent
           { "no-constructor-return": "error" }
 
 
+      //- ─── no-ex-assign ───────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.codeValidity.$children["no-ex-assign"].$heading,
+        HTML_ID: localizedSectioning.codeValidity.$children["no-ex-assign"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-ex-assign": "error" }
+
+      //- ─── no-func-assign ─────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.codeValidity.$children["no-func-assign"].$heading,
+        HTML_ID: localizedSectioning.codeValidity.$children["no-func-assign"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-func-assign": "error" }
+
+
+
     //- ━━━ Предотвращение алгоритмических ошибок ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
     +Heading--YDF({
       level: 2,
@@ -458,6 +482,20 @@ block append SpecificContent
         +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
           { "no-empty-character-class": "error" }
 
+      //- ─── no-fallthrough ─────────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.algorithmicErrorsPreventing.$children["no-fallthrough"].$heading,
+        HTML_ID: localizedSectioning.algorithmicErrorsPreventing.$children["no-fallthrough"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-fallthrough": "error" }
+
+
+    //
+
     //-
       //- ━━━ Не должно быть в чистовом коде ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       +Heading--YDF({
@@ -493,6 +531,17 @@ block append SpecificContent
       +CodeViewer--YDF({ title: "Конфигурация правила" })
         +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
           { "no-duplicate-imports": "error" }
+
+      //- ─── no-empty-pattern ───────────────────────────────────────────────────────────────────────────────────────────
+      +Heading--YDF({
+        level: 3,
+        text: localizedSectioning.neatness.$children["no-empty-pattern"].$heading,
+        HTML_ID: localizedSectioning.neatness.$children["no-empty-pattern"].$anchor
+      }).Article-Heading3
+
+      +CodeViewer--YDF({ title: "Конфигурация правила" })
+        +CodeViewer-Listing--YDF({ codeLanguage: CodeViewer__YDF.SupportedCodesLanguages.JSON }).
+          { "no-empty-pattern": "error" }
 
       //- ━━━ Предотвращение запутывания и глупых ошибок ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
       +Heading--YDF({

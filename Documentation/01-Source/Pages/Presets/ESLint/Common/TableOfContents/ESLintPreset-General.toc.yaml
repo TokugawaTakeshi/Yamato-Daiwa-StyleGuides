@@ -29,6 +29,14 @@ codeValidity:
       $heading: no-constructor-return
       $anchor: no-constructor-return
 
+    no-ex-assign:
+      $heading: no-ex-assign
+      $anchor: no-ex-assign
+
+    no-func-assign:
+      $heading: no-func-assign
+      $anchor: no-func-assign
+
 algorithmicErrorsPreventing:
 
   $heading: `algorithmicErrorsPreventing.$heading`
@@ -84,6 +92,10 @@ algorithmicErrorsPreventing:
       $heading: no-empty-character-class
       $anchor: no-empty-character-class
 
+    no-fallthrough:
+      $heading: no-fallthrough
+      $anchor: no-fallthrough
+
 mustNotBeInProductionCode:
 
   $heading: `mustNotBeInProductionCode.$heading`
@@ -120,6 +132,11 @@ neatness:
 
       $heading: no-duplicate-imports
       $anchor: no-duplicate-imports
+
+  no-empty-pattern:
+
+    $heading: no-empty-pattern
+    $anchor: no-empty-pattern
 
 preventionOfConfusingAndStupidMistakes:
 
