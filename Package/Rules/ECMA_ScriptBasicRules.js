@@ -156,6 +156,7 @@ module.exports = {
     "all",
     {
       nestedBinaryExpressions: false,
+      nestedConditionalExpressions: false,
       enforceForArrowConditionals: false
     }
   ],

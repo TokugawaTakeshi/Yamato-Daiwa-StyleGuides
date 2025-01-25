@@ -84,7 +84,7 @@ module.exports = {
   "@typescript-eslint/unbound-method": [ "error", { ignoreStatic: true } ],
 
 
-  /* ━━━ Type Safety ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  /* ━━━ Prevention of the Confusing & Stupid Mistakes ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
   "@typescript-eslint/await-thenable": "error",
 
   "class-methods-use-this": "off",
@@ -131,6 +131,8 @@ module.exports = {
       }
     }
   ],
+
+  "@typescript-eslint/no-misused-spread": "error",
 
   "@typescript-eslint/no-non-null-asserted-nullish-coalescing": "error",
 
