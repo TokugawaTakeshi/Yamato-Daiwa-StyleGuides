@@ -175,7 +175,10 @@ module.exports = {
     }
   ],
 
-  "@typescript-eslint/switch-exhaustiveness-check": "error",
+  "@typescript-eslint/switch-exhaustiveness-check": [
+    "error",
+    { allowDefaultCaseForExhaustiveSwitch: true }
+  ],
 
 
   /* ━━━ Elimination of Useless Code ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
