@@ -322,8 +322,8 @@ module.exports = {
   "no-magic-numbers": [
     "error",
     {
-      "enforceConst": true,
-      "ignore": [
+      enforceConst: true,
+      ignore: [
         -1,
         0,
         0.5,

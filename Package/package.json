@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.6.3",
+  "version": "0.6.4",
   "description": "The guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=18.18.0"
@@ -21,8 +21,8 @@
   "peerDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "~4.4.0",
     "@stylistic/eslint-plugin": "~3.1.0",
-    "@typescript-eslint/eslint-plugin": "~8.24.0",
-    "@typescript-eslint/parser": "~8.24.0",
+    "@typescript-eslint/eslint-plugin": "~8.25.0",
+    "@typescript-eslint/parser": "~8.25.0",
     "eslint": "~9.21.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-n": "~17.15.0",
@@ -34,8 +34,8 @@
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.4.1",
     "@stylistic/eslint-plugin": "3.1.0",
-    "@typescript-eslint/eslint-plugin": "8.24.1",
-    "@typescript-eslint/parser": "8.24.1",
+    "@typescript-eslint/eslint-plugin": "8.25.0",
+    "@typescript-eslint/parser": "8.25.0",
     "eslint": "9.21.0",
     "eslint-plugin-import": "2.31.0",
     "eslint-plugin-n": "17.15.1",
