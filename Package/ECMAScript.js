@@ -100,8 +100,9 @@ module.exports = [
   },
 
   {
-    files: [ "*.jsx", "*.tsx" ],
+    files: [ "**/*.jsx", "**/*.tsx" ],
     languageOptions: {
+      parser: typeScriptESLintParser,
       parserOptions: {
         ecmaFeatures: { jsx: true }
       }
