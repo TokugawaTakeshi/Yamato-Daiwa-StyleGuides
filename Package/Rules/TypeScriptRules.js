@@ -185,6 +185,7 @@ module.exports = {
   "@typescript-eslint/no-unnecessary-qualifier": "error",
 
   "@typescript-eslint/no-unnecessary-type-assertion": "error",
+  "@typescript-eslint/no-unnecessary-type-conversion": "error",
 
   "no-useless-constructor": "off",
   "@typescript-eslint/no-useless-constructor": "error",
