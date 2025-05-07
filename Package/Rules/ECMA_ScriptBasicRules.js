@@ -297,6 +297,7 @@ module.exports = {
       /* [ API ] Case is matters */
       exceptions: [
         "add",
+        "BFF",
         "id",
         "ID",
         "key",
