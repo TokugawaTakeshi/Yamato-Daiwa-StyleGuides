@@ -37,8 +37,6 @@ module.exports = {
   "no-duplicate-case": "error",
   "no-empty-character-class": "error",
   "no-fallthrough": "error",
-
-
   "no-inner-declarations": "error",
   "no-irregular-whitespace": [
     "error",
@@ -67,6 +65,7 @@ module.exports = {
   "no-loop-func": "error",
   "no-shadow": "error",
   "no-shadow-restricted-names": "error",
+  "no-unassigned-vars": "error",
   "operator-assignment": [ "error", "never" ],
   "prefer-object-has-own": [ "error" ],
   radix: "error",

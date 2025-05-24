@@ -70,7 +70,8 @@ module.exports = [
       globals: {
         ...globals.browser,
         ...globals.node,
-        ...globals.mocha
+        ...globals.mocha,
+        BufferEncoding: "readonly"
       }
 
     },
