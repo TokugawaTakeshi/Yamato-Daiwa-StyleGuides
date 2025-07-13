@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "description": "The guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=18.18.0"
@@ -20,12 +20,12 @@
   "license": "MIT",
   "peerDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "~4.5.0",
-    "@stylistic/eslint-plugin": "~4.4.0",
-    "@typescript-eslint/eslint-plugin": "~8.33.0",
-    "@typescript-eslint/parser": "~8.33.0",
-    "eslint": "~9.28.0",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-n": "~17.19.0",
+    "@stylistic/eslint-plugin": "~5.1.0",
+    "@typescript-eslint/eslint-plugin": "~8.36.0",
+    "@typescript-eslint/parser": "~8.36.0",
+    "eslint": "~9.31.0",
+    "eslint-plugin-import": "~2.32.0",
+    "eslint-plugin-n": "~17.21.0",
     "eslint-plugin-react": "~7.37.0",
     "eslint-plugin-vue": "~9.33.0",
     "eslint-plugin-vue-pug": "~0.6.2",
@@ -33,14 +33,14 @@
   },
   "devDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "4.5.0",
-    "@stylistic/eslint-plugin": "4.4.1",
+    "@stylistic/eslint-plugin": "5.1.0",
     "@types/node": "22.15.30",
-    "@types/react": "19.1.6",
-    "@typescript-eslint/eslint-plugin": "8.33.1",
-    "@typescript-eslint/parser": "8.33.1",
-    "eslint": "9.28.0",
-    "eslint-plugin-import": "2.31.0",
-    "eslint-plugin-n": "17.19.0",
+    "@types/react": "19.1.8",
+    "@typescript-eslint/eslint-plugin": "8.36.0",
+    "@typescript-eslint/parser": "8.36.0",
+    "eslint": "9.31.0",
+    "eslint-plugin-import": "2.32.0",
+    "eslint-plugin-n": "17.21.0",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-vue": "9.33.0",
     "eslint-plugin-vue-pug": "0.6.2",
@@ -58,7 +58,8 @@
     "JavaScript Test": "eslint Tests/JavaScriptTest.js --config ECMAScript.js",
     "TypeScript Test": "eslint Tests/TypeScriptTest.ts --config ECMAScript.js",
     "Testing File Test": "eslint Tests/Test.test.ts --config ECMAScript.js",
-    "React Test": "eslint Tests/ReactTest.tsx",
+    "TSX Test": "eslint Tests/ReactTest.tsx",
+    "JSX Test": "eslint Tests/ReactTest.jsx",
     "Testing of All Assets": "eslint Tests/**/*",
     "Vue Single File Component Test": "eslint Tests/SampleVueSingleFileComponent.vue --config ECMAScript.js"
   }

@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React from "react";
 
 
 class ReactTest extends React.Component<ReactTest.Props, ReactTest.State> {

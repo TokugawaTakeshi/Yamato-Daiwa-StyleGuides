@@ -101,13 +101,21 @@ module.exports = [
   },
 
   {
-    files: [ "**/*.jsx", "**/*.tsx" ],
+    files: [ "**/*.tsx" ],
     languageOptions: {
       parser: typeScriptESLintParser,
       parserOptions: {
         ecmaFeatures: { jsx: true }
       }
     },
+    plugins: {
+      react: reactPlugin
+    },
+    rules: reactRules
+  },
+
+  {
+    files: [ "**/*.jsx" ],
     plugins: {
       react: reactPlugin
     },
