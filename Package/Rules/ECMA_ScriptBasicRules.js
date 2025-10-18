@@ -156,7 +156,9 @@ module.exports = {
     {
       nestedBinaryExpressions: false,
       nestedConditionalExpressions: false,
-      enforceForArrowConditionals: false
+      ignoredNodes: [
+        "ArrowFunctionExpression[body.type=ConditionalExpression]"
+      ]
     }
   ],
 
