@@ -252,6 +252,8 @@ module.exports = {
     }
   ],
 
+  "@typescript-eslint/no-unused-private-class-members": "error",
+
   "no-unused-vars": "off",
   "@typescript-eslint/no-unused-vars": ECMA_ScriptBasicRules["no-unused-vars"],
 
