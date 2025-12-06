@@ -11,16 +11,15 @@ module.exports = {
   "@stylistic/jsx-indent-props": [ "warn", 2 ],
   "@stylistic/jsx-max-props-per-line": [ "warn" ],
   "@stylistic/jsx-one-expression-per-line": [ "warn", { allow: "single-child" } ],
-  "@stylistic/jsx-props-no-multi-spaces": [ "warn" ],
   "@stylistic/jsx-quotes": [ "error" ],
   "@stylistic/jsx-self-closing-comp": [ "error" ],
   "@stylistic/jsx-tag-spacing": [
     "warn",
     {
       closingSlash: "never",
-      beforeSelfClosing: "never",
+      beforeSelfClosing: "always",
       afterOpening: "never",
-      beforeClosing: "allow"
+      beforeClosing: "never"
     }
   ],
   "@stylistic/jsx-wrap-multilines": [ "warn" ],

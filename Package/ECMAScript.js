@@ -105,13 +105,18 @@ module.exports = [
     languageOptions: {
       parser: typeScriptESLintParser,
       parserOptions: {
-        ecmaFeatures: { jsx: true }
+        ecmaFeatures: { jsx: true },
+        projectService: true
       }
     },
     plugins: {
+      "@typescript-eslint": typeScriptPlugin,
       react: reactPlugin
     },
-    rules: reactRules
+    rules: {
+      ...reactRules,
+      ...typeScriptRules
+    }
   },
 
   {

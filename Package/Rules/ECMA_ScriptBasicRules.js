@@ -158,7 +158,8 @@ module.exports = {
       nestedConditionalExpressions: false,
       ignoredNodes: [
         "ArrowFunctionExpression[body.type=ConditionalExpression]"
-      ]
+      ],
+      ignoreJSX: "all"
     }
   ],
 

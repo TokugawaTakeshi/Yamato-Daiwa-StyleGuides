@@ -8,9 +8,13 @@ class ReactTest extends React.Component<ReactTest.Props, ReactTest.State> {
 
 namespace ReactTest {
 
-  export type Props = Readonly<{}>;
+  export type Props = Readonly<{
+    className?: string;
+  }>;
 
-  export type State = Readonly<{}>;
+  export type State = Readonly<{
+    sample: number;
+  }>;
 
 }
 
