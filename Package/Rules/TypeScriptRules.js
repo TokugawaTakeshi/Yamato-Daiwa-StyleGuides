@@ -193,6 +193,8 @@ module.exports = {
   "@typescript-eslint/no-unnecessary-parameter-property-assignment": "error",
   "@typescript-eslint/no-unnecessary-template-expression": "warn",
 
+  "@typescript-eslint/no-useless-default-assignment": "error",
+
   "@typescript-eslint/return-await": "error",
 
 

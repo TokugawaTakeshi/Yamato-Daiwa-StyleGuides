@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.11.2",
+  "version": "0.11.3",
   "description": "Strict guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=18.18.0"
@@ -21,8 +21,8 @@
   "peerDependencies": {
     "@eslint-community/eslint-plugin-eslint-comments": "~4.5.0",
     "@stylistic/eslint-plugin": "~5.6.0",
-    "@typescript-eslint/eslint-plugin": "~8.48.0",
-    "@typescript-eslint/parser": "~8.48.0",
+    "@typescript-eslint/eslint-plugin": "~8.50.0",
+    "@typescript-eslint/parser": "~8.50.0",
     "eslint": "~9.39.0",
     "eslint-plugin-import": "~2.32.0",
     "eslint-plugin-n": "~17.23.0",
@@ -36,15 +36,15 @@
     "@stylistic/eslint-plugin": "5.6.1",
     "@types/node": "22.15.30",
     "@types/react": "19.2.7",
-    "@typescript-eslint/eslint-plugin": "8.48.0",
-    "@typescript-eslint/parser": "8.48.0",
-    "eslint": "9.39.1",
+    "@typescript-eslint/eslint-plugin": "8.50.1",
+    "@typescript-eslint/parser": "8.50.1",
+    "eslint": "9.39.2",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "17.23.1",
     "eslint-plugin-react": "7.37.5",
     "eslint-plugin-vue": "9.33.0",
     "eslint-plugin-vue-pug": "0.6.2",
-    "react": "19.2.0",
+    "react": "19.2.3",
     "typescript": "5.9.3",
     "vue-facing-decorator": "3.0.4"
   },
