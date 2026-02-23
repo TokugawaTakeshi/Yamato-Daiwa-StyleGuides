@@ -41,6 +41,8 @@ module.exports = {
 
   "@typescript-eslint/strict-boolean-expressions": "error",
 
+  "@typescript-eslint/strict-void-return": "error",
+
   "@typescript-eslint/typedef": [
     "error",
     {
@@ -254,7 +256,13 @@ module.exports = {
     }
   ],
 
-  "@typescript-eslint/no-unused-private-class-members": "error",
+  "no-unused-private-class-members": "off",
+
+  /* [ Disabled until fixed ]
+   * Does not work if an instance member has not been invoked directly by "this", while it may be accessed
+   *   inside a static method via instance created there like in the `CalendarBuilder` class of
+   *   @yamato-daiwa/es-extensions. */
+  /* "@typescript-eslint/no-unused-private-class-members": "error", */
 
   "no-unused-vars": "off",
   "@typescript-eslint/no-unused-vars": ECMA_ScriptBasicRules["no-unused-vars"],

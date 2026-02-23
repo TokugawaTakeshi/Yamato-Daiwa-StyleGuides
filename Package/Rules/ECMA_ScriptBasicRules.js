@@ -222,7 +222,26 @@ module.exports = {
   "@stylistic/new-parens": "error",
   "@stylistic/newline-per-chained-call": [ "warn", { ignoreChainWithDepth: 2 } ],
   "@stylistic/no-floating-decimal": "error",
-  "@stylistic/no-whitespace-before-property": "warn",
+
+
+  /*
+
+    [ Disabled until fixed ]
+
+    False positive at the third line of
+
+    ```
+    public static async simulateDataRetrieving<RequestParameters, ResponseData>(
+      dataRetrievingSimulationConfiguration: MockGatewayHelper.
+          DataRetrievingSimulationConfiguration<RequestParameters, ResponseData>
+    ): Promise<ResponseData>
+    ```
+
+    from the @yamato-daiwa/es-extensions.
+
+  */
+  /* "@stylistic/no-whitespace-before-property": "warn"  */
+
   "@stylistic/object-curly-spacing": [ "warn", "always" ],
   "@stylistic/object-property-newline": [ "warn", { allowAllPropertiesOnSameLine: true } ],
   "@stylistic/operator-linebreak": [ "warn", "after" ],
@@ -246,7 +265,13 @@ module.exports = {
 
 
   /* ━━━ Neatness ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
-  "@stylistic/lines-around-comment": [ "warn", { beforeBlockComment: true } ],
+  "@stylistic/lines-around-comment": [
+    "warn",
+    {
+      beforeBlockComment: true,
+      ignorePattern: "^\\\\* ━━━ Imports >"
+    }
+  ],
 
   "@stylistic/lines-between-class-members": [
     "warn",
