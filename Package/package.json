@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.12.3",
+  "version": "0.12.4",
   "description": "Strict guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=20.0.0"
