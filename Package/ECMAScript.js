@@ -1,6 +1,6 @@
 /* ─── Plugins ────────────────────────────────────────────────────────────────────────────────────────────────────── */
 const stylisticPlugin = require("@stylistic/eslint-plugin");
-const nodePlugin = require("eslint-plugin-n");
+const nodePlugin = require("eslint-plugin-n").default;
 const commentsPlugin = require("@eslint-community/eslint-plugin-eslint-comments");
 const importPlugin = require("eslint-plugin-import");
 const vuePlugin = require("eslint-plugin-vue");

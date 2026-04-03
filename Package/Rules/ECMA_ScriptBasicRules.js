@@ -177,7 +177,6 @@ module.exports = {
   "@stylistic/arrow-parens": [ "warn", "always" ],
   "@stylistic/arrow-spacing": [ "warn", { before: true, after: true } ],
   "@stylistic/block-spacing": [ "warn", "always" ],
-  "@stylistic/brace-style": [ "warn", "1tbs", { allowSingleLine: true } ],
   "@stylistic/comma-dangle": [ "warn", "never" ],
   "@stylistic/comma-spacing": [ "warn", { before: false, after: true } ],
   "@stylistic/comma-style": [ "error", "last" ],
@@ -331,7 +330,8 @@ module.exports = {
         "Pug",
         "pug",
         "Vue",
-        "vue"
+        "vue",
+        "YDB"
       ]
 
     }
