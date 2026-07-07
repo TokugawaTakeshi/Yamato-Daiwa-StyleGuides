@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.14.2",
+  "version": "0.14.3",
   "description": "Strict guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=22.0.0"
@@ -38,7 +38,7 @@
     "@types/react": "19.2.17",
     "@typescript-eslint/eslint-plugin": "8.63.0",
     "@typescript-eslint/parser": "8.63.0",
-    "eslint": "9.39.3",
+    "eslint": "9.39.4",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "18.2.1",
     "eslint-plugin-react": "7.37.5",
