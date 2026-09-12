@@ -113,6 +113,8 @@ module.exports = {
 
   "@typescript-eslint/no-duplicate-type-constituents": "error",
 
+  "@typescript-eslint/no-generated-empty-object-type": "error",
+
   "no-invalid-this": "off",
   "@typescript-eslint/no-invalid-this": "error",
 
