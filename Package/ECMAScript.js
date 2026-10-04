@@ -94,6 +94,7 @@ module.exports = [
       }
     },
     plugins: {
+      "@typescript-eslint": typeScriptPlugin,
       vue: vuePlugin
     },
     processor: "vue/vue",
@@ -129,7 +130,10 @@ module.exports = [
 
   {
     files: [ "**/*.test.ts" ],
-    rules: overridingsForTestingFiles
+    rules: overridingsForTestingFiles,
+    plugins: {
+      "@typescript-eslint": typeScriptPlugin
+    }
   },
 
   {

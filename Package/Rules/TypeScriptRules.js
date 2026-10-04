@@ -152,6 +152,8 @@ module.exports = {
 
   "@typescript-eslint/no-unnecessary-type-constraint": "error",
 
+  "@typescript-eslint/no-unsafe-enum-assignment": "error",
+
   "@typescript-eslint/no-unsafe-enum-comparison": "error",
 
   "no-unused-expressions": "off",

@@ -26,6 +26,10 @@
       this.initializeNonReactiveClassFields();
     }
 
+    protected mounted(): void {
+      console.log("mounted");
+    }
+
     private initializeNonReactiveClassFields(): void {
 
     }

@@ -1,3 +1,6 @@
+const TypeScriptRules = require("./TypeScriptRules");
+
+
 module.exports = {
 
   /* ━━━ Essential ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
@@ -90,6 +93,25 @@ module.exports = {
   "class-methods-use-this": "off",
   "@typescript-eslint/indent": "off",
   "@typescript-eslint/member-ordering": "off",
-  "vue/script-indent": "off"
+  "vue/script-indent": "off",
+
+
+  /* ━━━ Overridings ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━ */
+  "@typescript-eslint/class-methods-use-this": [
+    ...TypeScriptRules["@typescript-eslint/class-methods-use-this"].slice(0, 1),
+    {
+      ...TypeScriptRules["@typescript-eslint/class-methods-use-this"][1],
+      exceptMethods: [
+        "beforeCreate",
+        "created",
+        "beforeMount",
+        "mounted",
+        "beforeUpdate",
+        "updated",
+        "beforeUnmount",
+        "unmounted"
+      ]
+    }
+  ]
 
 };
