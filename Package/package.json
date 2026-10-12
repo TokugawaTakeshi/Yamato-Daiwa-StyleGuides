@@ -1,6 +1,6 @@
 {
   "name": "@yamato-daiwa/style_guides",
-  "version": "0.14.7",
+  "version": "0.14.8",
   "description": "Strict guidelines for ESLint and Pug.",
   "engines": {
     "node": ">=22.0.0"
@@ -36,8 +36,8 @@
     "@stylistic/eslint-plugin": "5.10.0",
     "@types/node": "22.20.2",
     "@types/react": "19.3.0",
-    "@typescript-eslint/eslint-plugin": "8.71.0",
-    "@typescript-eslint/parser": "8.71.0",
+    "@typescript-eslint/eslint-plugin": "8.71.1",
+    "@typescript-eslint/parser": "8.71.1",
     "eslint": "9.39.4",
     "eslint-plugin-import": "2.32.0",
     "eslint-plugin-n": "18.4.1",
@@ -52,6 +52,7 @@
     "Overridings",
     "Rules",
     "ECMAScript.js",
+    "ESLintUtils",
     "Markup.js"
   ],
   "scripts": {
